@@ -72,6 +72,10 @@ const createI18nContent = (t) => {
       display: true,
       link: 'https://cal.com'
     },
+    quote: {
+      display: true,
+      link: "/quote"
+    },
     intro: {
       display: true,
       title: t("about.intro.title"),

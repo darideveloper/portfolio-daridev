@@ -145,7 +145,7 @@ export default function About(
                         fillWidth minHeight="160"
                         direction="column" justifyContent="center"
                         marginBottom="32">
-                        {about.calendar.display && (
+                        {about.quote.display && (
                             <Flex
                                 className={styles.blockAlign}
                                 style={{
@@ -158,15 +158,15 @@ export default function About(
                                 alignItems="center">
                                 <Flex paddingLeft="12">
                                     <Icon
-                                        name="calendar"
+                                        name="quote"
                                         onBackground="brand-weak"/>
                                 </Flex>
                                 <Flex
                                     paddingX="8">
-                                    Schedule a call
+                                    Cotiza tu projecto
                                 </Flex>
                                 <IconButton
-                                    href={about.calendar.link}
+                                    href={about.quote.link}
                                     data-border="rounded"
                                     variant="tertiary"
                                     icon="chevronRight"/>

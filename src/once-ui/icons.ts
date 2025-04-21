@@ -37,6 +37,7 @@ import {
 	FaLinkedin,
 	FaXTwitter,
 	FaTelegram,
+	FaFileInvoiceDollar,
 } from "react-icons/fa6";
 
 import { IoLogoWhatsapp } from "react-icons/io";
@@ -77,4 +78,5 @@ export const iconLibrary: Record<string, IconType> = {
 	whatsapp: IoLogoWhatsapp,
 	telegram: FaTelegram,
 	fiverr: SiFiverr,
+	quote: FaFileInvoiceDollar,
 };
