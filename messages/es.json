@@ -1,9 +1,9 @@
 {
     "person": {
-        "role": "Design Engineer"
+        "role": "Desarrollador Full Stack"
     },
     "newsletter": {
-        "title": "Subscribe to {firstName}'s Newsletter",
+        "title": "Subscríbete al Newsletter de {firstName}",
         "description": "I occasionally write about design, technology, and share thoughts on the intersection of creativity and engineering",
         "button": "Sign up"
     },
@@ -15,12 +15,12 @@
         "subline": "I'm Selene, a design engineer at FLY, where I craft intuitive user experiences. After hours, I build my own projects."
     },
     "about": {
-        "label": "About",
-        "title": "About me",
-        "description": "Meet {name}, {role} from {location}",
+        "label": "Acerca de",
+        "title": "Acerca de",
+        "description": "Conoce a {name}, {role} de {location}",
         "intro": {
             "title": "Introduction",
-            "description": "Selene is a Jakarta-based design engineer with a passion for transforming complex challenges into simple, elegant design solutions. Her work spans digital interfaces, interactive experiences, and the convergence of design and technology."
+            "description": "Desarrollador web full stack especializado en sitios modernos, rápidos y optimizados para conversión. Ofrezco soluciones a medida en Next.js, Django y más. Portafolio, contacto y servicios en un solo lugar."
         },
         "work": {
             "title": "Work Experience",
