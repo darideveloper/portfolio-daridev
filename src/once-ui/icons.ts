@@ -36,7 +36,13 @@ import {
 	FaGithub,
 	FaLinkedin,
 	FaXTwitter,
+	FaTelegram,
 } from "react-icons/fa6";
+
+import { IoLogoWhatsapp } from "react-icons/io";
+
+import { SiFiverr } from "react-icons/si";
+
 
 export const iconLibrary: Record<string, IconType> = {
 	chevronUp: HiChevronUp,
@@ -67,5 +73,8 @@ export const iconLibrary: Record<string, IconType> = {
 	linkedin: FaLinkedin,
 	x: FaXTwitter,
 	clipboard: HiClipboard,
-	arrowUpRightFromSquare: HiArrowTopRightOnSquare
+	arrowUpRightFromSquare: HiArrowTopRightOnSquare,
+	whatsapp: IoLogoWhatsapp,
+	telegram: FaTelegram,
+	fiverr: SiFiverr,
 };
