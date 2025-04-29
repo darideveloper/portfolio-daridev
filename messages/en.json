@@ -60,13 +60,32 @@
             }
         },
         "technical": {
-            "title": "Technical skills",
+            "title": "Our Skills",
+            "description": "Together with my DariDev's Team, we offer a comprehensive web development and automation service. We specialize in creating custom digital solutions tailored to the specific needs of each client.",
             "skills": {
-                "Figma": {
-                    "description": "Able to prototype in Figma with Once UI with unnatural speed."
+                "frontend": {
+                    "title": "Frontend",
+                    "description": "HTML5; CSS3; JavaScript; Astro; React.js; Next.js; Tailwind CSS; AOS; Axios; Fetch API; WordPress; Divi"
                 },
-                "Nextjs": {
-                    "description": "Building next gen apps with Next.js + Once UI + Supabase."
+                "backend": {
+                    "title": "Backend",
+                    "description": "Node.js; Django; Python; Flask, REST APIs; JWT; OAuth; WebSockets"
+                },
+                "database": {
+                    "title": "Database",
+                    "description": "PostgreSQL; MySQL; MongoDB; SQLite; Supabase"
+                },
+                "automation": {
+                    "title": "Automation",
+                    "description": "Python; Requests; BeautifulSoup; Selenium; Telegram Bots; Zapier; n8n"
+                },
+                "devops": {
+                    "title": "DevOps & Hosting",
+                    "description": "Git; GitHub; Docker; Coolify; Vercel; DigitalOcean; Hetzner; Nginx; GitHub Actions"
+                },
+                "integrations": {
+                    "title": "Integrations",
+                    "description": "Stripe; PayPal; Google APIs; OpenAI; HubSpot"
                 }
             }
         }

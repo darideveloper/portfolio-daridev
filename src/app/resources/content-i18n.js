@@ -1,5 +1,18 @@
 import { InlineCode } from "@/once-ui/components"
 
+/**
+ * Returns a Jsx ul list from string separated by ;
+ * 
+ * @param {string} text - The string to be converted into a list.
+ * @returns {JSX.Element} - A JSX ul list.
+ */
+function getJsxList(text) {
+  const items = text.split(";").map((item, index) => {
+    return <li key={index}>{item}</li>
+  })
+  return <ul>{items}</ul>
+}
+
 const createI18nContent = (t) => {
   const person = {
     firstName: 'Dari',
@@ -146,36 +159,31 @@ const createI18nContent = (t) => {
     technical: {
       display: true, // set to false to hide this section
       title: t("about.technical.title"),
+      description: t("about.technical.description"),
       skills: [
         {
-          title: 'Figma',
-          description: <>{t("about.technical.skills.Figma.description")}</>,
-          images: [
-            {
-              src: '/images/projects/project-01/cover-02.jpg',
-              alt: 'Project image',
-              width: 16,
-              height: 9
-            },
-            {
-              src: '/images/projects/project-01/cover-03.jpg',
-              alt: 'Project image',
-              width: 16,
-              height: 9
-            },
-          ]
+          title: t("about.technical.skills.frontend.title"),
+          description: getJsxList(t("about.technical.skills.frontend.description")),
         },
         {
-          title: 'Next.js',
-          description: <>{t("about.technical.skills.Nextjs.description")}</>, // "." not accepted in next-intl namespace
-          images: [
-            {
-              src: '/images/projects/project-01/cover-04.jpg',
-              alt: 'Project image',
-              width: 16,
-              height: 9
-            },
-          ]
+          title: t("about.technical.skills.backend.title"),
+          description: getJsxList(t("about.technical.skills.backend.description")),
+        },
+        {
+          title: t("about.technical.skills.database.title"),
+          description: getJsxList(t("about.technical.skills.database.description")),
+        },
+        {
+          title: t("about.technical.skills.automation.title"),
+          description: getJsxList(t("about.technical.skills.automation.description")),
+        },
+        {
+          title: t("about.technical.skills.devops.title"),
+          description: getJsxList(t("about.technical.skills.devops.description")),
+        },
+        {
+          title: t("about.technical.skills.integrations.title"),
+          description: getJsxList(t("about.technical.skills.integrations.description")),
         }
       ]
     }
