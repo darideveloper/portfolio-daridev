@@ -20,20 +20,31 @@
         "description": "Conoce a {name}, {role} de {location}",
         "intro": {
             "title": "Introduction",
-            "description": "Desarrollador web full stack especializado en sitios modernos, rápidos y optimizados para conversión. Ofrezco soluciones a medida en Next.js, Django y más. Portafolio, contacto y servicios en un solo lugar."
+            "description": "Desarrollador web full stack especializado en sitios modernos, rápidos y optimizados para conversión. Ofrezco soluciones a medida, desde la Landing Pages hasta Aplicaciones Web. Portafolio, contacto y servicios en un solo lugar."
         },
         "work": {
-            "title": "Work Experience",
+            "title": "Trayectoria Profesional",
             "experiences": {
-                "FLY": {
-                    "timeframe": "2022 - Present",
-                    "role": "Senior Design Engineer",
-                    "achievements": "Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user engagement and 30% faster load times.;Spearheaded the integration of AI tools into design workflows, enabling designers to iterate 50% faster."
+                "daridevsTeam": {
+                    "company": "DariDev's Team",
+                    "timeframe": "2024 - Present",
+                    "role": "Team Lead & Full Stack Developer",
+                    "achievements": "Team Líder en mi Agencia de Desarrollo Web, donde creamos soluciones digitales completas, personalizadas y listas para escalar.; Junto a un equipo de profesionales, ayudo a negocios y emprendedores a lanzar landing pages efectivas, dashboards intuitivos, blogs modernos, sistemas de reservaciones, tiendas online y todo tipo de aplicaciones web.; Nos enfocamos en resultados reales: mejorar tu presencia digital, atraer más clientes y ayudarte a crecer con tecnología que trabaja para ti.",
+                    "imgAlt": "Ilustración del equipo de DariDev"
                 },
-                "Creativ3": {
-                    "timeframe": "2018 - 2022",
-                    "role": "Lead Designer",
-                    "achievements": "Developed a design system that unified the brand across multiple platforms, improving design consistency by 40%.;Led a cross-functional team to launch a new product line, contributing to a 15% increase in overall company revenue."
+                "fullStack": {
+                    "company": "Full Stack Freelance",
+                    "timeframe": "2021 - 2024",
+                    "role": "Desarrollador Full Stack Developer",
+                    "achievements": "Durante 4 años ayudé a emprendedores, negocios locales y empresas a crear sitios web profesionales, tiendas en línea y plataformas personalizadas.; Me enfoqué en desarrollar soluciones completas, desde el diseño hasta la funcionalidad, siempre priorizando velocidad, usabilidad y resultados reales.; Mi trabajo permitió a mis clientes ahorrar tiempo, atraer más clientes y mejorar su presencia digital.",
+                    "imgAlt": "Ilustración de Dari Dev programando un protecto Full Stack"
+                },
+                "automation": {
+                    "company": "Automatización Freelance",
+                    "timeframe": "2020 - 2021",
+                    "role": "Especialista en Automatización",
+                    "achievements": "Aayudé a empresas y emprendedores a automatizar tareas repetitivas y recopilar información clave de internet para tomar mejores decisiones.; Desarrollé soluciones personalizadas que ahorraron tiempo, redujeron errores humanos y mejoraron procesos internos, como la actualización de bases de datos, monitoreo de precios, generación de reportes o seguimiento de prospectos.",
+                    "imgAlt": "Ilustración de Dari Dev programando un script de automatización"
                 }
             }
         },
@@ -49,7 +60,7 @@
             }
         },
         "technical": {
-            "title": "Technical skills",
+            "title": "Team skills",
             "skills": {
                 "Figma": {
                     "description": "Able to prototype in Figma with Once UI with unnatural speed."

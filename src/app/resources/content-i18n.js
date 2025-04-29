@@ -86,30 +86,51 @@ const createI18nContent = (t) => {
       title: t("about.work.title"),
       experiences: [
         {
-          company: 'FLY',
-          timeframe: t("about.work.experiences.FLY.timeframe"),
-          role: t("about.work.experiences.FLY.role"),
-          achievements: t("about.work.experiences.FLY.achievements").split(";"),
-          images: [ // optional: leave the array empty if you don't want to display images
+          company: t("about.work.experiences.daridevsTeam.company"),
+          timeframe: t("about.work.experiences.daridevsTeam.timeframe"),
+          role: t("about.work.experiences.daridevsTeam.role"),
+          achievements: t("about.work.experiences.daridevsTeam.achievements").split(";"),
+          images: [
             {
-              src: '/images/projects/project-01/cover-01.jpg',
-              alt: 'Once UI Project',
-              width: 16,
-              height: 9
+              src: '/images/about/team.svg',
+              alt: t("about.work.experiences.daridevsTeam.imgAlt"),
+              width: 26,
+              height: 18
             }
           ]
         },
         {
-          company: 'Creativ3',
-          timeframe: t("about.work.experiences.Creativ3.timeframe"),
-          role: t("about.work.experiences.Creativ3.role"),
-          achievements: t("about.work.experiences.Creativ3.achievements").split(";"),
-          images: []
+          company: t("about.work.experiences.fullStack.company"),
+          timeframe: t("about.work.experiences.fullStack.timeframe"),
+          role: t("about.work.experiences.fullStack.role"),
+          achievements: t("about.work.experiences.fullStack.achievements").split(";"),
+          images: [
+            {
+              src: '/images/about/fullstack.svg',
+              alt: t("about.work.experiences.fullStack.imgAlt"),
+              width: 24,
+              height: 25
+            }
+          ]
+        },
+        {
+          company: t("about.work.experiences.automation.company"),
+          timeframe: t("about.work.experiences.automation.timeframe"),
+          role: t("about.work.experiences.automation.role"),
+          achievements: t("about.work.experiences.automation.achievements").split(";"),
+          images: [
+            {
+              src: '/images/about/automation.svg',
+              alt: t("about.work.experiences.automation.imgAlt"),
+              width: 24,
+              height: 24
+            }
+          ]
         }
       ]
     },
     studies: {
-      display: true, // set to false to hide this section
+      display: false, // set to false to hide this section
       title: t("about.studies.title"),
       institutions: [
         {

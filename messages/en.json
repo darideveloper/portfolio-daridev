@@ -20,20 +20,31 @@
         "description": "Meet {name}, {role} from {location}",
         "intro": {
             "title": "Introduction",
-            "description": "Selene is a Jakarta-based design engineer with a passion for transforming complex challenges into simple, elegant design solutions. Her work spans digital interfaces, interactive experiences, and the convergence of design and technology."
+            "description": "Full stack web developer specializing in modern, fast, and conversion-optimized websites. I offer custom solutions, from landing pages to web applications. Portfolio, contact, and services all in one place."
         },
         "work": {
-            "title": "Work Experience",
+            "title": "Professional Experience",
             "experiences": {
-                "FLY": {
-                    "timeframe": "2022 - Present",
-                    "role": "Senior Design Engineer",
-                    "achievements": "Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user engagement and 30% faster load times.;Spearheaded the integration of AI tools into design workflows, enabling designers to iterate 50% faster."
+                "daridevsTeam": {
+                    "company": "DariDev's Team",
+                    "timeframe": "2024 - Present",
+                    "role": "Team Lead & Full Stack Developer",
+                    "achievements": "Team Lead at my Web Development Agency, where we build scalable, tailor-made digital solutions.; Together with a team of professionals, I help businesses and entrepreneurs launch high-converting landing pages, user-friendly dashboards, modern blogs, reservation systems, e-commerce platforms, and all kinds of web applications.; We focus on real results: boosting your digital presence, attracting more clients, and helping you grow with technology that works for you.",
+                    "imgAlt": "Illustration of the DariDev team"
                 },
-                "Creativ3": {
-                    "timeframe": "2018 - 2022",
-                    "role": "Lead Designer",
-                    "achievements": "Developed a design system that unified the brand across multiple platforms, improving design consistency by 40%.;Led a cross-functional team to launch a new product line, contributing to a 15% increase in overall company revenue."
+                "fullStack": {
+                    "company": "Full Stack Freelance",
+                    "timeframe": "2021 - 2024",
+                    "role": "Full Stack Developer",
+                    "achievements": "For 4 years, I’ve helped startups, local businesses, and companies build professional websites, online stores, and custom platforms.; I focused on delivering end-to-end solutions—from design to development—prioritizing speed, usability, and measurable results.; My work enabled clients to save time, increase traffic, and strengthen their online presence.",
+                    "imgAlt": "Illustration of Dari Dev coding a Full Stack project"
+                },
+                "automation": {
+                    "company": "Automatización Freelance",
+                    "timeframe": "2020 - 2021",
+                    "role": "Automation Specialist",
+                    "achievements": "I supported businesses and entrepreneurs by automating repetitive tasks and gathering valuable data from the web to drive better decision-making.; I built custom automation tools that saved time, minimized human errors, and optimized internal processes such as database updates, price monitoring, report generation, and lead tracking.",
+                    "imgAlt": "Illustration of Dari Dev programming an automation script"
                 }
             }
         },
