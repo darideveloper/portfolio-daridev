@@ -1,6 +1,6 @@
 {
     "person": {
-        "role": "Full Stack Dev"
+        "role": "Full Stack Team"
     },
     "newsletter": {
         "title": "Subscribe to {firstName}'s Newsletter",
@@ -18,9 +18,12 @@
         "label": "About",
         "title": "About me",
         "description": "Meet {name}, {role} from {location}",
+        "quote": {
+            "text": "Quote your project"
+        },
         "intro": {
             "title": "Introduction",
-            "description": "Full stack web developer specializing in modern, fast, and conversion-optimized websites. I offer custom solutions, from landing pages to web applications. Portfolio, contact, and services all in one place."
+            "description": "Full-stack web developer and leader of my own development team, specializing in modern, fast, and conversion-optimized websites. We offer custom solutions, from landing pages to web applications. Portfolio, contact, and services all in one place."
         },
         "work": {
             "title": "Professional Experience",

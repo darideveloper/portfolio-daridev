@@ -87,7 +87,8 @@ const createI18nContent = (t) => {
     },
     quote: {
       display: true,
-      link: "/quote"
+      link: "/quote",
+      text: t("about.quote.text"),
     },
     intro: {
       display: true,

@@ -1,6 +1,6 @@
 {
     "person": {
-        "role": "Desarrollador Full Stack"
+        "role": "Equipo Full Stack"
     },
     "newsletter": {
         "title": "Subscríbete al Newsletter de {firstName}",
@@ -18,9 +18,12 @@
         "label": "Acerca de",
         "title": "Acerca de",
         "description": "Conoce a {name}, {role} de {location}",
+        "quote": {
+            "text": "Cotiza tu proyecto"
+        },
         "intro": {
             "title": "Introduction",
-            "description": "Desarrollador web full stack especializado en sitios modernos, rápidos y optimizados para conversión. Ofrezco soluciones a medida, desde la Landing Pages hasta Aplicaciones Web. Portafolio, contacto y servicios en un solo lugar."
+            "description": "Desarrollador web full stack y líder de mi propio equipo de desarrollo, especializado en sitios modernos, rápidos y optimizados para conversión. Ofrecemos soluciones a medida, desde la Landing Pages hasta Aplicaciones Web. Portafolio, contacto y servicios en un solo lugar."
         },
         "work": {
             "title": "Trayectoria Profesional",
