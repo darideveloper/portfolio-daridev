@@ -1,0 +1,15 @@
+.accordion {
+  cursor: pointer;
+  transition: var(--transition-micro-medium);
+  background: var(--static-transparent);
+}
+.accordion:hover {
+  background: var(--neutral-alpha-weak);
+}
+
+.border {
+  border-top: 1px solid var(--neutral-border-medium);
+}
+.border:first-of-type {
+  border: none;
+}/*# sourceMappingURL=Accordion.module.css.map */

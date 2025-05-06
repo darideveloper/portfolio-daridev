@@ -1,0 +1,14 @@
+.type {
+  content: var(--type);
+}
+
+.icon {
+  content: var(--icon);
+}
+
+.type, .icon {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  display: block;
+}/*# sourceMappingURL=Logo.module.css.map */

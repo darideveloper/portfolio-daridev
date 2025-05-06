@@ -1,0 +1,12 @@
+.wrapper {
+  border: 1px solid var(--static-transparent);
+  transition: var(--transition-micro-medium);
+}
+.wrapper:hover {
+  background-color: var(--neutral-alpha-weak);
+  border: 1px solid var(--neutral-alpha-medium);
+}
+.wrapper.selected:hover {
+  background-color: var(--neutral-background-strong);
+  border: 1px solid var(--neutral-border-strong);
+}/*# sourceMappingURL=UserMenu.module.css.map */

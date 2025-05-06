@@ -1,0 +1,6 @@
+.hover {
+  transition: var(--transition-micro-medium);
+}
+.hover:hover {
+  transform: translateX(var(--static-space-8));
+}/*# sourceMappingURL=Posts.module.css.map */

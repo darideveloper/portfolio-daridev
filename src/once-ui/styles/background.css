@@ -1,0 +1,458 @@
+/****************************/
+/*     BACKGROUND-COLOR     */
+/****************************/
+/* PAGE */
+.page-background {
+  background-color: var(--page-background);
+}
+
+.surface-background {
+  background-color: var(--surface-background);
+  -webkit-backdrop-filter: var(--backdrop-filter);
+          backdrop-filter: var(--backdrop-filter);
+}
+
+.backdrop {
+  background-color: var(--backdrop);
+}
+
+/* NEUTRAL */
+.neutral-background-weak ::-moz-selection, .neutral-background-medium ::-moz-selection, .neutral-background-strong ::-moz-selection, .neutral-alpha-weak ::-moz-selection, .neutral-alpha-medium ::-moz-selection, .neutral-alpha-strong ::-moz-selection {
+  background-color: var(--neutral-on-background-weak);
+  color: var(--neutral-background-weak);
+}
+.neutral-background-weak ::selection,
+.neutral-background-medium ::selection,
+.neutral-background-strong ::selection,
+.neutral-alpha-weak ::selection,
+.neutral-alpha-medium ::selection,
+.neutral-alpha-strong ::selection {
+  background-color: var(--neutral-on-background-weak);
+  color: var(--neutral-background-weak);
+}
+
+.neutral-solid-weak ::-moz-selection, .neutral-solid-medium ::-moz-selection, .neutral-solid-strong ::-moz-selection {
+  background-color: var(--neutral-background-weak);
+  color: var(--neutral-on-background-medium);
+}
+
+.neutral-solid-weak ::selection,
+.neutral-solid-medium ::selection,
+.neutral-solid-strong ::selection {
+  background-color: var(--neutral-background-weak);
+  color: var(--neutral-on-background-medium);
+}
+
+.neutral-background-weak {
+  background-color: var(--neutral-background-weak);
+}
+
+.neutral-background-medium {
+  background-color: var(--neutral-background-medium);
+}
+
+.neutral-background-strong {
+  background-color: var(--neutral-background-strong);
+}
+
+.neutral-solid-weak {
+  background-color: var(--neutral-solid-weak);
+}
+
+.neutral-solid-medium {
+  background-color: var(--neutral-solid-medium);
+}
+
+.neutral-solid-strong {
+  background-color: var(--neutral-solid-strong);
+}
+
+.neutral-alpha-weak {
+  background-color: var(--neutral-alpha-weak);
+}
+
+.neutral-alpha-medium {
+  background-color: var(--neutral-alpha-medium);
+}
+
+.neutral-alpha-strong {
+  background-color: var(--neutral-alpha-strong);
+}
+
+/* BRAND */
+.brand-background-weak ::-moz-selection, .brand-background-medium ::-moz-selection, .brand-background-strong ::-moz-selection, .brand-alpha-weak ::-moz-selection, .brand-alpha-medium ::-moz-selection, .brand-alpha-strong ::-moz-selection {
+  background-color: var(--brand-on-background-weak);
+  color: var(--brand-background-weak);
+}
+.brand-background-weak ::selection,
+.brand-background-medium ::selection,
+.brand-background-strong ::selection,
+.brand-alpha-weak ::selection,
+.brand-alpha-medium ::selection,
+.brand-alpha-strong ::selection {
+  background-color: var(--brand-on-background-weak);
+  color: var(--brand-background-weak);
+}
+
+.brand-solid-weak ::-moz-selection, .brand-solid-medium ::-moz-selection, .brand-solid-strong ::-moz-selection {
+  background-color: var(--brand-background-weak);
+  color: var(--brand-on-background-medium);
+}
+
+.brand-solid-weak ::selection,
+.brand-solid-medium ::selection,
+.brand-solid-strong ::selection {
+  background-color: var(--brand-background-weak);
+  color: var(--brand-on-background-medium);
+}
+
+.brand-background-weak {
+  background-color: var(--brand-background-weak);
+}
+
+.brand-background-medium {
+  background-color: var(--brand-background-medium);
+}
+
+.brand-background-strong {
+  background-color: var(--brand-background-strong);
+}
+
+.brand-solid-weak {
+  background-color: var(--brand-solid-weak);
+}
+
+.brand-solid-medium {
+  background-color: var(--brand-solid-medium);
+}
+
+.brand-solid-strong {
+  background-color: var(--brand-solid-strong);
+}
+
+.brand-alpha-weak {
+  background-color: var(--brand-alpha-weak);
+}
+
+.brand-alpha-medium {
+  background-color: var(--brand-alpha-medium);
+}
+
+.brand-alpha-strong {
+  background-color: var(--brand-alpha-strong);
+}
+
+/* ACCENT */
+.accent-background-weak ::-moz-selection, .accent-background-medium ::-moz-selection, .accent-background-strong ::-moz-selection, .accent-alpha-weak ::-moz-selection, .accent-alpha-medium ::-moz-selection, .accent-alpha-strong ::-moz-selection {
+  background-color: var(--accent-on-background-weak);
+  color: var(--accent-background-weak);
+}
+.accent-background-weak ::selection,
+.accent-background-medium ::selection,
+.accent-background-strong ::selection,
+.accent-alpha-weak ::selection,
+.accent-alpha-medium ::selection,
+.accent-alpha-strong ::selection {
+  background-color: var(--accent-on-background-weak);
+  color: var(--accent-background-weak);
+}
+
+.accent-solid-weak ::-moz-selection, .accent-solid-medium ::-moz-selection, .accent-solid-strong ::-moz-selection {
+  background-color: var(--accent-background-weak);
+  color: var(--accent-on-background-medium);
+}
+
+.accent-solid-weak ::selection,
+.accent-solid-medium ::selection,
+.accent-solid-strong ::selection {
+  background-color: var(--accent-background-weak);
+  color: var(--accent-on-background-medium);
+}
+
+.accent-background-weak {
+  background-color: var(--accent-background-weak);
+}
+
+.accent-background-medium {
+  background-color: var(--accent-background-medium);
+}
+
+.accent-background-strong {
+  background-color: var(--accent-background-strong);
+}
+
+.accent-solid-weak {
+  background-color: var(--accent-solid-weak);
+}
+
+.accent-solid-medium {
+  background-color: var(--accent-solid-medium);
+}
+
+.accent-solid-strong {
+  background-color: var(--accent-solid-strong);
+}
+
+.accent-alpha-weak {
+  background-color: var(--accent-alpha-weak);
+}
+
+.accent-alpha-medium {
+  background-color: var(--accent-alpha-medium);
+}
+
+.accent-alpha-strong {
+  background-color: var(--accent-alpha-strong);
+}
+
+/* INFO */
+.info-background-weak ::-moz-selection, .info-background-medium ::-moz-selection, .info-background-strong ::-moz-selection, .info-alpha-weak ::-moz-selection, .info-alpha-medium ::-moz-selection, .info-alpha-strong ::-moz-selection {
+  background-color: var(--info-on-background-weak);
+  color: var(--info-background-weak);
+}
+.info-background-weak ::selection,
+.info-background-medium ::selection,
+.info-background-strong ::selection,
+.info-alpha-weak ::selection,
+.info-alpha-medium ::selection,
+.info-alpha-strong ::selection {
+  background-color: var(--info-on-background-weak);
+  color: var(--info-background-weak);
+}
+
+.info-solid-weak ::-moz-selection, .info-solid-medium ::-moz-selection, .info-solid-strong ::-moz-selection {
+  background-color: var(--info-background-weak);
+  color: var(--info-on-background-medium);
+}
+
+.info-solid-weak ::selection,
+.info-solid-medium ::selection,
+.info-solid-strong ::selection {
+  background-color: var(--info-background-weak);
+  color: var(--info-on-background-medium);
+}
+
+.info-background-weak {
+  background-color: var(--info-background-weak);
+}
+
+.info-background-medium {
+  background-color: var(--info-background-medium);
+}
+
+.info-background-strong {
+  background-color: var(--info-background-strong);
+}
+
+.info-solid-weak {
+  background-color: var(--info-solid-weak);
+}
+
+.info-solid-medium {
+  background-color: var(--info-solid-medium);
+}
+
+.info-solid-strong {
+  background-color: var(--info-solid-strong);
+}
+
+.info-alpha-weak {
+  background-color: var(--info-alpha-weak);
+}
+
+.info-alpha-medium {
+  background-color: var(--info-alpha-medium);
+}
+
+.info-alpha-strong {
+  background-color: var(--info-alpha-strong);
+}
+
+/* DANGER */
+.danger-background-weak ::-moz-selection, .danger-background-medium ::-moz-selection, .danger-background-strong ::-moz-selection, .danger-alpha-weak ::-moz-selection, .danger-alpha-medium ::-moz-selection, .danger-alpha-strong ::-moz-selection {
+  background-color: var(--danger-on-background-weak);
+  color: var(--danger-background-weak);
+}
+.danger-background-weak ::selection,
+.danger-background-medium ::selection,
+.danger-background-strong ::selection,
+.danger-alpha-weak ::selection,
+.danger-alpha-medium ::selection,
+.danger-alpha-strong ::selection {
+  background-color: var(--danger-on-background-weak);
+  color: var(--danger-background-weak);
+}
+
+.danger-solid-weak ::-moz-selection, .danger-solid-medium ::-moz-selection, .danger-solid-strong ::-moz-selection {
+  background-color: var(--danger-background-weak);
+  color: var(--danger-on-background-medium);
+}
+
+.danger-solid-weak ::selection,
+.danger-solid-medium ::selection,
+.danger-solid-strong ::selection {
+  background-color: var(--danger-background-weak);
+  color: var(--danger-on-background-medium);
+}
+
+.danger-background-weak {
+  background-color: var(--danger-background-weak);
+}
+
+.danger-background-medium {
+  background-color: var(--danger-background-medium);
+}
+
+.danger-background-strong {
+  background-color: var(--danger-background-strong);
+}
+
+.danger-solid-weak {
+  background-color: var(--danger-solid-weak);
+}
+
+.danger-solid-medium {
+  background-color: var(--danger-solid-medium);
+}
+
+.danger-solid-strong {
+  background-color: var(--danger-solid-strong);
+}
+
+.danger-alpha-weak {
+  background-color: var(--danger-alpha-weak);
+}
+
+.danger-alpha-medium {
+  background-color: var(--danger-alpha-medium);
+}
+
+.danger-alpha-strong {
+  background-color: var(--danger-alpha-strong);
+}
+
+/* WARNING */
+.warning-background-weak ::-moz-selection, .warning-background-medium ::-moz-selection, .warning-background-strong ::-moz-selection, .warning-alpha-weak ::-moz-selection, .warning-alpha-medium ::-moz-selection, .warning-alpha-strong ::-moz-selection {
+  background-color: var(--warning-on-background-weak);
+  color: var(--warning-background-weak);
+}
+.warning-background-weak ::selection,
+.warning-background-medium ::selection,
+.warning-background-strong ::selection,
+.warning-alpha-weak ::selection,
+.warning-alpha-medium ::selection,
+.warning-alpha-strong ::selection {
+  background-color: var(--warning-on-background-weak);
+  color: var(--warning-background-weak);
+}
+
+.warning-solid-weak ::-moz-selection, .warning-solid-medium ::-moz-selection, .warning-solid-strong ::-moz-selection {
+  background-color: var(--warning-background-weak);
+  color: var(--warning-on-background-medium);
+}
+
+.warning-solid-weak ::selection,
+.warning-solid-medium ::selection,
+.warning-solid-strong ::selection {
+  background-color: var(--warning-background-weak);
+  color: var(--warning-on-background-medium);
+}
+
+.warning-background-weak {
+  background-color: var(--warning-background-weak);
+}
+
+.warning-background-medium {
+  background-color: var(--warning-background-medium);
+}
+
+.warning-background-strong {
+  background-color: var(--warning-background-strong);
+}
+
+.warning-solid-weak {
+  background-color: var(--warning-solid-weak);
+}
+
+.warning-solid-medium {
+  background-color: var(--warning-solid-medium);
+}
+
+.warning-solid-strong {
+  background-color: var(--warning-solid-strong);
+}
+
+.warning-alpha-weak {
+  background-color: var(--warning-alpha-weak);
+}
+
+.warning-alpha-medium {
+  background-color: var(--warning-alpha-medium);
+}
+
+.warning-alpha-strong {
+  background-color: var(--warning-alpha-strong);
+}
+
+/* SUCCESS */
+.success-background-weak ::-moz-selection, .success-background-medium ::-moz-selection, .success-background-strong ::-moz-selection, .success-alpha-weak ::-moz-selection, .success-alpha-medium ::-moz-selection, .success-alpha-strong ::-moz-selection {
+  background-color: var(--success-on-background-weak);
+  color: var(--success-background-weak);
+}
+.success-background-weak ::selection,
+.success-background-medium ::selection,
+.success-background-strong ::selection,
+.success-alpha-weak ::selection,
+.success-alpha-medium ::selection,
+.success-alpha-strong ::selection {
+  background-color: var(--success-on-background-weak);
+  color: var(--success-background-weak);
+}
+
+.success-solid-weak ::-moz-selection, .success-solid-medium ::-moz-selection, .success-solid-strong ::-moz-selection {
+  background-color: var(--success-background-weak);
+  color: var(--success-on-background-medium);
+}
+
+.success-solid-weak ::selection,
+.success-solid-medium ::selection,
+.success-solid-strong ::selection {
+  background-color: var(--success-background-weak);
+  color: var(--success-on-background-medium);
+}
+
+.success-background-weak {
+  background-color: var(--success-background-weak);
+}
+
+.success-background-medium {
+  background-color: var(--success-background-medium);
+}
+
+.success-background-strong {
+  background-color: var(--success-background-strong);
+}
+
+.success-solid-weak {
+  background-color: var(--success-solid-weak);
+}
+
+.success-solid-medium {
+  background-color: var(--success-solid-medium);
+}
+
+.success-solid-strong {
+  background-color: var(--success-solid-strong);
+}
+
+.success-alpha-weak {
+  background-color: var(--success-alpha-weak);
+}
+
+.success-alpha-medium {
+  background-color: var(--success-alpha-medium);
+}
+
+.success-alpha-strong {
+  background-color: var(--success-alpha-strong);
+}/*# sourceMappingURL=background.css.map */

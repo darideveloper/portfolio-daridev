@@ -1,0 +1,19 @@
+.revealFx {
+  display: inline-block;
+  position: relative;
+  -webkit-mask-image: linear-gradient(to right, black 0%, black 25%, transparent 50%);
+          mask-image: linear-gradient(to right, black 0%, black 25%, transparent 50%);
+  -webkit-mask-size: 300% 100%;
+          mask-size: 300% 100%;
+  transition: all ease-in-out;
+}
+.revealFx.hidden {
+  -webkit-mask-position: 100% 0;
+          mask-position: 100% 0;
+  filter: blur(0.5rem);
+}
+.revealFx.revealed {
+  -webkit-mask-position: 0 0;
+          mask-position: 0 0;
+  filter: blur(0);
+}/*# sourceMappingURL=RevealFx.module.css.map */
