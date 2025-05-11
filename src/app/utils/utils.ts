@@ -21,7 +21,6 @@ type Metadata = {
 };
 
 function getMDXFiles(dir: string) {
-    console.log({dir})
     if (!fs.existsSync(dir)) {
         throw new Error(`Directory not found: ${dir}`);
     }
