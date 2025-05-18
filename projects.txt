@@ -1,0 +1,73 @@
+https://github.com/darideveloper/nyx-dashboard
+https://github.com/darideveloper/cancunconciergedmc-v2
+https://github.com/darideveloper/nyxtrackers
+https://github.com/darideveloper/itzimna
+https://github.com/darideveloper/mi-caja-de-herramientas-dashboard
+https://github.com/darideveloper/Itzimna-dashboard
+https://github.com/darideveloper/case-solutions
+https://github.com/darideveloper/gana-en-tu-hogar-by-coca-cola
+https://github.com/darideveloper/cakestoremommy
+https://github.com/darideveloper/elite-guard-services
+https://github.com/darideveloper/cancun-concierge
+https://github.com/darideveloper/c4empresarialyresidencial
+https://github.com/darideveloper/c4-dashboard
+https://github.com/darideveloper/tony-thoa-airport-transfers
+https://github.com/darideveloper/will-ryan-airport-transfers
+https://github.com/darideveloper/driven-mastermind
+https://github.com/darideveloper/pies-perfectos
+https://github.com/darideveloper/sugar-kiss-cupcakes
+https://github.com/darideveloper/ahoraiteya
+https://github.com/darideveloper/iyali-reyes
+https://github.com/darideveloper/blixerhost
+https://github.com/darideveloper/email-sender-google-sheets
+https://github.com/darideveloper/taxsales-lgbs-maps-scraper
+https://github.com/darideveloper/telegram-bot-web-monitoring
+https://github.com/darideveloper/facebook-groups-post-bot
+https://github.com/darideveloper/fututalent
+https://github.com/darideveloper/lzunigar-dashboard
+https://github.com/darideveloper/6pm-scraper
+https://github.com/darideveloper/comunidad-mc
+https://github.com/darideveloper/google-maps-scraper
+https://github.com/darideveloper/gutenberg-downloader
+https://github.com/darideveloper/twitch-cheer-bot
+https://github.com/darideveloper/phone-emails-scraper-multithreading
+https://github.com/darideveloper/twitch-viewer-bot
+https://github.com/darideveloper/twitch-chat-reader-v-system
+https://github.com/darideveloper/manga-pdf-downloader
+https://github.com/darideveloper/sorteos-ajolote-frontend
+https://github.com/darideveloper/sorteos-ajolote-backend
+https://github.com/darideveloper/optima
+https://github.com/darideveloper/buenos-aires-aire-acondicionado
+https://github.com/darideveloper/First-in-Flight-Network
+https://github.com/darideveloper/Keagan-s-Kloset-Boutique
+https://github.com/darideveloper/webleague
+https://github.com/darideveloper/XYMale-Barbershop
+https://github.com/darideveloper/ohiohealthmd
+https://drive.google.com/drive/folders/104B2A4yRohU1WWoaW8YDg_3CC07UtpIN?usp=drive_link
+https://drive.google.com/drive/folders/19wL5-qRRJIMrB0PxIKFa-kVBIX1zbJJT?usp=drive_link
+https://drive.google.com/drive/folders/1medcqqmCopjPz7X0hsRi6eOhFvK2Rc4S?usp=drive_link
+https://drive.google.com/drive/folders/1mMha6jAZCRh9XbgMirciJpXXWsOzjVja?usp=drive_link
+https://drive.google.com/drive/folders/15knGPgK9B_ydkZzkzZ_q3P8YH-jBGeOD?usp=drive_link
+https://drive.google.com/drive/folders/1TwbRZVfykPjRceD4BJKMXXf_9UzfNmXX?usp=drive_link
+https://drive.google.com/drive/folders/19RXMHMUsTEhtXbqxlIPeRW_azW1nfRK0?usp=drive_link
+- https://drive.google.com/drive/folders/1mOveoaUyxB1LrVZFkuQD2b1ks0Y35x4a?usp=drive_link
+* https://drive.google.com/drive/folders/1TbUWldJ2UXW19VRIJFKzvJzUcsmdbwZ6?usp=drive_link
+* https://drive.google.com/drive/folders/1mKqvIax9K3aTNIKqiBzj7OIjAkV5uDqE?usp=drive_link
+* https://drive.google.com/drive/folders/11FdsOFZKN9K9TqwHP3zT9bneki1ipD-g?usp=drive_link
+* https://drive.google.com/drive/folders/17_jgFDc-OGijmmXIXVlhEDZgiamb3oTK?usp=drive_link
+
+TODO: update contact link in all projects: https://api.whatsapp.com/send?phone=5214493402622
+
+tecnologias:
+
+- **Wordpress:** CMS para la gestión de contenido.
+- **Divi:** Constructor de páginas para diseño visual.
+- **Smash Balloon**: Plugin para integrar el ***feed de Instagram***.
+- **Simply Schedule Appointments**: Plugin para gestionar el **formulario de reservaciones**.
+- **Buttonizer**: Plugin para crear **botones flotantes** y **acciones rápidas**.
+- **Loginizer**: Plugin para proteger el **login** de WordPress.
+- **DariDev Contact Form API**: Api del equipo, para crear **formularios de contacto**.
+
+team:
+* marcogzmdev
+* Sagdev
