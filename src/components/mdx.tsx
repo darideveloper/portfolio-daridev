@@ -8,6 +8,9 @@ import { HeadingLink } from '@/components';
 import { TextProps } from '@/once-ui/interfaces';
 import { SmartImageProps } from '@/once-ui/components/SmartImage';
 
+// Import custom sass
+import '@/components/mdx.sass';
+
 type TableProps = {
     data: {
         headers: string[];
