@@ -42,7 +42,6 @@ https://github.com/darideveloper/First-in-Flight-Network
 https://github.com/darideveloper/Keagan-s-Kloset-Boutique
 https://github.com/darideveloper/webleague
 https://github.com/darideveloper/XYMale-Barbershop
-https://github.com/darideveloper/ohiohealthmd
 https://drive.google.com/drive/folders/104B2A4yRohU1WWoaW8YDg_3CC07UtpIN?usp=drive_link
 https://drive.google.com/drive/folders/19wL5-qRRJIMrB0PxIKFa-kVBIX1zbJJT?usp=drive_link
 https://drive.google.com/drive/folders/1medcqqmCopjPz7X0hsRi6eOhFvK2Rc4S?usp=drive_link
@@ -60,6 +59,7 @@ TODO: update contact link in all projects: https://api.whatsapp.com/send?phone=5
 
 tecnologias:
 
+--- wordpress
 - **Wordpress:** CMS para la gestión de contenido.
 - **Divi:** Constructor de páginas para diseño visual.
 - **Smash Balloon**: Plugin para integrar el ***feed de Instagram***.
@@ -67,6 +67,20 @@ tecnologias:
 - **Buttonizer**: Plugin para crear **botones flotantes** y **acciones rápidas**.
 - **Loginizer**: Plugin para proteger el **login** de WordPress.
 - **DariDev Contact Form API**: Api del equipo, para crear **formularios de contacto**.
+--- code
+- **DariDev Contact Form API**: Api del equipo, para crear **formularios de contacto**.
+- **HTML5**: Lenguaje de marcado para la estructura de contenido.
+- **CSS3**: Lenguaje de estilo para el diseño visual.
+- **Vanilla JavaScript**: Lenguaje de programación para la interactividad.
+- **React JS**: Biblioteca de JavaScript para construir interfaces de usuario.
+- **Next JS**: Framework de React para aplicaciones web.
+- **AOS**: Framework de CSS para diseño responsivo.
+- **Tailwind CSS**: Framework de CSS para diseño responsivo.
+- **SweetAlert2**: Librería de JavaScript para alertas personalizadas.
+- **Splide JS**: Librería de JavaScript para crear sliders.
+- **Swiper JS**: Librería de JavaScript para crear sliders.
+- **Astro**: Framework de JavaScript para crear aplicaciones web rápidas.
+
 
 team:
 * marcogzmdev
