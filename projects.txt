@@ -83,5 +83,13 @@ tecnologias:
 
 
 team:
-* marcogzmdev
-* Sagdev
+
+  - name: "Dari Dev"
+    role: "Full Stack Developer"
+    avatar: "/images/avatars/daridev.webp"
+  - name: "Sagdev"
+    role: "Frontend Developer"
+    avatar: "/images/avatars/saul.webp"
+  - name: "Silvia"
+    role: "Full Stack Developer"
+    avatar: "/images/avatars/silvia.webp"
