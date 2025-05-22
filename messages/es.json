@@ -96,8 +96,8 @@
     "blog": {
         "last": "Lo último en nuestro blog",
         "label": "Blog",
-        "title": "Writing about design and tech...",
-        "description": "Read what {name} has been up to recently"
+        "title": "Consejos reales y herramientas digitales para emprender con tecnología",
+        "description": "Lee lo que {name} ha estado haciendo recientemente"
     },
     "work": {
         "label": "Work",
