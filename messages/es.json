@@ -110,7 +110,7 @@
         "description": "A photo collection by {name}"
     },
     "projectCard": {
-        "label": "Read More",
-        "link": "Project Link"
+        "label": "Leer más",
+        "link": "Enlace del proyecto"
     }
 }
