@@ -4,15 +4,15 @@
     },
     "newsletter": {
         "title": "Subscríbete al Newsletter de {firstName}",
-        "description": "I occasionally write about design, technology, and share thoughts on the intersection of creativity and engineering",
-        "button": "Sign up"
+        "description": "Escribo ocasionalmente sobre desarrollo web, emprendimiento, programación, inteligencia articial, herramientas digitales y más.",
+        "button": "Suscribirme"
     },
     "home": {
         "label": "Home",
         "title": "{name}'s Portfolio",
         "description": "Portfolio website showcasing my work as a {role}",
-        "headline": "Design engineer and builder",
-        "subline": "I'm Selene, a design engineer at FLY, where I craft intuitive user experiences. After hours, I build my own projects."
+        "headline": "Desarrollador Web",
+        "subline": "Soy Dari Dev, un desarrollador web full stack y líder de mi propio equipo de desarrollo. ¿Listo para llevar tu proyecto al siguiente nivel?"
     },
     "about": {
         "label": "Acerca de",
@@ -94,6 +94,7 @@
         }
     },
     "blog": {
+        "last": "Lo último en nuestro blog",
         "label": "Blog",
         "title": "Writing about design and tech...",
         "description": "Read what {name} has been up to recently"
