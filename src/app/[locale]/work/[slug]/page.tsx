@@ -9,6 +9,9 @@ import { useTranslations } from 'next-intl';
 import { formatDate } from '@/app/utils/formatDate';
 import ScrollToHash from '@/components/ScrollToHash';
 
+// Dari Dev Components
+import ShareButtons from '@/components/ShareButtons'
+
 interface WorkParams {
     params: {
         slug: string;
@@ -162,6 +165,9 @@ export default function Project({ params }: WorkParams) {
 						{formatDate(post.metadata.publishedAt)}
 					</Text>
 				</Flex>
+
+				<ShareButtons />
+
 				<CustomMDX source={post.content} />
 			</Flex>
 			<ScrollToHash />
