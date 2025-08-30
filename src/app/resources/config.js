@@ -1,4 +1,4 @@
-const baseURL = 'darideveloper.com'
+const baseURL = 'https://www.darideveloper.com'
 
 // Enable localization
 const i18n = true;
