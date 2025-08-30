@@ -10,32 +10,47 @@ export async function generateMetadata(
 ) {
 
 	const t = await getTranslations();
-	const { blog } = renderContent(t);
+	const { blog, person } = renderContent(t);
 
 	const title = blog.title;
 	const description = blog.description;
-	const ogImage = `https://${baseURL}/og?title=${encodeURIComponent(title)}`;
+	const ogImage = `${baseURL}${person.avatar}`;
 
 	return {
 		title,
 		description,
+		keywords: 'blog, portfolio, web development, design, Next.js, React, fullstack, automation, DevOps, Dari Dev, articles, writing',
+		author: person.name,
 		openGraph: {
 			title,
 			description,
 			type: 'website',
 			url: `https://${baseURL}/${locale}/blog`,
+			siteName: `${person.firstName}'s Portfolio`,
+			locale: 'en_US',
 			images: [
 				{
 					url: ogImage,
-					alt: title,
+					alt: `${person.name} - ${person.role}`,
+					width: 400,
+					height: 400,
 				},
 			],
 		},
 		twitter: {
 			card: 'summary_large_image',
+			site: '@DeveloperDari',
+			creator: '@DeveloperDari',
 			title,
 			description,
 			images: [ogImage],
+		},
+		alternates: {
+			canonical: `https://${baseURL}/${locale}/blog`,
+			languages: {
+				'en': `https://${baseURL}/en/blog`,
+				'es': `https://${baseURL}/es/blog`,
+			},
 		},
 	};
 }
@@ -61,7 +76,7 @@ export default function Blog(
 						headline: blog.title,
 						description: blog.description,
 						url: `https://${baseURL}/blog`,
-						image: `${baseURL}/og?title=${encodeURIComponent(blog.title)}`,
+						image: `${baseURL}${person.avatar}`,
 						author: {
 							'@type': 'Person',
 							name: person.name,

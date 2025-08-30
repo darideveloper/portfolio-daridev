@@ -57,28 +57,44 @@ export function generateMetadata({ params: { slug, locale } }: BlogParams) {
   } = post.metadata
   let ogImage = image
     ? `https://${baseURL}${image}`
-    : `https://${baseURL}/og?title=${title}`
+    : `https://${baseURL}/images/avatar.png`
 
   return {
     title,
     description,
+    keywords: `blog, ${title}, portfolio, web development, design, Next.js, React, fullstack, automation, DevOps, Dari Dev, article`,
+    author: 'Dari Dev',
     openGraph: {
       title,
       description,
       type: 'article',
       publishedTime,
       url: `https://${baseURL}/${locale}/blog/${post.slug}`,
+      siteName: 'Dari Dev Portfolio',
+      locale: 'en_US',
       images: [
         {
           url: ogImage,
+          alt: `${title} - Article by Dari Dev`,
+          width: 1200,
+          height: 630,
         },
       ],
     },
     twitter: {
       card: 'summary_large_image',
+      site: '@DeveloperDari',
+      creator: '@DeveloperDari',
       title,
       description,
       images: [ogImage],
+    },
+    alternates: {
+      canonical: `https://${baseURL}/${locale}/blog/${post.slug}`,
+      languages: {
+        'en': `https://${baseURL}/en/blog/${post.slug}`,
+        'es': `https://${baseURL}/es/blog/${post.slug}`,
+      },
     },
   }
 }

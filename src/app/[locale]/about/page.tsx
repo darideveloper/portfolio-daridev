@@ -24,28 +24,43 @@ export async function generateMetadata({
   const { person, about, social } = renderContent(t)
   const title = about.title
   const description = about.description
-  const ogImage = `https://${baseURL}/og?title=${encodeURIComponent(title)}`
+  const ogImage = `${baseURL}${person.avatar}`
 
   return {
     title,
     description,
+    keywords: 'about, portfolio, web development, design, Next.js, React, fullstack, automation, DevOps, Dari Dev, experience, skills',
+    author: person.name,
     openGraph: {
       title,
       description,
       type: 'website',
       url: `https://${baseURL}/${locale}/about`,
+      siteName: `${person.firstName}'s Portfolio`,
+      locale: 'en_US',
       images: [
         {
           url: ogImage,
-          alt: title,
+          alt: `${person.name} - ${person.role}`,
+          width: 400,
+          height: 400,
         },
       ],
     },
     twitter: {
       card: 'summary_large_image',
+      site: '@DeveloperDari',
+      creator: '@DeveloperDari',
       title,
       description,
       images: [ogImage],
+    },
+    alternates: {
+      canonical: `https://${baseURL}/${locale}/about`,
+      languages: {
+        'en': `https://${baseURL}/en/about`,
+        'es': `https://${baseURL}/es/about`,
+      },
     },
   }
 }

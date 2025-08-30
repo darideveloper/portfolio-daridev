@@ -13,31 +13,46 @@ export async function generateMetadata(
 	{params: {locale}}: { params: { locale: string }}
 ) {
 	const t = await getTranslations();
-    const { home } = renderContent(t);
+    const { home, person } = renderContent(t);
 	const title = home.title;
 	const description = home.description;
-	const ogImage = `https://${baseURL}/og?title=${encodeURIComponent(title)}`;
+	const ogImage = `${baseURL}${person.avatar}`;
 
 	return {
 		title,
 		description,
+		keywords: 'portfolio, web development, design, Next.js, React, fullstack, automation, DevOps, Dari Dev',
+		author: person.name,
 		openGraph: {
 			title,
 			description,
 			type: 'website',
 			url: `https://${baseURL}/${locale}`,
+			siteName: `${person.firstName}'s Portfolio`,
+			locale: 'en_US',
 			images: [
 				{
 					url: ogImage,
-					alt: title,
+					alt: `${person.name} - ${person.role}`,
+					width: 400,
+					height: 400,
 				},
 			],
 		},
 		twitter: {
 			card: 'summary_large_image',
+			site: '@DeveloperDari',
+			creator: '@DeveloperDari',
 			title,
 			description,
 			images: [ogImage],
+		},
+		alternates: {
+			canonical: `https://${baseURL}/${locale}`,
+			languages: {
+				'en': `https://${baseURL}/en`,
+				'es': `https://${baseURL}/es`,
+			},
 		},
 	};
 }
@@ -62,7 +77,7 @@ export default function Home(
 						name: home.title,
 						description: home.description,
 						url: `https://${baseURL}`,
-						image: `${baseURL}/og?title=${encodeURIComponent(home.title)}`,
+						image: `${baseURL}${person.avatar}`,
 						publisher: {
 							'@type': 'Person',
 							name: person.name,
