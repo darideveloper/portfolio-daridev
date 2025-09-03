@@ -1,0 +1,89 @@
+.quoteForm {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.stepIndicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-m);
+  padding: var(--spacing-l) 0;
+}
+
+.priceDisplay {
+  background-color: var(--color-neutral-weak);
+  border-radius: var(--border-radius-m);
+  padding: var(--spacing-l) var(--spacing-m);
+  text-align: center;
+}
+
+.currencySelector {
+  display: flex;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-m) 0;
+  justify-content: center;
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-m);
+  margin: var(--spacing-l) 0;
+}
+
+.featureCard {
+  border: 1px solid var(--color-neutral-weak);
+  border-radius: var(--border-radius-m);
+  padding: var(--spacing-m);
+  transition: all 0.2s ease;
+  
+  &:hover {
+    border-color: var(--color-brand-weak);
+  }
+  
+  &.selected {
+    border-color: var(--color-brand-strong);
+    background-color: var(--color-brand-weak);
+  }
+}
+
+.formStep {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-l);
+  min-height: 400px;
+}
+
+.navigationButtons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-l) 0;
+  border-top: 1px solid var(--color-neutral-weak);
+}
+
+.warning {
+  background-color: var(--color-warning-weak);
+  border: 1px solid var(--color-warning-strong);
+  border-radius: var(--border-radius-m);
+  padding: var(--spacing-m);
+  margin: var(--spacing-l) 0;
+}
+
+.confirmationMessage {
+  text-align: center;
+  padding: var(--spacing-xl) 0;
+}
+
+@media (max-width: 768px) {
+  .featureGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .navigationButtons {
+    flex-direction: column;
+    gap: var(--spacing-m);
+  }
+}

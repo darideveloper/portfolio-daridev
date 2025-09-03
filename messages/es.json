@@ -3,114 +3,205 @@
         "role": "Equipo Full Stack"
     },
     "newsletter": {
-        "title": "Subscríbete al Newsletter de {firstName}",
-        "description": "Escribo ocasionalmente sobre desarrollo web, emprendimiento, programación, inteligencia articial, herramientas digitales y más.",
-        "button": "Suscribirme"
+        "title": "Suscríbete al Newsletter de {firstName}",
+        "description": "Ocasionalmente escribo sobre desarrollo web, emprendimiento, programación, inteligencia artificial, herramientas digitales y más.",
+        "button": "Suscribirse"
     },
     "home": {
-        "label": "Home",
-        "title": "{name}'s Portfolio",
-        "description": "Portfolio website showcasing my work as a {role}",
+        "label": "Inicio",
+        "title": "Portfolio de {name}",
+        "description": "Sitio web de portfolio que muestra mi trabajo como {role}",
         "headline": "Desarrollador Web",
         "subline": "Soy Dari Dev, un desarrollador web full stack y líder de mi propio equipo de desarrollo. ¿Listo para llevar tu proyecto al siguiente nivel?"
     },
     "about": {
         "label": "Acerca de",
-        "title": "Acerca de",
+        "title": "Acerca de mí",
         "description": "Conoce a {name}, {role} de {location}",
         "quote": {
             "text": "Cotiza tu proyecto"
         },
         "intro": {
-            "title": "Introduction",
-            "description": "Desarrollador web full stack y líder de mi propio equipo de desarrollo, especializado en sitios modernos, rápidos y optimizados para conversión. Ofrecemos soluciones a medida, desde la Landing Pages hasta Aplicaciones Web. Portafolio, contacto y servicios en un solo lugar."
+            "title": "Introducción",
+            "description": "Desarrollador web full stack y líder de mi propio equipo de desarrollo, especializado en sitios web modernos, rápidos y optimizados para conversión. Ofrecemos soluciones personalizadas, desde landing pages hasta aplicaciones web. Portfolio, contacto y servicios todo en un lugar."
         },
         "work": {
-            "title": "Trayectoria Profesional",
+            "title": "Experiencia Profesional",
             "experiences": {
                 "daridevsTeam": {
-                    "company": "DariDev's Team",
-                    "timeframe": "2024 - Present",
-                    "role": "Team Lead & Full Stack Developer",
-                    "achievements": "Team Líder en mi Agencia de Desarrollo Web, donde creamos soluciones digitales completas, personalizadas y listas para escalar.; Junto a un equipo de profesionales, ayudo a negocios y emprendedores a lanzar landing pages efectivas, dashboards intuitivos, blogs modernos, sistemas de reservaciones, tiendas online y todo tipo de aplicaciones web.; Nos enfocamos en resultados reales: mejorar tu presencia digital, atraer más clientes y ayudarte a crecer con tecnología que trabaja para ti.",
-                    "imgAlt": "Ilustración del equipo de DariDev"
+                    "company": "Equipo DariDevs",
+                    "timeframe": "2020 - Presente",
+                    "role": "Líder de Equipo y Desarrollador Full Stack",
+                    "achievements": "Liderando un equipo de desarrollo;Gestionando múltiples proyectos de clientes;Implementando tecnologías web modernas;Asegurando calidad de código y mejores prácticas",
+                    "imgAlt": "Ilustración de colaboración en equipo"
                 },
                 "fullStack": {
-                    "company": "Full Stack Freelance",
-                    "timeframe": "2021 - 2024",
-                    "role": "Desarrollador Full Stack Developer",
-                    "achievements": "Durante 4 años ayudé a emprendedores, negocios locales y empresas a crear sitios web profesionales, tiendas en línea y plataformas personalizadas.; Me enfoqué en desarrollar soluciones completas, desde el diseño hasta la funcionalidad, siempre priorizando velocidad, usabilidad y resultados reales.; Mi trabajo permitió a mis clientes ahorrar tiempo, atraer más clientes y mejorar su presencia digital.",
-                    "imgAlt": "Ilustración de Dari Dev programando un protecto Full Stack"
+                    "company": "Freelance",
+                    "timeframe": "2018 - Presente",
+                    "role": "Desarrollador Full Stack",
+                    "achievements": "Construyendo aplicaciones web responsivas;Creando soluciones personalizadas para clientes;Integrando servicios de terceros;Optimizando el rendimiento del sitio web",
+                    "imgAlt": "Ilustración de desarrollo full stack"
                 },
                 "automation": {
-                    "company": "Automatización Freelance",
-                    "timeframe": "2020 - 2021",
+                    "company": "Varios Clientes",
+                    "timeframe": "2019 - Presente",
                     "role": "Especialista en Automatización",
-                    "achievements": "Aayudé a empresas y emprendedores a automatizar tareas repetitivas y recopilar información clave de internet para tomar mejores decisiones.; Desarrollé soluciones personalizadas que ahorraron tiempo, redujeron errores humanos y mejoraron procesos internos, como la actualización de bases de datos, monitoreo de precios, generación de reportes o seguimiento de prospectos.",
-                    "imgAlt": "Ilustración de Dari Dev programando un script de automatización"
+                    "achievements": "Implementando pipelines CI/CD;Automatizando procesos de despliegue;Configurando sistemas de monitoreo;Creando flujos de trabajo de pruebas automatizadas",
+                    "imgAlt": "Ilustración de proceso de automatización"
                 }
             }
         },
         "studies": {
-            "title": "Studies",
+            "title": "Educación",
             "institutions": {
                 "University of Jakarta": {
-                    "description": "Studied software engineering."
+                    "description": "Licenciatura en Ciencias de la Computación con enfoque en desarrollo web e ingeniería de software."
                 },
                 "Build the Future": {
-                    "description": "Studied online marketing and personal branding."
+                    "description": "Certificación avanzada en tecnologías web modernas y computación en la nube."
                 }
             }
         },
         "technical": {
             "title": "Habilidades Técnicas",
-            "description": "En conjunto con mi equipo de DariDev's Team, ofrecemos un servicio integral de desarrollo web y automatización. Nos especializamos en crear soluciones digitales personalizadas que se adaptan a las necesidades específicas de cada cliente.",
+            "description": "Experiencia integral en tecnologías y metodologías modernas de desarrollo web.",
             "skills": {
                 "frontend": {
-                    "title": "Frontend",
-                    "description": "HTML5; CSS3; JavaScript; Astro; React.js; Next.js; Tailwind CSS; AOS; Axios; Fetch API; WordPress; Divi"
+                    "title": "Desarrollo Frontend",
+                    "description": "React, Next.js, TypeScript, HTML5, CSS3, SCSS, Tailwind CSS, Diseño Responsivo, PWA, Web Components"
                 },
                 "backend": {
-                    "title": "Backend",
-                    "description": "Node.js; Django; Python; Flask, REST APIs; JWT; OAuth; WebSockets"
+                    "title": "Desarrollo Backend",
+                    "description": "Node.js, Express, Python, Django, PHP, Laravel, APIs RESTful, GraphQL, Microservicios, Serverless"
                 },
                 "database": {
-                    "title": "Base de datos",
-                    "description": "PostgreSQL; MySQL; MongoDB; SQLite; Supabase"
+                    "title": "Gestión de Base de Datos",
+                    "description": "PostgreSQL, MySQL, MongoDB, Redis, Diseño de Base de Datos, Optimización de Consultas, Migración de Datos"
                 },
                 "automation": {
-                    "title": "Automatización",
-                    "description": "Python; Requests; BeautifulSoup; Selenium; Telegram Bots; Zapier; n8n"
+                    "title": "DevOps y Automatización",
+                    "description": "Docker, Kubernetes, AWS, Azure, CI/CD, GitHub Actions, Pruebas Automatizadas, Monitoreo, Infraestructura como Código"
                 },
                 "devops": {
-                    "title": "DevOps & Hosting",
-                    "description": "Git; GitHub; Docker; Coolify; Vercel; DigitalOcean; Hetzner; Nginx; GitHub Actions"
+                    "title": "Nube e Infraestructura",
+                    "description": "AWS, Azure, Google Cloud, Vercel, Netlify, CDN, SSL, Gestión de Dominios, Configuración de Servidores"
                 },
                 "integrations": {
-                    "title": "Integraciones",
-                    "description": "Stripe; PayPal; Google APIs; OpenAI; HubSpot"
-                }                
+                    "title": "Integraciones de Terceros",
+                    "description": "Pasarelas de Pago, Servicios de Email, Analytics, Sistemas CRM, APIs de Redes Sociales, Webhooks"
+                }
             }
         }
     },
     "blog": {
-        "last": "Lo último en nuestro blog",
         "label": "Blog",
-        "title": "Consejos reales y herramientas digitales para emprender con tecnología",
-        "description": "Lee lo que {name} ha estado haciendo recientemente"
+        "title": "Blog",
+        "description": "Pensamientos e ideas sobre desarrollo web, tecnología e innovación digital por {name}",
+        "last": "Últimas Publicaciones"
     },
     "work": {
-        "label": "Work",
-        "title": "My projects",
-        "description": "Design and dev projects by {name}"
+        "label": "Trabajo",
+        "title": "Proyectos",
+        "description": "Una muestra de proyectos de desarrollo web y soluciones digitales creadas por {name}"
     },
     "gallery": {
-        "label": "Gallery",
-        "title": "My photo gallery",
-        "description": "A photo collection by {name}"
+        "label": "Galería",
+        "title": "Galería",
+        "description": "Una colección de fotos por {name}"
     },
     "projectCard": {
         "label": "Leer más",
         "link": "Enlace del proyecto"
+    },
+    "quote": {
+        "title": "Obtener Cotización",
+        "description": "Obtén una cotización personalizada para tu proyecto de desarrollo web. Selecciona las características que necesitas y te proporcionaremos un precio estimado.",
+        "comingSoon": "Formulario de cotización próximamente...",
+        "steps": {
+            "basic": "Características Básicas",
+            "content": "Características de Contenido",
+            "advanced": "Características Avanzadas", 
+            "services": "Servicios Adicionales",
+            "info": "Tu Información"
+        },
+        "currency": {
+            "usd": "USD",
+            "mxn": "MXN"
+        },
+        "features": {
+            "blog": {
+                "name": "Blog",
+                "description": "Sistema completo de blog con panel de administración para gestión de contenido"
+            },
+            "sections": {
+                "name": "Cada Sección",
+                "description": "Secciones de contenido adicionales para tu sitio web"
+            },
+            "domain": {
+                "name": "Dominio / Año",
+                "description": "Registro de dominio y renovación por un año"
+            },
+            "social": {
+                "name": "Integración de Redes Sociales",
+                "description": "Incrustar feeds de redes sociales y botones de compartir"
+            },
+            "contact": {
+                "name": "Formulario de Contacto",
+                "description": "Formulario de contacto personalizado con notificaciones por email"
+            },
+            "hosting": {
+                "name": "Hosting / Mes",
+                "description": "Servicio de hosting web con certificado SSL"
+            },
+            "newsletter": {
+                "name": "Newsletter",
+                "description": "Sistema de suscripción y gestión de newsletter por email"
+            },
+            "ecommerce": {
+                "name": "E-commerce",
+                "description": "Tienda en línea completa con procesamiento de pagos"
+            },
+            "whatsapp": {
+                "name": "Botón de WhatsApp",
+                "description": "Botón flotante de WhatsApp para contacto instantáneo"
+            },
+            "reservations": {
+                "name": "Reservaciones",
+                "description": "Sistema de reservas y citas en línea"
+            },
+            "multilang": {
+                "name": "Multiidioma / Sección",
+                "description": "Agregar soporte multiidioma para cada sección"
+            },
+            "backups": {
+                "name": "Respaldos Semanales / Mes",
+                "description": "Respaldos automatizados semanales de tu sitio web"
+            },
+            "payments": {
+                "name": "Pagos en Línea",
+                "description": "Integración de pasarela de pagos para transacciones en línea"
+            },
+            "email": {
+                "name": "Email Corporativo",
+                "description": "Cuentas de email profesionales para tu negocio"
+            }
+        },
+        "form": {
+            "total": "Precio Total",
+            "next": "Siguiente",
+            "previous": "Anterior",
+            "submit": "Obtener Cotización",
+            "name": "Nombre Completo",
+            "email": "Dirección de Email",
+            "company": "Empresa (Opcional)",
+            "phone": "Número de Teléfono (Opcional)",
+            "customFeatures": "Características Personalizadas",
+            "customFeaturesPlaceholder": "Describe cualquier característica adicional que necesites...",
+            "questions": "Preguntas",
+            "questionsPlaceholder": "¿Alguna pregunta sobre tu proyecto?",
+            "warning": "Esto es solo una aproximación general. Nuestro equipo de ventas te proporcionará una oferta personalizada después de revisar los detalles.",
+            "success": "¡Cotización enviada exitosamente! Te contactaremos pronto.",
+            "error": "Hubo un error al enviar tu cotización. Por favor intenta de nuevo."
+        }
     }
 }
