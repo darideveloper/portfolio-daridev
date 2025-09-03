@@ -5,6 +5,8 @@ export type Currency = 'USD' | 'MXN';
 export interface QuoteFormState {
     currentStep: number;
     selectedFeatures: string[];
+    selectedSections: string[];
+    extraSections: number;
     currency: Currency;
     sectionCount: number;
     clientInfo: ClientInfo;
@@ -30,13 +32,30 @@ export interface Feature {
     isPerSection?: boolean;
 }
 
+export interface WebsiteSection {
+    id: string;
+    name: string;
+    icon: string;
+    description: string;
+    category: string;
+    required?: boolean;
+}
+
 export interface FeatureCategory {
     title: string;
     features: string[];
 }
 
+export interface SectionCategory {
+    name: string;
+    description: string;
+    sections: string[];
+}
+
 export interface QuoteSubmission {
     selectedFeatures: string[];
+    selectedSections: string[];
+    extraSections: number;
     currency: Currency;
     sectionCount: number;
     totalPrice: number;
@@ -50,6 +69,8 @@ export interface QuoteFormContextType {
     state: QuoteFormState;
     updateStep: (step: number) => void;
     toggleFeature: (featureId: string) => void;
+    toggleSection: (sectionId: string) => void;
+    setExtraSections: (count: number) => void;
     setCurrency: (currency: Currency) => void;
     setSectionCount: (count: number) => void;
     updateClientInfo: (field: keyof ClientInfo, value: string) => void;
@@ -72,6 +93,13 @@ export interface FeatureCardProps {
     selected: boolean;
     currency: Currency;
     sectionCount: number;
+    selectedSections: string[];
+    onToggle: () => void;
+}
+
+export interface SectionCardProps {
+    section: WebsiteSection;
+    selected: boolean;
     onToggle: () => void;
 }
 
@@ -104,4 +132,13 @@ export interface ConfirmationMessageProps {
     message: string;
     onRetry?: () => void;
     onNewQuote?: () => void;
+}
+
+export interface SectionSelectionProps {
+    selectedSections: string[];
+    extraSections: number;
+    onSectionToggle: (sectionId: string) => void;
+    onExtraSectionsChange: (count: number) => void;
+    onNext: () => void;
+    onPrevious: () => void;
 }

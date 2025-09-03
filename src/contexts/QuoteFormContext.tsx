@@ -15,6 +15,8 @@ import { calculateTotalPrice } from '@/app/resources/pricing';
 const initialState: QuoteFormState = {
     currentStep: 1,
     selectedFeatures: [],
+    selectedSections: [],
+    extraSections: 0,
     currency: 'USD',
     sectionCount: 1,
     clientInfo: {
@@ -32,6 +34,8 @@ const initialState: QuoteFormState = {
 type QuoteFormAction =
     | { type: 'UPDATE_STEP'; payload: number }
     | { type: 'TOGGLE_FEATURE'; payload: string }
+    | { type: 'TOGGLE_SECTION'; payload: string }
+    | { type: 'SET_EXTRA_SECTIONS'; payload: number }
     | { type: 'SET_CURRENCY'; payload: Currency }
     | { type: 'SET_SECTION_COUNT'; payload: number }
     | { type: 'UPDATE_CLIENT_INFO'; payload: { field: keyof ClientInfo; value: string } }
@@ -48,12 +52,24 @@ const quoteFormReducer = (state: QuoteFormState, action: QuoteFormAction): Quote
         
         case 'TOGGLE_FEATURE':
             const featureId = action.payload;
-            const isSelected = state.selectedFeatures.includes(featureId);
-            const newSelectedFeatures = isSelected
+            const isFeatureSelected = state.selectedFeatures.includes(featureId);
+            const newSelectedFeatures = isFeatureSelected
                 ? state.selectedFeatures.filter(id => id !== featureId)
                 : [...state.selectedFeatures, featureId];
             
             return { ...state, selectedFeatures: newSelectedFeatures };
+        
+        case 'TOGGLE_SECTION':
+            const sectionId = action.payload;
+            const isSectionSelected = state.selectedSections.includes(sectionId);
+            const newSelectedSections = isSectionSelected
+                ? state.selectedSections.filter(id => id !== sectionId)
+                : [...state.selectedSections, sectionId];
+            
+            return { ...state, selectedSections: newSelectedSections };
+        
+        case 'SET_EXTRA_SECTIONS':
+            return { ...state, extraSections: action.payload };
         
         case 'SET_CURRENCY':
             return { ...state, currency: action.payload };
@@ -80,7 +96,8 @@ const quoteFormReducer = (state: QuoteFormState, action: QuoteFormAction): Quote
             const totalPrice = calculateTotalPrice(
                 state.selectedFeatures,
                 state.currency,
-                state.sectionCount
+                state.sectionCount,
+                state.selectedSections
             );
             return { ...state, totalPrice };
         
@@ -107,6 +124,18 @@ export const QuoteFormProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     const toggleFeature = useCallback((featureId: string) => {
         dispatch({ type: 'TOGGLE_FEATURE', payload: featureId });
         // Recalculate total after feature change
+        setTimeout(() => dispatch({ type: 'CALCULATE_TOTAL' }), 0);
+    }, []);
+
+    const toggleSection = useCallback((sectionId: string) => {
+        dispatch({ type: 'TOGGLE_SECTION', payload: sectionId });
+        // Recalculate total after section change
+        setTimeout(() => dispatch({ type: 'CALCULATE_TOTAL' }), 0);
+    }, []);
+
+    const setExtraSections = useCallback((count: number) => {
+        dispatch({ type: 'SET_EXTRA_SECTIONS', payload: count });
+        // Recalculate total after extra sections change
         setTimeout(() => dispatch({ type: 'CALCULATE_TOTAL' }), 0);
     }, []);
 
@@ -146,6 +175,8 @@ export const QuoteFormProvider: React.FC<{ children: React.ReactNode }> = ({ chi
         try {
             const submissionData: QuoteSubmission = {
                 selectedFeatures: state.selectedFeatures,
+                selectedSections: state.selectedSections,
+                extraSections: state.extraSections,
                 currency: state.currency,
                 sectionCount: state.sectionCount,
                 totalPrice: state.totalPrice,
@@ -186,6 +217,8 @@ export const QuoteFormProvider: React.FC<{ children: React.ReactNode }> = ({ chi
         state,
         updateStep,
         toggleFeature,
+        toggleSection,
+        setExtraSections,
         setCurrency,
         setSectionCount,
         updateClientInfo,

@@ -1,6 +1,8 @@
 // Pricing configuration for quote form
 // All prices are in USD, MXN prices are calculated using exchange rate
 
+import { WEBSITE_SECTIONS } from './sections';
+
 const EXCHANGE_RATE = 16.0; // USD to MXN (approximate rate)
 
 const FEATURES = {
@@ -18,7 +20,8 @@ const FEATURES = {
         icon: 'layers',
         category: 'content',
         usdPrice: 20,
-        description: 'sections.description'
+        description: 'sections.description',
+        isPerSection: true // This feature is priced per section
     },
     domain: {
         id: 'domain',
@@ -139,15 +142,21 @@ const FEATURE_CATEGORIES = {
 };
 
 // Helper functions
-const getFeaturePrice = (featureId, currency = 'USD', sectionCount = 1) => {
+const getFeaturePrice = (featureId, currency = 'USD', sectionCount = 1, selectedSections = []) => {
     const feature = FEATURES[featureId];
     if (!feature) return 0;
     
     let basePrice = feature.usdPrice;
     
-    // Handle per-section pricing (like multilang)
+    // Handle per-section pricing (like sections and multilang)
     if (feature.isPerSection) {
-        basePrice = basePrice * sectionCount;
+        if (featureId === 'sections') {
+            // For sections, count selected sections + extra sections
+            basePrice = basePrice * (selectedSections.length + sectionCount);
+        } else {
+            // For other per-section features (like multilang)
+            basePrice = basePrice * (selectedSections.length + sectionCount);
+        }
     }
     
     if (currency === 'MXN') {
@@ -157,9 +166,9 @@ const getFeaturePrice = (featureId, currency = 'USD', sectionCount = 1) => {
     return basePrice;
 };
 
-const calculateTotalPrice = (selectedFeatures, currency = 'USD', sectionCount = 1) => {
+const calculateTotalPrice = (selectedFeatures, currency = 'USD', sectionCount = 1, selectedSections = []) => {
     return selectedFeatures.reduce((total, featureId) => {
-        return total + getFeaturePrice(featureId, currency, sectionCount);
+        return total + getFeaturePrice(featureId, currency, sectionCount, selectedSections);
     }, 0);
 };
 

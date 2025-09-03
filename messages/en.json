@@ -118,6 +118,7 @@
         "description": "Get a personalized quote for your web development project. Select the features you need and we'll provide you with an estimated price.",
         "comingSoon": "Quote form coming soon...",
         "steps": {
+            "sections": "Website Sections",
             "basic": "Basic Features",
             "content": "Content Features", 
             "advanced": "Advanced Features",

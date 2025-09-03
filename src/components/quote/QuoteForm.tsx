@@ -8,12 +8,13 @@ import { StepIndicator } from './StepIndicator';
 import { PriceDisplay } from './PriceDisplay';
 import { CurrencySelector } from './CurrencySelector';
 import { FeatureCard } from './FeatureCard';
+import { SectionSelection } from './SectionSelection';
 import { ClientInfoForm } from './ClientInfoForm';
 import { ConfirmationMessage } from './ConfirmationMessage';
 import { getFeaturesByCategory } from '@/app/resources/pricing';
 
-const TOTAL_STEPS = 5;
-const STEP_CATEGORIES = ['basic', 'content', 'advanced', 'services', 'info'];
+const TOTAL_STEPS = 6; // Increased to include section selection
+const STEP_CATEGORIES = ['basic', 'sections', 'content', 'advanced', 'services', 'info'];
 
 function QuoteFormContent() {
     const t = useTranslations();
@@ -22,6 +23,8 @@ function QuoteFormContent() {
         calculateTotal, 
         updateStep, 
         toggleFeature, 
+        toggleSection,
+        setExtraSections,
         setCurrency,
         setSectionCount,
         updateClientInfo,
@@ -36,7 +39,7 @@ function QuoteFormContent() {
     // Calculate total whenever dependencies change
     useEffect(() => {
         calculateTotal();
-    }, [state.selectedFeatures, state.currency, state.sectionCount, calculateTotal]);
+    }, [state.selectedFeatures, state.selectedSections, state.extraSections, state.currency, state.sectionCount, calculateTotal]);
 
     const handleNext = () => {
         if (state.currentStep < TOTAL_STEPS) {
@@ -178,7 +181,18 @@ function QuoteFormContent() {
                 fillWidth
                 direction="column"
                 gap="l">
-                {state.currentStep < TOTAL_STEPS ? (
+                {state.currentStep === 2 ? (
+                    // Section Selection Step
+                    <SectionSelection
+                        selectedSections={state.selectedSections}
+                        extraSections={state.extraSections}
+                        onSectionToggle={toggleSection}
+                        onExtraSectionsChange={setExtraSections}
+                        onNext={handleNext}
+                        onPrevious={handlePrevious}
+                    />
+                ) : state.currentStep < TOTAL_STEPS ? (
+                    // Feature Selection Steps
                     <>
                         <Heading
                             as="h3"
@@ -239,12 +253,14 @@ function QuoteFormContent() {
                                     selected={state.selectedFeatures.includes(feature.id)}
                                     currency={state.currency}
                                     sectionCount={state.sectionCount}
+                                    selectedSections={state.selectedSections}
                                     onToggle={() => toggleFeature(feature.id)}
                                 />
                             ))}
                         </Flex>
                     </>
                 ) : (
+                    // Client Information Step
                     <>
                         <Heading
                             as="h3"
@@ -279,37 +295,39 @@ function QuoteFormContent() {
                 )}
             </Flex>
             
-            {/* Navigation Buttons */}
-            <Flex
-                fillWidth
-                justifyContent="space-between"
-                alignItems="center"
-                paddingY="l"
-                style={{
-                    borderTop: '1px solid var(--color-neutral-weak)',
-                }}>
-                <Button
-                    variant="tertiary"
-                    onClick={handlePrevious}
-                    disabled={isFirstStep}>
-                    {t('quote.form.previous')}
-                </Button>
-                
-                {isLastStep ? (
+            {/* Navigation Buttons - Only show for non-section selection steps */}
+            {state.currentStep !== 2 && (
+                <Flex
+                    fillWidth
+                    justifyContent="space-between"
+                    alignItems="center"
+                    paddingY="l"
+                    style={{
+                        borderTop: '1px solid var(--color-neutral-weak)',
+                    }}>
                     <Button
-                        variant="primary"
-                        onClick={handleSubmit}
-                        loading={isSubmitting}>
-                        {t('quote.form.submit')}
+                        variant="tertiary"
+                        onClick={handlePrevious}
+                        disabled={isFirstStep}>
+                        {t('quote.form.previous')}
                     </Button>
-                ) : (
-                    <Button
-                        variant="primary"
-                        onClick={handleNext}>
-                        {t('quote.form.next')}
-                    </Button>
-                )}
-            </Flex>
+                    
+                    {isLastStep ? (
+                        <Button
+                            variant="primary"
+                            onClick={handleSubmit}
+                            loading={isSubmitting}>
+                            {t('quote.form.submit')}
+                        </Button>
+                    ) : (
+                        <Button
+                            variant="primary"
+                            onClick={handleNext}>
+                            {t('quote.form.next')}
+                        </Button>
+                    )}
+                </Flex>
+            )}
         </Flex>
     );
 }

@@ -10,11 +10,12 @@ export function FeatureCard({
     selected, 
     currency, 
     sectionCount, 
+    selectedSections,
     onToggle 
 }: FeatureCardProps) {
     const t = useTranslations();
     
-    const price = getFeaturePrice(feature.id, currency, sectionCount);
+    const price = getFeaturePrice(feature.id, currency, sectionCount, selectedSections);
     
     const formatPrice = (price: number, currency: 'USD' | 'MXN') => {
         return new Intl.NumberFormat('en-US', {
@@ -52,6 +53,11 @@ export function FeatureCard({
             <Text variant="body-default-s" onBackground="neutral-weak">
                 {t(`quote.features.${feature.name}.description`)}
             </Text>
+            {feature.isPerSection && (
+                <Text variant="body-default-xs" style={{ color: 'var(--color-brand-strong)' }}>
+                    Price per section: {formatPrice(feature.usdPrice, currency)}
+                </Text>
+            )}
             <Button
                 variant={selected ? 'secondary' : 'tertiary'}
                 size="s"
