@@ -290,6 +290,22 @@ function SectionCard({ section, selected, onToggle, disabled = false }: SectionC
                 }}>
                 {t(`quote.sections.sectionDescriptions.${section.id}`)}
             </Text>
+            
+            {/* Section Skeleton Preview */}
+            <div style={{ 
+                marginTop: 'var(--spacing-xs)', 
+                marginBottom: 'var(--spacing-xs)',
+                padding: '16px',
+                backgroundColor: 'rgba(0, 0, 0, 0.03)',
+                borderRadius: '8px',
+                border: '1px solid rgba(0, 0, 0, 0.08)',
+                minHeight: '100px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+            }}>
+                <SectionSkeleton sectionId={section.id} />
+            </div>
             {!disabled && (
                 <Button
                     variant={selected ? 'secondary' : 'tertiary'}
@@ -304,5 +320,386 @@ function SectionCard({ section, selected, onToggle, disabled = false }: SectionC
                 </Button>
             )}
         </Flex>
+    );
+}
+
+// Section Skeleton Preview Component
+function SectionSkeleton({ sectionId }: { sectionId: string }) {
+    const getSkeletonForSection = (id: string) => {
+        switch (id) {
+            case 'header':
+                return (
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px' }}>
+                            <div style={{ width: '80px', height: '24px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
+                            <div style={{ display: 'flex', gap: '8px' }}>
+                                <div style={{ width: '50px', height: '18px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                <div style={{ width: '50px', height: '18px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                <div style={{ width: '50px', height: '18px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                <div style={{ width: '50px', height: '18px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                            </div>
+                        </div>
+                        <div style={{ width: '100%', height: '1px', backgroundColor: '#e5e7eb' }} />
+                    </div>
+                );
+            
+            case 'footer':
+                return (
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                        <div style={{ width: '100%', height: '1px', backgroundColor: '#e5e7eb' }} />
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '12px' }}>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                                <div style={{ width: '100px', height: '16px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                <div style={{ width: '80px', height: '12px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                            </div>
+                            <div style={{ display: 'flex', gap: '8px' }}>
+                                <div style={{ width: '24px', height: '24px', backgroundColor: '#d1d5db', borderRadius: '50%' }} />
+                                <div style={{ width: '24px', height: '24px', backgroundColor: '#d1d5db', borderRadius: '50%' }} />
+                                <div style={{ width: '24px', height: '24px', backgroundColor: '#d1d5db', borderRadius: '50%' }} />
+                            </div>
+                        </div>
+                    </div>
+                );
+            
+            case 'hero':
+                return (
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center', textAlign: 'center' }}>
+                        <div style={{ width: '100%', height: '80px', backgroundColor: '#d1d5db', borderRadius: '12px' }} />
+                        <div style={{ width: '85%', height: '24px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
+                        <div style={{ width: '70%', height: '18px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                        <div style={{ width: '45%', height: '36px', backgroundColor: '#3b82f6', borderRadius: '6px' }} />
+                    </div>
+                );
+            
+            case 'about':
+                return (
+                    <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                        <div style={{ width: '60px', height: '60px', backgroundColor: '#d1d5db', borderRadius: '8px', flexShrink: 0 }} />
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', flex: 1 }}>
+                            <div style={{ width: '100%', height: '20px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                            <div style={{ width: '95%', height: '14px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                            <div style={{ width: '90%', height: '14px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                            <div style={{ width: '75%', height: '14px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                        </div>
+                    </div>
+                );
+            
+            case 'services':
+                return (
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                        <div style={{ width: '100%', height: '22px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
+                        <div style={{ display: 'flex', gap: '8px' }}>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', flex: 1 }}>
+                                <div style={{ width: '100%', height: '40px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
+                                <div style={{ width: '90%', height: '14px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                <div style={{ width: '80%', height: '12px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                            </div>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', flex: 1 }}>
+                                <div style={{ width: '100%', height: '40px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
+                                <div style={{ width: '90%', height: '14px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                <div style={{ width: '80%', height: '12px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                            </div>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', flex: 1 }}>
+                                <div style={{ width: '100%', height: '40px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
+                                <div style={{ width: '90%', height: '14px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                <div style={{ width: '80%', height: '12px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                            </div>
+                        </div>
+                    </div>
+                );
+            
+            case 'portfolio':
+                return (
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                        <div style={{ width: '100%', height: '22px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
+                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                                <div style={{ width: '100%', height: '50px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
+                                <div style={{ width: '90%', height: '14px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                <div style={{ width: '70%', height: '12px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                            </div>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                                <div style={{ width: '100%', height: '50px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
+                                <div style={{ width: '90%', height: '14px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                <div style={{ width: '70%', height: '12px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                            </div>
+                        </div>
+                    </div>
+                );
+            
+            case 'gallery':
+                return (
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                        <div style={{ width: '100%', height: '22px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
+                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '6px' }}>
+                            <div style={{ width: '100%', height: '45px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
+                            <div style={{ width: '100%', height: '45px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
+                            <div style={{ width: '100%', height: '45px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
+                        </div>
+                    </div>
+                );
+            
+            case 'testimonials':
+                return (
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                        <div style={{ width: '100%', height: '22px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
+                        <div style={{ display: 'flex', gap: '8px' }}>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', flex: 1 }}>
+                                <div style={{ width: '100%', height: '50px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                    <div style={{ width: '24px', height: '24px', backgroundColor: '#d1d5db', borderRadius: '50%' }} />
+                                    <div style={{ width: '80px', height: '14px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                </div>
+                            </div>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', flex: 1 }}>
+                                <div style={{ width: '100%', height: '50px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                    <div style={{ width: '24px', height: '24px', backgroundColor: '#d1d5db', borderRadius: '50%' }} />
+                                    <div style={{ width: '80px', height: '14px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                );
+            
+            case 'team':
+                return (
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                        <div style={{ width: '100%', height: '22px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
+                        <div style={{ display: 'flex', gap: '8px' }}>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', flex: 1 }}>
+                                <div style={{ width: '100%', height: '50px', backgroundColor: '#d1d5db', borderRadius: '50%' }} />
+                                <div style={{ width: '90%', height: '14px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                <div style={{ width: '70%', height: '12px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                            </div>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', flex: 1 }}>
+                                <div style={{ width: '100%', height: '50px', backgroundColor: '#d1d5db', borderRadius: '50%' }} />
+                                <div style={{ width: '90%', height: '14px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                <div style={{ width: '70%', height: '12px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                            </div>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', flex: 1 }}>
+                                <div style={{ width: '100%', height: '50px', backgroundColor: '#d1d5db', borderRadius: '50%' }} />
+                                <div style={{ width: '90%', height: '14px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                <div style={{ width: '70%', height: '12px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                            </div>
+                        </div>
+                    </div>
+                );
+            
+            case 'pricing':
+                return (
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                        <div style={{ width: '100%', height: '22px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
+                        <div style={{ display: 'flex', gap: '8px' }}>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', flex: 1, padding: '8px', backgroundColor: '#f9fafb', borderRadius: '8px', border: '1px solid #e5e7eb' }}>
+                                <div style={{ width: '100%', height: '16px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                <div style={{ width: '60%', height: '20px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                <div style={{ width: '100%', height: '12px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                <div style={{ width: '100%', height: '12px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                            </div>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', flex: 1, padding: '8px', backgroundColor: '#eff6ff', borderRadius: '8px', border: '2px solid #3b82f6' }}>
+                                <div style={{ width: '100%', height: '16px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                <div style={{ width: '60%', height: '20px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                <div style={{ width: '100%', height: '12px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                <div style={{ width: '100%', height: '12px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                            </div>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', flex: 1, padding: '8px', backgroundColor: '#f9fafb', borderRadius: '8px', border: '1px solid #e5e7eb' }}>
+                                <div style={{ width: '100%', height: '16px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                <div style={{ width: '60%', height: '20px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                <div style={{ width: '100%', height: '12px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                <div style={{ width: '100%', height: '12px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                            </div>
+                        </div>
+                    </div>
+                );
+            
+            case 'features':
+                return (
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                        <div style={{ width: '100%', height: '22px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                                <div style={{ width: '20px', height: '20px', backgroundColor: '#3b82f6', borderRadius: '50%' }} />
+                                <div style={{ width: '75%', height: '16px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                            </div>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                                <div style={{ width: '20px', height: '20px', backgroundColor: '#3b82f6', borderRadius: '50%' }} />
+                                <div style={{ width: '85%', height: '16px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                            </div>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                                <div style={{ width: '20px', height: '20px', backgroundColor: '#3b82f6', borderRadius: '50%' }} />
+                                <div style={{ width: '80%', height: '16px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                            </div>
+                        </div>
+                    </div>
+                );
+            
+            case 'stats':
+                return (
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                        <div style={{ width: '100%', height: '22px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
+                        <div style={{ display: 'flex', gap: '8px' }}>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', flex: 1, alignItems: 'center', padding: '8px', backgroundColor: '#eff6ff', borderRadius: '8px' }}>
+                                <div style={{ width: '30px', height: '30px', backgroundColor: '#3b82f6', borderRadius: '50%' }} />
+                                <div style={{ width: '80%', height: '16px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                <div style={{ width: '60%', height: '12px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                            </div>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', flex: 1, alignItems: 'center', padding: '8px', backgroundColor: '#eff6ff', borderRadius: '8px' }}>
+                                <div style={{ width: '30px', height: '30px', backgroundColor: '#3b82f6', borderRadius: '50%' }} />
+                                <div style={{ width: '80%', height: '16px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                <div style={{ width: '60%', height: '12px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                            </div>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', flex: 1, alignItems: 'center', padding: '8px', backgroundColor: '#eff6ff', borderRadius: '8px' }}>
+                                <div style={{ width: '30px', height: '30px', backgroundColor: '#3b82f6', borderRadius: '50%' }} />
+                                <div style={{ width: '80%', height: '16px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                <div style={{ width: '60%', height: '12px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                            </div>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', flex: 1, alignItems: 'center', padding: '8px', backgroundColor: '#eff6ff', borderRadius: '8px' }}>
+                                <div style={{ width: '30px', height: '30px', backgroundColor: '#3b82f6', borderRadius: '50%' }} />
+                                <div style={{ width: '80%', height: '16px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                <div style={{ width: '60%', height: '12px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                            </div>
+                        </div>
+                    </div>
+                );
+            
+            case 'faq':
+                return (
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                        <div style={{ width: '100%', height: '22px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '8px', backgroundColor: '#f9fafb', borderRadius: '6px', border: '1px solid #e5e7eb' }}>
+                                <div style={{ width: '80%', height: '16px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                <div style={{ width: '16px', height: '16px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                            </div>
+                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '8px', backgroundColor: '#f9fafb', borderRadius: '6px', border: '1px solid #e5e7eb' }}>
+                                <div style={{ width: '80%', height: '16px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                <div style={{ width: '16px', height: '16px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                            </div>
+                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '8px', backgroundColor: '#f9fafb', borderRadius: '6px', border: '1px solid #e5e7eb' }}>
+                                <div style={{ width: '80%', height: '16px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                <div style={{ width: '16px', height: '16px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                            </div>
+                        </div>
+                    </div>
+                );
+            
+            case 'blog':
+                return (
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                        <div style={{ width: '100%', height: '22px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
+                        <div style={{ display: 'flex', gap: '8px' }}>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', flex: 2 }}>
+                                <div style={{ width: '100%', height: '50px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
+                                <div style={{ width: '90%', height: '16px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                <div style={{ width: '80%', height: '14px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                <div style={{ width: '70%', height: '12px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                            </div>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', flex: 1 }}>
+                                <div style={{ width: '100%', height: '30px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
+                                <div style={{ width: '90%', height: '12px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                <div style={{ width: '80%', height: '12px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                <div style={{ width: '70%', height: '12px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                            </div>
+                        </div>
+                    </div>
+                );
+            
+            case 'news':
+                return (
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                        <div style={{ width: '100%', height: '22px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                            <div style={{ display: 'flex', gap: '8px', padding: '8px', backgroundColor: '#f9fafb', borderRadius: '6px', border: '1px solid #e5e7eb' }}>
+                                <div style={{ width: '60px', height: '40px', backgroundColor: '#d1d5db', borderRadius: '4px', flexShrink: 0 }} />
+                                <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', flex: 1 }}>
+                                    <div style={{ width: '100%', height: '16px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                    <div style={{ width: '90%', height: '12px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                    <div style={{ width: '70%', height: '10px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                </div>
+                            </div>
+                            <div style={{ display: 'flex', gap: '8px', padding: '8px', backgroundColor: '#f9fafb', borderRadius: '6px', border: '1px solid #e5e7eb' }}>
+                                <div style={{ width: '60px', height: '40px', backgroundColor: '#d1d5db', borderRadius: '4px', flexShrink: 0 }} />
+                                <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', flex: 1 }}>
+                                    <div style={{ width: '100%', height: '16px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                    <div style={{ width: '90%', height: '12px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                    <div style={{ width: '70%', height: '10px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                );
+            
+            case 'contact':
+                return (
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                        <div style={{ width: '100%', height: '22px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
+                        <div style={{ display: 'flex', gap: '8px' }}>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', flex: 1 }}>
+                                <div style={{ width: '100%', height: '16px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                <div style={{ width: '90%', height: '16px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                <div style={{ width: '100%', height: '16px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                <div style={{ width: '100%', height: '40px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                            </div>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', flex: 1 }}>
+                                <div style={{ width: '100%', height: '16px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                <div style={{ width: '90%', height: '16px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                <div style={{ width: '100%', height: '16px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                                <div style={{ width: '100%', height: '40px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                            </div>
+                        </div>
+                    </div>
+                );
+            
+            case 'location':
+                return (
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                        <div style={{ width: '100%', height: '22px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
+                        <div style={{ display: 'flex', gap: '8px' }}>
+                            <div style={{ width: '100%', height: '60px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
+                        </div>
+                        <div style={{ display: 'flex', gap: '8px' }}>
+                            <div style={{ width: '60%', height: '16px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                            <div style={{ width: '35%', height: '16px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                        </div>
+                    </div>
+                );
+            
+            case 'social':
+                return (
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                        <div style={{ width: '100%', height: '22px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
+                        <div style={{ display: 'flex', gap: '8px', justifyContent: 'center' }}>
+                            <div style={{ width: '36px', height: '36px', backgroundColor: '#3b82f6', borderRadius: '50%' }} />
+                            <div style={{ width: '36px', height: '36px', backgroundColor: '#1da1f2', borderRadius: '50%' }} />
+                            <div style={{ width: '36px', height: '36px', backgroundColor: '#0077b5', borderRadius: '50%' }} />
+                            <div style={{ width: '36px', height: '36px', backgroundColor: '#e1306c', borderRadius: '50%' }} />
+                        </div>
+                    </div>
+                );
+            
+            default:
+                return (
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                        <div style={{ width: '100%', height: '22px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
+                        <div style={{ width: '100%', height: '50px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
+                        <div style={{ width: '90%', height: '16px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                        <div style={{ width: '80%', height: '14px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                    </div>
+                );
+        }
+    };
+
+    return (
+        <div style={{ 
+            opacity: 0.25,
+            pointerEvents: 'none',
+            width: '100%',
+            maxWidth: '260px',
+            transform: 'scale(0.85)',
+            filter: 'blur(0.5px)'
+        }}>
+            {getSkeletonForSection(sectionId)}
+        </div>
     );
 }
