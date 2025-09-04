@@ -48,13 +48,13 @@ export function SectionSelection({
                     as="h3"
                     variant="display-strong-s"
                     align="center">
-                    Select Website Sections
+                    {t('quote.sections.title')}
                 </Heading>
                 <Text
                     variant="body-default-m"
                     align="center"
                     onBackground="neutral-weak">
-                    Choose the sections you want for your website. Each section costs $20 USD.
+                    {t('quote.sections.description')}
                 </Text>
                 <Text
                     variant="body-default-s"
@@ -62,12 +62,12 @@ export function SectionSelection({
                     style={{
                         color: 'var(--color-brand-strong)',
                     }}>
-                    Total Sections: {totalSelectedSections} (${totalSelectedSections * 20} USD)
+                    {t('quote.sections.totalSections')}: {totalSelectedSections} (${totalSelectedSections * 20} USD)
                 </Text>
             </Flex>
 
             <Accordion
-                title="Required Sections (Included)"
+                title={t('quote.sections.requiredSections')}
                 open={openAccordions.has('required')}>
                 <Flex
                     fillWidth
@@ -155,13 +155,13 @@ export function SectionSelection({
                         style={{ color: 'var(--color-brand-strong)' }}
                     />
                     <Text variant="heading-default-l" weight="strong">
-                        Extra Custom Sections
+                        {t('quote.sections.extraCustomSections')}
                     </Text>
                 </Flex>
                 <Text
                     variant="body-default-s"
                     onBackground="neutral-weak">
-                    Add custom sections that are not in the list above
+                    {t('quote.sections.extraDescription')}
                 </Text>
                 <Flex
                     alignItems="center"
@@ -173,9 +173,9 @@ export function SectionSelection({
                         onClick={() => onExtraSectionsChange(Math.max(0, extraSections - 1))}>
                         -
                     </Button>
-                    <Text variant="body-default-m" weight="strong">
-                        {extraSections} Extra Sections
-                    </Text>
+                                            <Text variant="body-default-m" weight="strong">
+                            {extraSections} {t('quote.sections.extraSections')}
+                        </Text>
                     <Button
                         variant="tertiary"
                         size="s"
@@ -229,6 +229,8 @@ interface SectionCardProps {
 }
 
 function SectionCard({ section, selected, onToggle, disabled = false }: SectionCardProps) {
+    const t = useTranslations();
+    
     return (
         <Flex
             direction="column"
@@ -262,11 +264,11 @@ function SectionCard({ section, selected, onToggle, disabled = false }: SectionC
                     style={{
                         color: selected ? 'var(--color-brand-strong)' : 'var(--color-neutral-strong)'
                     }}>
-                    {section.name}
+                    {t(`quote.sections.sectionNames.${section.id}`)}
                 </Text>
                 {disabled && (
                     <Text variant="body-default-xs" onBackground="neutral-weak">
-                        (Required)
+                        ({t('quote.sections.required')})
                     </Text>
                 )}
             </Flex>
@@ -277,7 +279,7 @@ function SectionCard({ section, selected, onToggle, disabled = false }: SectionC
                     lineHeight: '1.4',
                     flex: 1
                 }}>
-                {section.description}
+                {t(`quote.sections.sectionDescriptions.${section.id}`)}
             </Text>
             {!disabled && (
                 <Button
@@ -289,7 +291,7 @@ function SectionCard({ section, selected, onToggle, disabled = false }: SectionC
                     }}
                     fillWidth
                     style={{ marginTop: 'var(--spacing-xs)' }}>
-                    {selected ? 'Selected' : 'Select'}
+                    {selected ? t('quote.sections.selected') : t('quote.sections.select')}
                 </Button>
             )}
         </Flex>

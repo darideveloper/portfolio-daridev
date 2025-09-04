@@ -125,6 +125,59 @@
             "services": "Servicios Adicionales",
             "info": "Tu Información"
         },
+        "sections": {
+            "title": "Seleccionar Secciones del Sitio Web",
+            "description": "Elige las secciones que quieres para tu sitio web. Cada sección cuesta $20 USD.",
+            "totalSections": "Total de Secciones",
+            "requiredSections": "Secciones Requeridas (Incluidas)",
+            "extraCustomSections": "Secciones Personalizadas Extra",
+            "extraDescription": "Agregar secciones personalizadas que no están en la lista anterior",
+            "extraSections": "Secciones Extra",
+            "required": "Requerido",
+            "selected": "Seleccionado",
+            "select": "Seleccionar",
+            "pricePerSection": "Precio por sección:",
+            "sectionNames": {
+                "header": "Encabezado",
+                "footer": "Pie de Página",
+                "hero": "Sección Hero",
+                "about": "Acerca de Nosotros",
+                "services": "Servicios",
+                "portfolio": "Portafolio",
+                "gallery": "Galería",
+                "testimonials": "Testimonios",
+                "team": "Nuestro Equipo",
+                "pricing": "Precios",
+                "features": "Características",
+                "stats": "Estadísticas",
+                "faq": "Preguntas Frecuentes",
+                "blog": "Blog",
+                "news": "Noticias",
+                "contact": "Formulario de Contacto",
+                "location": "Ubicación",
+                "social": "Redes Sociales"
+            },
+            "sectionDescriptions": {
+                "header": "Encabezado del sitio web con menú de navegación y logo",
+                "footer": "Pie de página del sitio web con enlaces e información de contacto",
+                "hero": "Sección de banner principal con llamada a la acción",
+                "about": "Sección acerca de con información de la empresa",
+                "services": "Sección de exhibición de servicios",
+                "portfolio": "Sección de portafolio o exhibición de trabajo",
+                "gallery": "Sección de galería de imágenes",
+                "testimonials": "Sección de testimonios de clientes",
+                "team": "Sección de miembros del equipo",
+                "pricing": "Sección de planes de precios",
+                "features": "Sección de lista de características",
+                "stats": "Sección de estadísticas y números",
+                "faq": "Sección de preguntas frecuentes",
+                "blog": "Sección de publicaciones de blog",
+                "news": "Sección de noticias y actualizaciones",
+                "contact": "Sección de formulario de contacto",
+                "location": "Sección de ubicación y mapa",
+                "social": "Sección de enlaces de redes sociales"
+            }
+        },
         "currency": {
             "usd": "USD",
             "mxn": "MXN"
@@ -210,7 +263,9 @@
             "questionsPlaceholder": "¿Alguna pregunta sobre tu proyecto?",
             "warning": "Esto es solo una aproximación general. Nuestro equipo de ventas te proporcionará una oferta personalizada después de revisar los detalles.",
             "success": "¡Cotización enviada exitosamente! Te contactaremos pronto.",
-            "error": "Hubo un error al enviar tu cotización. Por favor intenta de nuevo."
+            "error": "Hubo un error al enviar tu cotización. Por favor intenta de nuevo.",
+            "currency": "Moneda:",
+            "sectionsForMultilang": "Número de secciones para multiidioma:"
         }
     }
 }

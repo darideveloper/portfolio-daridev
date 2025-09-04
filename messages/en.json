@@ -120,10 +120,63 @@
         "steps": {
             "sections": "Website Sections",
             "basic": "Basic Features",
-            "content": "Content Features", 
+            "content": "Content Features",
             "advanced": "Advanced Features",
             "services": "Additional Services",
             "info": "Your Information"
+        },
+        "sections": {
+            "title": "Select Website Sections",
+            "description": "Choose the sections you want for your website. Each section costs $20 USD.",
+            "totalSections": "Total Sections",
+            "requiredSections": "Required Sections (Included)",
+            "extraCustomSections": "Extra Custom Sections",
+            "extraDescription": "Add custom sections that are not in the list above",
+            "extraSections": "Extra Sections",
+            "required": "Required",
+            "selected": "Selected",
+            "select": "Select",
+            "pricePerSection": "Price per section:",
+            "sectionNames": {
+                "header": "Header",
+                "footer": "Footer",
+                "hero": "Hero Section",
+                "about": "About Us",
+                "services": "Services",
+                "portfolio": "Portfolio",
+                "gallery": "Gallery",
+                "testimonials": "Testimonials",
+                "team": "Our Team",
+                "pricing": "Pricing",
+                "features": "Features",
+                "stats": "Statistics",
+                "faq": "FAQ",
+                "blog": "Blog",
+                "news": "News",
+                "contact": "Contact Form",
+                "location": "Location",
+                "social": "Social Media"
+            },
+            "sectionDescriptions": {
+                "header": "Website header with navigation menu and logo",
+                "footer": "Website footer with links and contact information",
+                "hero": "Main banner section with call-to-action",
+                "about": "About section with company information",
+                "services": "Services showcase section",
+                "portfolio": "Portfolio or work showcase section",
+                "gallery": "Image gallery section",
+                "testimonials": "Customer testimonials section",
+                "team": "Team members section",
+                "pricing": "Pricing plans section",
+                "features": "Features list section",
+                "stats": "Statistics and numbers section",
+                "faq": "Frequently asked questions section",
+                "blog": "Blog posts section",
+                "news": "News and updates section",
+                "contact": "Contact form section",
+                "location": "Location and map section",
+                "social": "Social media links section"
+            }
         },
         "currency": {
             "usd": "USD",
@@ -210,7 +263,9 @@
             "questionsPlaceholder": "Any questions about your project?",
             "warning": "This is just a general approximation. Our sales team will provide you with a custom offer after reviewing the details.",
             "success": "Quote submitted successfully! We'll contact you soon.",
-            "error": "There was an error submitting your quote. Please try again."
+            "error": "There was an error submitting your quote. Please try again.",
+            "currency": "Currency:",
+            "sectionsForMultilang": "Number of sections for multi-language:"
         }
     }
 }

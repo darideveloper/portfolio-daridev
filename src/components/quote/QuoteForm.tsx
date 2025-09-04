@@ -160,7 +160,7 @@ function QuoteFormContent() {
                         alignItems="center"
                         gap="m">
                         <Text variant="body-default-s" weight="strong">
-                            Currency:
+                            {t('quote.form.currency')}
                         </Text>
                         <CurrencySelector
                             currency={state.currency}
@@ -215,7 +215,7 @@ function QuoteFormContent() {
                                     padding: 'var(--spacing-m)',
                                 }}>
                                 <Text variant="body-default-s" weight="strong">
-                                    Number of sections for multi-language:
+                                    {t('quote.form.sectionsForMultilang')}
                                 </Text>
                                 <Flex
                                     alignItems="center"

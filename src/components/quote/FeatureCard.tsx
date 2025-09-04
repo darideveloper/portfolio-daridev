@@ -55,7 +55,7 @@ export function FeatureCard({
             </Text>
             {feature.isPerSection && (
                 <Text variant="body-default-xs" style={{ color: 'var(--color-brand-strong)' }}>
-                    Price per section: {formatPrice(feature.usdPrice, currency)}
+                    {t('quote.sections.pricePerSection')} {formatPrice(feature.usdPrice, currency)}
                 </Text>
             )}
             <Button
