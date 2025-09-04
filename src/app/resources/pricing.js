@@ -14,15 +14,6 @@ const FEATURES = {
         usdPrice: 25,
         description: 'blog.description'
     },
-    sections: {
-        id: 'sections',
-        name: 'sections',
-        icon: 'layers',
-        category: 'content',
-        usdPrice: 20,
-        description: 'sections.description',
-        isPerSection: true // This feature is priced per section
-    },
     domain: {
         id: 'domain',
         name: 'domain',
@@ -34,7 +25,7 @@ const FEATURES = {
     social: {
         id: 'social',
         name: 'social',
-        icon: 'share',
+        icon: 'openLink',
         category: 'content',
         usdPrice: 30,
         description: 'social.description'
@@ -42,7 +33,7 @@ const FEATURES = {
     contact: {
         id: 'contact',
         name: 'contact',
-        icon: 'mail',
+        icon: 'email',
         category: 'basic',
         usdPrice: 15,
         description: 'contact.description'
@@ -50,7 +41,7 @@ const FEATURES = {
     hosting: {
         id: 'hosting',
         name: 'hosting',
-        icon: 'server',
+        icon: 'grid',
         category: 'basic',
         usdPrice: 10,
         description: 'hosting.description'
@@ -58,7 +49,7 @@ const FEATURES = {
     newsletter: {
         id: 'newsletter',
         name: 'newsletter',
-        icon: 'newspaper',
+        icon: 'book',
         category: 'content',
         usdPrice: 15,
         description: 'newsletter.description'
@@ -66,7 +57,7 @@ const FEATURES = {
     ecommerce: {
         id: 'ecommerce',
         name: 'ecommerce',
-        icon: 'shopping-cart',
+        icon: 'grid',
         category: 'advanced',
         usdPrice: 120,
         description: 'ecommerce.description'
@@ -74,7 +65,7 @@ const FEATURES = {
     whatsapp: {
         id: 'whatsapp',
         name: 'whatsapp',
-        icon: 'message-circle',
+        icon: 'whatsapp',
         category: 'basic',
         usdPrice: 15,
         description: 'whatsapp.description'
@@ -90,7 +81,7 @@ const FEATURES = {
     multilang: {
         id: 'multilang',
         name: 'multilang',
-        icon: 'globe-2',
+        icon: 'globe',
         category: 'services',
         usdPrice: 5,
         description: 'multilang.description',
@@ -99,7 +90,7 @@ const FEATURES = {
     backups: {
         id: 'backups',
         name: 'backups',
-        icon: 'save',
+        icon: 'checkCircle',
         category: 'services',
         usdPrice: 5,
         description: 'backups.description'
@@ -107,7 +98,7 @@ const FEATURES = {
     payments: {
         id: 'payments',
         name: 'payments',
-        icon: 'credit-card',
+        icon: 'quote',
         category: 'advanced',
         usdPrice: 35,
         description: 'payments.description'
@@ -115,7 +106,7 @@ const FEATURES = {
     email: {
         id: 'email',
         name: 'email',
-        icon: 'at-sign',
+        icon: 'email',
         category: 'basic',
         usdPrice: 15,
         description: 'email.description'
@@ -129,7 +120,7 @@ const FEATURE_CATEGORIES = {
     },
     content: {
         title: 'quote.steps.content',
-        features: ['blog', 'sections', 'social', 'newsletter']
+        features: ['blog', 'social', 'newsletter']
     },
     advanced: {
         title: 'quote.steps.advanced',

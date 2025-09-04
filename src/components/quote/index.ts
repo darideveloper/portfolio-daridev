@@ -5,3 +5,4 @@ export { CurrencySelector } from './CurrencySelector';
 export { FeatureCard } from './FeatureCard';
 export { ClientInfoForm } from './ClientInfoForm';
 export { ConfirmationMessage } from './ConfirmationMessage';
+export { ControlledAccordion } from './ControlledAccordion';

@@ -135,28 +135,6 @@ export const WEBSITE_SECTIONS = {
         category: 'contact'
     },
     
-    // E-commerce sections
-    products: {
-        id: 'products',
-        name: 'Products',
-        icon: 'grid',
-        description: 'Products catalog section',
-        category: 'ecommerce'
-    },
-    cart: {
-        id: 'cart',
-        name: 'Shopping Cart',
-        icon: 'grid',
-        description: 'Shopping cart section',
-        category: 'ecommerce'
-    },
-    checkout: {
-        id: 'checkout',
-        name: 'Checkout',
-        icon: 'checkCircle',
-        description: 'Checkout process section',
-        category: 'ecommerce'
-    },
     
     // Special sections
     booking: {
@@ -187,20 +165,6 @@ export const WEBSITE_SECTIONS = {
         description: 'Search functionality section',
         category: 'special'
     },
-    login: {
-        id: 'login',
-        name: 'Login',
-        icon: 'person',
-        description: 'User login section',
-        category: 'special'
-    },
-    register: {
-        id: 'register',
-        name: 'Register',
-        icon: 'person',
-        description: 'User registration section',
-        category: 'special'
-    }
 };
 
 export const SECTION_CATEGORIES = {
@@ -219,15 +183,10 @@ export const SECTION_CATEGORIES = {
         description: 'Contact and communication sections',
         sections: ['contact', 'location', 'social']
     },
-    ecommerce: {
-        name: 'E-commerce Sections',
-        description: 'Online store functionality',
-        sections: ['products', 'cart', 'checkout']
-    },
     special: {
         name: 'Special Sections',
         description: 'Advanced functionality sections',
-        sections: ['booking', 'events', 'newsletter', 'search', 'login', 'register']
+        sections: ['booking', 'events', 'newsletter', 'search']
     }
 };
 

@@ -1,7 +1,8 @@
 "use client";
 
-import { Flex, Heading, Text, Button, Icon } from '@/once-ui/components';
+import { Flex, Heading, Text, Button, Icon, Accordion } from '@/once-ui/components';
 import { useTranslations } from 'next-intl';
+import { useState } from 'react';
 import { SectionSelectionProps, WebsiteSection } from '@/types/quote';
 import { SECTION_CATEGORIES, getSectionsByCategory, getRequiredSections } from '@/app/resources/sections';
 
@@ -14,6 +15,21 @@ export function SectionSelection({
     onPrevious 
 }: SectionSelectionProps) {
     const t = useTranslations();
+    
+    // State for accordion tabs (allow multiple open at once)
+    const [openAccordions, setOpenAccordions] = useState<Set<string>>(new Set(['content']));
+    
+    const handleAccordionToggle = (accordionId: string) => {
+        setOpenAccordions(prev => {
+            const newSet = new Set(prev);
+            if (newSet.has(accordionId)) {
+                newSet.delete(accordionId);
+            } else {
+                newSet.add(accordionId);
+            }
+            return newSet;
+        });
+    };
 
     const requiredSections = getRequiredSections();
     const totalSelectedSections = selectedSections.length + extraSections;
@@ -50,17 +66,9 @@ export function SectionSelection({
                 </Text>
             </Flex>
 
-            {/* Required Sections */}
-            <Flex
-                fillWidth
-                direction="column"
-                gap="m">
-                <Heading
-                    as="h4"
-                    variant="heading-default-l"
-                    weight="strong">
-                    Required Sections (Included)
-                </Heading>
+            <Accordion
+                title="Required Sections (Included)"
+                open={openAccordions.has('required')}>
                 <Flex
                     fillWidth
                     gap="m"
@@ -78,84 +86,77 @@ export function SectionSelection({
                         />
                     ))}
                 </Flex>
-            </Flex>
+            </Accordion>
 
-            {/* Optional Sections by Category */}
             {Object.keys(SECTION_CATEGORIES).filter(category => category !== 'core').map((categoryKey) => {
                 const category = SECTION_CATEGORIES[categoryKey];
                 const sections = getSectionsByCategory(categoryKey);
                 
                 return (
-                    <Flex
+                    <Accordion
                         key={categoryKey}
-                        fillWidth
-                        direction="column"
-                        gap="m">
-                        <Flex
-                            alignItems="center"
-                            gap="s">
-                            <Icon 
-                                name={getCategoryIcon(categoryKey)} 
-                                size="s" 
-                                style={{ color: 'var(--color-brand-strong)' }}
-                            />
-                            <Heading
-                                as="h4"
-                                variant="heading-default-l"
-                                weight="strong">
-                                {category.name}
-                            </Heading>
-                        </Flex>
-                        <Text
-                            variant="body-default-s"
-                            onBackground="neutral-weak">
-                            {category.description}
-                        </Text>
+                        title={
+                            <Flex alignItems="center" gap="s">
+                                <Icon 
+                                    name={getCategoryIcon(categoryKey)} 
+                                    size="s" 
+                                    style={{ color: 'var(--color-brand-strong)' }}
+                                />
+                                <Text variant="heading-default-l" weight="strong">
+                                    {category.name}
+                                </Text>
+                            </Flex>
+                        }
+                        open={openAccordions.has(categoryKey)}>
                         <Flex
                             fillWidth
-                            gap="m"
-                            style={{
-                                display: 'grid',
-                                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-                            }}>
-                            {sections.map((section) => (
-                                <SectionCard
-                                    key={section.id}
-                                    section={section}
-                                    selected={selectedSections.includes(section.id)}
-                                    onToggle={() => onSectionToggle(section.id)}
-                                />
-                            ))}
+                            direction="column"
+                            gap="m">
+                            <Text
+                                variant="body-default-s"
+                                onBackground="neutral-weak">
+                                {category.description}
+                            </Text>
+                            <Flex
+                                fillWidth
+                                gap="m"
+                                style={{
+                                    display: 'grid',
+                                    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                                }}>
+                                {sections.map((section) => (
+                                    <SectionCard
+                                        key={section.id}
+                                        section={section}
+                                        selected={selectedSections.includes(section.id)}
+                                        onToggle={() => onSectionToggle(section.id)}
+                                    />
+                                ))}
+                            </Flex>
                         </Flex>
-                    </Flex>
+                    </Accordion>
                 );
             })}
 
-            {/* Extra Sections */}
             <Flex
                 fillWidth
                 direction="column"
                 gap="m"
-                paddingY="l"
+                padding="l"
                 style={{
-                    backgroundColor: 'var(--color-brand-weak)',
+                    border: '1px solid var(--color-neutral-weak)',
                     borderRadius: 'var(--border-radius-m)',
-                    padding: 'var(--spacing-l)',
+                    backgroundColor: 'var(--color-neutral-weakest)',
                 }}>
-                <Flex
-                    alignItems="center"
-                    gap="s">
+                <Flex alignItems="center" gap="s">
                     <Icon 
                         name="checkCircle" 
                         size="s" 
                         style={{ color: 'var(--color-brand-strong)' }}
                     />
-                    <Heading
-                        as="h4"
-                        variant="heading-default-l"
-                        weight="strong">
+                    <Text variant="heading-default-l" weight="strong">
                         Extra Custom Sections
-                    </Heading>
+                    </Text>
                 </Flex>
                 <Text
                     variant="body-default-s"
