@@ -166,10 +166,6 @@
                 "name": "Botón de WhatsApp",
                 "description": "Botón flotante de WhatsApp para contacto instantáneo"
             },
-            "reservations": {
-                "name": "Reservaciones",
-                "description": "Sistema de reservas y citas en línea"
-            },
             "multilang": {
                 "name": "Multiidioma / Sección",
                 "description": "Agregar soporte multiidioma para cada sección"
@@ -185,6 +181,18 @@
             "email": {
                 "name": "Email Corporativo",
                 "description": "Cuentas de email profesionales para tu negocio"
+            },
+            "booking": {
+                "name": "Reservas",
+                "description": "Sistema de reservas y citas en línea"
+            },
+            "events": {
+                "name": "Eventos",
+                "description": "Calendario de eventos y gestión de eventos"
+            },
+            "search": {
+                "name": "Búsqueda",
+                "description": "Funcionalidad de búsqueda en el sitio web"
             }
         },
         "form": {

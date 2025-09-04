@@ -70,14 +70,6 @@ const FEATURES = {
         usdPrice: 15,
         description: 'whatsapp.description'
     },
-    reservations: {
-        id: 'reservations',
-        name: 'reservations',
-        icon: 'calendar',
-        category: 'advanced',
-        usdPrice: 35,
-        description: 'reservations.description'
-    },
     multilang: {
         id: 'multilang',
         name: 'multilang',
@@ -110,6 +102,30 @@ const FEATURES = {
         category: 'basic',
         usdPrice: 15,
         description: 'email.description'
+    },
+    booking: {
+        id: 'booking',
+        name: 'booking',
+        icon: 'calendar',
+        category: 'advanced',
+        usdPrice: 35,
+        description: 'booking.description'
+    },
+    events: {
+        id: 'events',
+        name: 'events',
+        icon: 'calendar',
+        category: 'advanced',
+        usdPrice: 25,
+        description: 'events.description'
+    },
+    search: {
+        id: 'search',
+        name: 'search',
+        icon: 'openLink',
+        category: 'advanced',
+        usdPrice: 20,
+        description: 'search.description'
     }
 };
 
@@ -124,7 +140,7 @@ const FEATURE_CATEGORIES = {
     },
     advanced: {
         title: 'quote.steps.advanced',
-        features: ['ecommerce', 'reservations', 'payments']
+        features: ['ecommerce', 'payments', 'booking', 'events', 'search']
     },
     services: {
         title: 'quote.steps.services',

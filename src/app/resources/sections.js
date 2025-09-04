@@ -137,34 +137,6 @@ export const WEBSITE_SECTIONS = {
     
     
     // Special sections
-    booking: {
-        id: 'booking',
-        name: 'Booking',
-        icon: 'calendar',
-        description: 'Appointment booking section',
-        category: 'special'
-    },
-    events: {
-        id: 'events',
-        name: 'Events',
-        icon: 'calendar',
-        description: 'Events calendar section',
-        category: 'special'
-    },
-    newsletter: {
-        id: 'newsletter',
-        name: 'Newsletter',
-        icon: 'email',
-        description: 'Newsletter signup section',
-        category: 'special'
-    },
-    search: {
-        id: 'search',
-        name: 'Search',
-        icon: 'openLink',
-        description: 'Search functionality section',
-        category: 'special'
-    },
 };
 
 export const SECTION_CATEGORIES = {
@@ -183,11 +155,6 @@ export const SECTION_CATEGORIES = {
         description: 'Contact and communication sections',
         sections: ['contact', 'location', 'social']
     },
-    special: {
-        name: 'Special Sections',
-        description: 'Advanced functionality sections',
-        sections: ['booking', 'events', 'newsletter', 'search']
-    }
 };
 
 // Helper functions

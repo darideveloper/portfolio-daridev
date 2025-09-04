@@ -166,10 +166,6 @@
                 "name": "WhatsApp Button",
                 "description": "Floating WhatsApp button for instant contact"
             },
-            "reservations": {
-                "name": "Reservations",
-                "description": "Online booking and reservation system"
-            },
             "multilang": {
                 "name": "Multi-language / Section",
                 "description": "Add multi-language support for each section"
@@ -185,6 +181,18 @@
             "email": {
                 "name": "Company Email",
                 "description": "Professional email accounts for your business"
+            },
+            "booking": {
+                "name": "Booking",
+                "description": "Online booking and appointment system"
+            },
+            "events": {
+                "name": "Events",
+                "description": "Events calendar and event management"
+            },
+            "search": {
+                "name": "Search",
+                "description": "Website search functionality"
             }
         },
         "form": {
