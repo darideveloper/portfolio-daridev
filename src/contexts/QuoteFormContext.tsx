@@ -97,7 +97,8 @@ const quoteFormReducer = (state: QuoteFormState, action: QuoteFormAction): Quote
                 state.selectedFeatures,
                 state.currency,
                 state.sectionCount,
-                state.selectedSections
+                state.selectedSections,
+                state.extraSections
             );
             return { ...state, totalPrice };
         

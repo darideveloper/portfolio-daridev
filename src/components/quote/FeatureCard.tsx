@@ -11,11 +11,12 @@ export function FeatureCard({
     currency, 
     sectionCount, 
     selectedSections,
+    extraSections,
     onToggle 
 }: FeatureCardProps) {
     const t = useTranslations();
     
-    const price = getFeaturePrice(feature.id, currency, sectionCount, selectedSections);
+    const price = getFeaturePrice(feature.id, currency, sectionCount, selectedSections, extraSections);
     
     const formatPrice = (price: number, currency: 'USD' | 'MXN') => {
         return new Intl.NumberFormat('en-US', {

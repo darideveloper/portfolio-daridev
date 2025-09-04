@@ -62,7 +62,16 @@ export function SectionSelection({
                     style={{
                         color: 'var(--color-brand-strong)',
                     }}>
-                    {t('quote.sections.totalSections')}: {totalSelectedSections} (${totalSelectedSections * 20} USD)
+                    {t('quote.sections.sectionsCalculation', { 
+                        count: totalSelectedSections, 
+                        total: totalSelectedSections * 20 
+                    })}
+                </Text>
+                <Text
+                    variant="body-default-xs"
+                    onBackground="neutral-weak"
+                    align="center">
+                    {t('quote.sections.sectionsIncludedInTotal')}
                 </Text>
             </Flex>
 

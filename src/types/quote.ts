@@ -94,6 +94,7 @@ export interface FeatureCardProps {
     currency: Currency;
     sectionCount: number;
     selectedSections: string[];
+    extraSections: number;
     onToggle: () => void;
 }
 

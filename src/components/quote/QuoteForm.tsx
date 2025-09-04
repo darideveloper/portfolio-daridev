@@ -201,43 +201,6 @@ function QuoteFormContent() {
                             {t(`quote.steps.${currentCategory}`)}
                         </Heading>
                         
-                        {/* Section Count Input for multi-language step */}
-                        {currentCategory === 'services' && (
-                            <Flex
-                                fillWidth
-                                justifyContent="center"
-                                alignItems="center"
-                                gap="m"
-                                paddingY="m"
-                                style={{
-                                    backgroundColor: 'var(--color-brand-weak)',
-                                    borderRadius: 'var(--border-radius-m)',
-                                    padding: 'var(--spacing-m)',
-                                }}>
-                                <Text variant="body-default-s" weight="strong">
-                                    {t('quote.form.sectionsForMultilang')}
-                                </Text>
-                                <Flex
-                                    alignItems="center"
-                                    gap="s">
-                                    <Button
-                                        variant="tertiary"
-                                        size="s"
-                                        onClick={() => setSectionCount(Math.max(1, state.sectionCount - 1))}>
-                                        -
-                                    </Button>
-                                    <Text variant="body-default-m" weight="strong">
-                                        {state.sectionCount}
-                                    </Text>
-                                    <Button
-                                        variant="tertiary"
-                                        size="s"
-                                        onClick={() => setSectionCount(state.sectionCount + 1)}>
-                                        +
-                                    </Button>
-                                </Flex>
-                            </Flex>
-                        )}
                         
                         <Flex
                             fillWidth
@@ -254,6 +217,7 @@ function QuoteFormContent() {
                                     currency={state.currency}
                                     sectionCount={state.sectionCount}
                                     selectedSections={state.selectedSections}
+                                    extraSections={state.extraSections}
                                     onToggle={() => toggleFeature(feature.id)}
                                 />
                             ))}

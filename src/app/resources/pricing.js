@@ -149,7 +149,7 @@ const FEATURE_CATEGORIES = {
 };
 
 // Helper functions
-const getFeaturePrice = (featureId, currency = 'USD', sectionCount = 1, selectedSections = []) => {
+const getFeaturePrice = (featureId, currency = 'USD', sectionCount = 1, selectedSections = [], extraSections = 0) => {
     const feature = FEATURES[featureId];
     if (!feature) return 0;
     
@@ -159,10 +159,10 @@ const getFeaturePrice = (featureId, currency = 'USD', sectionCount = 1, selected
     if (feature.isPerSection) {
         if (featureId === 'sections') {
             // For sections, count selected sections + extra sections
-            basePrice = basePrice * (selectedSections.length + sectionCount);
+            basePrice = basePrice * (selectedSections.length + extraSections);
         } else {
-            // For other per-section features (like multilang)
-            basePrice = basePrice * (selectedSections.length + sectionCount);
+            // For other per-section features (like multilang), use selected sections + extra sections
+            basePrice = basePrice * (selectedSections.length + extraSections);
         }
     }
     
@@ -173,10 +173,21 @@ const getFeaturePrice = (featureId, currency = 'USD', sectionCount = 1, selected
     return basePrice;
 };
 
-const calculateTotalPrice = (selectedFeatures, currency = 'USD', sectionCount = 1, selectedSections = []) => {
-    return selectedFeatures.reduce((total, featureId) => {
-        return total + getFeaturePrice(featureId, currency, sectionCount, selectedSections);
+const calculateTotalPrice = (selectedFeatures, currency = 'USD', sectionCount = 1, selectedSections = [], extraSections = 0) => {
+    // Calculate features price
+    const featuresPrice = selectedFeatures.reduce((total, featureId) => {
+        return total + getFeaturePrice(featureId, currency, sectionCount, selectedSections, extraSections);
     }, 0);
+    
+    // Calculate sections price ($20 USD per section)
+    const sectionsPrice = (selectedSections.length + extraSections) * 20;
+    
+    // Convert to MXN if needed
+    if (currency === 'MXN') {
+        return featuresPrice + Math.round(sectionsPrice * EXCHANGE_RATE);
+    }
+    
+    return featuresPrice + sectionsPrice;
 };
 
 const getFeaturesByCategory = (category) => {
