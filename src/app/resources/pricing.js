@@ -30,14 +30,6 @@ const FEATURES = {
         usdPrice: 30,
         description: 'social.description'
     },
-    contact: {
-        id: 'contact',
-        name: 'contact',
-        icon: 'email',
-        category: 'basic',
-        usdPrice: 15,
-        description: 'contact.description'
-    },
     hosting: {
         id: 'hosting',
         name: 'hosting',
@@ -61,14 +53,6 @@ const FEATURES = {
         category: 'advanced',
         usdPrice: 120,
         description: 'ecommerce.description'
-    },
-    whatsapp: {
-        id: 'whatsapp',
-        name: 'whatsapp',
-        icon: 'whatsapp',
-        category: 'basic',
-        usdPrice: 15,
-        description: 'whatsapp.description'
     },
     multilang: {
         id: 'multilang',
@@ -132,7 +116,7 @@ const FEATURES = {
 const FEATURE_CATEGORIES = {
     basic: {
         title: 'quote.steps.basic',
-        features: ['domain', 'hosting', 'contact', 'whatsapp', 'email']
+        features: ['domain', 'hosting', 'email']
     },
     content: {
         title: 'quote.steps.content',

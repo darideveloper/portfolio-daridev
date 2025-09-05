@@ -158,7 +158,8 @@
                 "news": "News",
                 "contact": "Contact Form",
                 "location": "Location",
-                "social": "Social Media"
+                "social": "Social Media",
+                "whatsapp": "WhatsApp Button"
             },
             "sectionDescriptions": {
                 "header": "Website header with navigation menu and logo",
@@ -178,7 +179,8 @@
                 "news": "News and updates section",
                 "contact": "Contact form section",
                 "location": "Location and map section",
-                "social": "Social media links section"
+                "social": "Social media links section",
+                "whatsapp": "WhatsApp contact button section"
             }
         },
         "currency": {
@@ -202,10 +204,6 @@
                 "name": "Social Media Integration",
                 "description": "Embed social media feeds and sharing buttons"
             },
-            "contact": {
-                "name": "Contact Form",
-                "description": "Custom contact form with email notifications"
-            },
             "hosting": {
                 "name": "Hosting / Month",
                 "description": "Web hosting service with SSL certificate"
@@ -217,10 +215,6 @@
             "ecommerce": {
                 "name": "E-commerce",
                 "description": "Complete online store with payment processing"
-            },
-            "whatsapp": {
-                "name": "WhatsApp Button",
-                "description": "Floating WhatsApp button for instant contact"
             },
             "multilang": {
                 "name": "Multi-language",

@@ -678,6 +678,44 @@ function SectionSkeleton({ sectionId }: { sectionId: string }) {
                     </div>
                 );
             
+            case 'whatsapp':
+                return (
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+                        <div style={{ width: '100%', height: '22px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
+                        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                            <div style={{ 
+                                width: '60px', 
+                                height: '60px', 
+                                backgroundColor: '#25d366', 
+                                borderRadius: '50%',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                position: 'relative'
+                            }}>
+                                <div style={{ 
+                                    width: '30px', 
+                                    height: '30px', 
+                                    backgroundColor: '#ffffff', 
+                                    borderRadius: '50%',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center'
+                                }}>
+                                    <div style={{ 
+                                        width: '20px', 
+                                        height: '20px', 
+                                        backgroundColor: '#25d366', 
+                                        borderRadius: '4px',
+                                        transform: 'rotate(45deg)'
+                                    }} />
+                                </div>
+                            </div>
+                        </div>
+                        <div style={{ width: '80%', height: '16px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
+                    </div>
+                );
+            
             default:
                 return (
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>

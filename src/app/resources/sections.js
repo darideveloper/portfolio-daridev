@@ -134,6 +134,13 @@ export const WEBSITE_SECTIONS = {
         description: 'Social media links section',
         category: 'contact'
     },
+    whatsapp: {
+        id: 'whatsapp',
+        name: 'WhatsApp Button',
+        icon: 'whatsapp',
+        description: 'WhatsApp contact button section',
+        category: 'contact'
+    },
     
     
     // Special sections
@@ -153,7 +160,7 @@ export const SECTION_CATEGORIES = {
     contact: {
         name: 'Contact Sections',
         description: 'Contact and communication sections',
-        sections: ['contact', 'location', 'social']
+        sections: ['contact', 'location', 'social', 'whatsapp']
     },
 };
 

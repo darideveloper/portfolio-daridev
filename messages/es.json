@@ -158,7 +158,8 @@
                 "news": "Noticias",
                 "contact": "Formulario de Contacto",
                 "location": "Ubicación",
-                "social": "Redes Sociales"
+                "social": "Redes Sociales",
+                "whatsapp": "Botón de WhatsApp"
             },
             "sectionDescriptions": {
                 "header": "Encabezado del sitio web con menú de navegación y logo",
@@ -178,7 +179,8 @@
                 "news": "Sección de noticias y actualizaciones",
                 "contact": "Sección de formulario de contacto",
                 "location": "Sección de ubicación y mapa",
-                "social": "Sección de enlaces de redes sociales"
+                "social": "Sección de enlaces de redes sociales",
+                "whatsapp": "Sección de botón de contacto de WhatsApp"
             }
         },
         "currency": {
@@ -202,10 +204,6 @@
                 "name": "Integración de Redes Sociales",
                 "description": "Incrustar feeds de redes sociales y botones de compartir"
             },
-            "contact": {
-                "name": "Formulario de Contacto",
-                "description": "Formulario de contacto personalizado con notificaciones por email"
-            },
             "hosting": {
                 "name": "Hosting / Mes",
                 "description": "Servicio de hosting web con certificado SSL"
@@ -217,10 +215,6 @@
             "ecommerce": {
                 "name": "E-commerce",
                 "description": "Tienda en línea completa con procesamiento de pagos"
-            },
-            "whatsapp": {
-                "name": "Botón de WhatsApp",
-                "description": "Botón flotante de WhatsApp para contacto instantáneo"
             },
             "multilang": {
                 "name": "Multiidioma",
