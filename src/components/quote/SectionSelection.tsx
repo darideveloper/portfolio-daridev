@@ -408,24 +408,6 @@ function SectionSkeleton({ sectionId }: { sectionId: string }) {
                     </div>
                 );
             
-            case 'portfolio':
-                return (
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                        <div style={{ width: '100%', height: '22px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
-                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                                <div style={{ width: '100%', height: '50px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
-                                <div style={{ width: '90%', height: '14px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
-                                <div style={{ width: '70%', height: '12px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
-                            </div>
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                                <div style={{ width: '100%', height: '50px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
-                                <div style={{ width: '90%', height: '14px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
-                                <div style={{ width: '70%', height: '12px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
-                            </div>
-                        </div>
-                    </div>
-                );
             
             case 'gallery':
                 return (
@@ -584,51 +566,7 @@ function SectionSkeleton({ sectionId }: { sectionId: string }) {
                     </div>
                 );
             
-            case 'blog':
-                return (
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                        <div style={{ width: '100%', height: '22px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
-                        <div style={{ display: 'flex', gap: '8px' }}>
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', flex: 2 }}>
-                                <div style={{ width: '100%', height: '50px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
-                                <div style={{ width: '90%', height: '16px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
-                                <div style={{ width: '80%', height: '14px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
-                                <div style={{ width: '70%', height: '12px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
-                            </div>
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', flex: 1 }}>
-                                <div style={{ width: '100%', height: '30px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
-                                <div style={{ width: '90%', height: '12px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
-                                <div style={{ width: '80%', height: '12px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
-                                <div style={{ width: '70%', height: '12px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
-                            </div>
-                        </div>
-                    </div>
-                );
             
-            case 'news':
-                return (
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                        <div style={{ width: '100%', height: '22px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                            <div style={{ display: 'flex', gap: '8px', padding: '8px', backgroundColor: '#f9fafb', borderRadius: '6px', border: '1px solid #e5e7eb' }}>
-                                <div style={{ width: '60px', height: '40px', backgroundColor: '#d1d5db', borderRadius: '4px', flexShrink: 0 }} />
-                                <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', flex: 1 }}>
-                                    <div style={{ width: '100%', height: '16px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
-                                    <div style={{ width: '90%', height: '12px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
-                                    <div style={{ width: '70%', height: '10px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
-                                </div>
-                            </div>
-                            <div style={{ display: 'flex', gap: '8px', padding: '8px', backgroundColor: '#f9fafb', borderRadius: '6px', border: '1px solid #e5e7eb' }}>
-                                <div style={{ width: '60px', height: '40px', backgroundColor: '#d1d5db', borderRadius: '4px', flexShrink: 0 }} />
-                                <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', flex: 1 }}>
-                                    <div style={{ width: '100%', height: '16px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
-                                    <div style={{ width: '90%', height: '12px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
-                                    <div style={{ width: '70%', height: '10px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                );
             
             case 'contact':
                 return (

@@ -41,13 +41,6 @@ export const WEBSITE_SECTIONS = {
         description: 'Services showcase section',
         category: 'content'
     },
-    portfolio: {
-        id: 'portfolio',
-        name: 'Portfolio',
-        icon: 'gallery',
-        description: 'Portfolio or work showcase section',
-        category: 'content'
-    },
     gallery: {
         id: 'gallery',
         name: 'Gallery',
@@ -97,20 +90,6 @@ export const WEBSITE_SECTIONS = {
         description: 'Frequently asked questions section',
         category: 'content'
     },
-    blog: {
-        id: 'blog',
-        name: 'Blog',
-        icon: 'book',
-        description: 'Blog posts section',
-        category: 'content'
-    },
-    news: {
-        id: 'news',
-        name: 'News',
-        icon: 'book',
-        description: 'News and updates section',
-        category: 'content'
-    },
     
     // Contact sections
     contact: {
@@ -155,7 +134,7 @@ export const SECTION_CATEGORIES = {
     content: {
         name: 'Content Sections',
         description: 'Main content sections for your website',
-        sections: ['hero', 'about', 'services', 'portfolio', 'gallery', 'testimonials', 'team', 'pricing', 'features', 'stats', 'faq', 'blog', 'news']
+        sections: ['hero', 'about', 'services', 'gallery', 'testimonials', 'team', 'pricing', 'features', 'stats', 'faq']
     },
     contact: {
         name: 'Contact Sections',

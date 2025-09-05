@@ -110,6 +110,22 @@ const FEATURES = {
         category: 'advanced',
         usdPrice: 20,
         description: 'search.description'
+    },
+    portfolio: {
+        id: 'portfolio',
+        name: 'portfolio',
+        icon: 'gallery',
+        category: 'content',
+        usdPrice: 30,
+        description: 'portfolio.description'
+    },
+    news: {
+        id: 'news',
+        name: 'news',
+        icon: 'book',
+        category: 'content',
+        usdPrice: 25,
+        description: 'news.description'
     }
 };
 
@@ -120,7 +136,7 @@ const FEATURE_CATEGORIES = {
     },
     content: {
         title: 'quote.steps.content',
-        features: ['blog', 'social', 'newsletter']
+        features: ['blog', 'social', 'newsletter', 'portfolio', 'news']
     },
     advanced: {
         title: 'quote.steps.advanced',

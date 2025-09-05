@@ -160,7 +160,6 @@
                 "hero": "Sección Hero",
                 "about": "Acerca de Nosotros",
                 "services": "Servicios",
-                "portfolio": "Portafolio",
                 "gallery": "Galería",
                 "testimonials": "Testimonios",
                 "team": "Nuestro Equipo",
@@ -168,8 +167,6 @@
                 "features": "Características",
                 "stats": "Estadísticas",
                 "faq": "Preguntas Frecuentes",
-                "blog": "Blog",
-                "news": "Noticias",
                 "contact": "Formulario de Contacto",
                 "location": "Ubicación",
                 "social": "Redes Sociales",
@@ -181,7 +178,6 @@
                 "hero": "Sección de banner principal con llamada a la acción",
                 "about": "Sección acerca de con información de la empresa",
                 "services": "Sección de exhibición de servicios",
-                "portfolio": "Sección de portafolio o exhibición de trabajo",
                 "gallery": "Sección de galería de imágenes",
                 "testimonials": "Sección de testimonios de clientes",
                 "team": "Sección de miembros del equipo",
@@ -189,8 +185,6 @@
                 "features": "Sección de lista de características",
                 "stats": "Sección de estadísticas y números",
                 "faq": "Sección de preguntas frecuentes",
-                "blog": "Sección de publicaciones de blog",
-                "news": "Sección de noticias y actualizaciones",
                 "contact": "Sección de formulario de contacto",
                 "location": "Sección de ubicación y mapa",
                 "social": "Sección de enlaces de redes sociales",
@@ -225,6 +219,14 @@
             "newsletter": {
                 "name": "Newsletter",
                 "description": "Sistema de suscripción y gestión de newsletter por email"
+            },
+            "portfolio": {
+                "name": "Portafolio",
+                "description": "Sección de portafolio para mostrar trabajos y proyectos"
+            },
+            "news": {
+                "name": "Noticias",
+                "description": "Sección de noticias y actualizaciones del sitio web"
             },
             "ecommerce": {
                 "name": "E-commerce",

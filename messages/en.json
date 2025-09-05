@@ -160,7 +160,6 @@
                 "hero": "Hero Section",
                 "about": "About Us",
                 "services": "Services",
-                "portfolio": "Portfolio",
                 "gallery": "Gallery",
                 "testimonials": "Testimonials",
                 "team": "Our Team",
@@ -168,8 +167,6 @@
                 "features": "Features",
                 "stats": "Statistics",
                 "faq": "FAQ",
-                "blog": "Blog",
-                "news": "News",
                 "contact": "Contact Form",
                 "location": "Location",
                 "social": "Social Media",
@@ -181,7 +178,6 @@
                 "hero": "Main banner section with call-to-action",
                 "about": "About section with company information",
                 "services": "Services showcase section",
-                "portfolio": "Portfolio or work showcase section",
                 "gallery": "Image gallery section",
                 "testimonials": "Customer testimonials section",
                 "team": "Team members section",
@@ -189,8 +185,6 @@
                 "features": "Features list section",
                 "stats": "Statistics and numbers section",
                 "faq": "Frequently asked questions section",
-                "blog": "Blog posts section",
-                "news": "News and updates section",
                 "contact": "Contact form section",
                 "location": "Location and map section",
                 "social": "Social media links section",
@@ -225,6 +219,14 @@
             "newsletter": {
                 "name": "Newsletter",
                 "description": "Email newsletter signup and management system"
+            },
+            "portfolio": {
+                "name": "Portfolio",
+                "description": "Portfolio section to showcase work and projects"
+            },
+            "news": {
+                "name": "News",
+                "description": "News and updates section for the website"
             },
             "ecommerce": {
                 "name": "E-commerce",
