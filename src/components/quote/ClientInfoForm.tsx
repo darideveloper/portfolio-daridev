@@ -1,8 +1,9 @@
 "use client";
 
-import { Flex, Input, Textarea, Text } from '@/once-ui/components';
+import { Flex, Textarea, Text } from '@/once-ui/components';
 import { useTranslations } from 'next-intl';
 import { ClientInfoFormProps } from '@/types/quote';
+import { ContactFields } from './ContactFields';
 
 export function ClientInfoForm({ 
     clientInfo, 
@@ -25,37 +26,10 @@ export function ClientInfoForm({
                 <Text variant="body-default-m" weight="strong">
                     Contact Information
                 </Text>
-                <Flex
-                    direction="column"
-                    gap="m">
-                    <Input
-                        id="name"
-                        label={t('quote.form.name')}
-                        value={clientInfo.name}
-                        onChange={(e) => onClientInfoChange('name', e.target.value)}
-                        required
-                    />
-                    <Input
-                        id="email"
-                        type="email"
-                        label={t('quote.form.email')}
-                        value={clientInfo.email}
-                        onChange={(e) => onClientInfoChange('email', e.target.value)}
-                        required
-                    />
-                    <Input
-                        id="company"
-                        label={t('quote.form.company')}
-                        value={clientInfo.company || ''}
-                        onChange={(e) => onClientInfoChange('company', e.target.value)}
-                    />
-                    <Input
-                        id="phone"
-                        label={t('quote.form.phone')}
-                        value={clientInfo.phone || ''}
-                        onChange={(e) => onClientInfoChange('phone', e.target.value)}
-                    />
-                </Flex>
+                <ContactFields
+                    clientInfo={clientInfo}
+                    onClientInfoChange={onClientInfoChange}
+                />
             </Flex>
             
             <Flex

@@ -7,6 +7,20 @@
         "description": "Ocasionalmente escribo sobre desarrollo web, emprendimiento, programación, inteligencia artificial, herramientas digitales y más.",
         "button": "Suscribirse"
     },
+    "contact": {
+        "title": "Contáctame",
+        "description": "¿Tienes un proyecto en mente? Me encantaría escuchar sobre tu idea y cómo puedo ayudarte a hacerla realidad.",
+        "form": {
+            "name": "Nombre",
+            "email": "Email",
+            "subject": "Asunto",
+            "message": "Mensaje",
+            "submit": "Enviar Mensaje",
+            "submitting": "Enviando...",
+            "success": "¡Mensaje enviado con éxito! Te contactaré pronto.",
+            "error": "Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo."
+        }
+    },
     "home": {
         "label": "Inicio",
         "title": "Portfolio de {name}",

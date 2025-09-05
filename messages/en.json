@@ -7,6 +7,20 @@
         "description": "I occasionally write about web development, entrepreneurship, programming, artificial intelligence, digital tools, and more.",
         "button": "Subscribe"
     },
+    "contact": {
+        "title": "Get In Touch",
+        "description": "Have a project in mind? I'd love to hear about your idea and how I can help you bring it to life.",
+        "form": {
+            "name": "Name",
+            "email": "Email",
+            "subject": "Subject",
+            "message": "Message",
+            "submit": "Send Message",
+            "submitting": "Sending...",
+            "success": "Message sent successfully! I'll get back to you soon.",
+            "error": "There was an error sending the message. Please try again."
+        }
+    },
     "home": {
         "label": "Home",
         "title": "{name}'s Portfolio",
