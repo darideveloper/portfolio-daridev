@@ -66,7 +66,6 @@ export function ClientInfoForm({
                 </Text>
                 <Textarea
                     id="customFeatures"
-                    label={t('quote.form.customFeatures')}
                     placeholder={t('quote.form.customFeaturesPlaceholder')}
                     value={customFeatures}
                     onChange={(e) => onCustomFeaturesChange(e.target.value)}
@@ -82,7 +81,6 @@ export function ClientInfoForm({
                 </Text>
                 <Textarea
                     id="questions"
-                    label={t('quote.form.questions')}
                     placeholder={t('quote.form.questionsPlaceholder')}
                     value={questions}
                     onChange={(e) => onQuestionsChange(e.target.value)}
