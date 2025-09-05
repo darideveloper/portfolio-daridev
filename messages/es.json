@@ -229,8 +229,8 @@
                 "description": "Integración de pasarela de pagos para transacciones en línea"
             },
             "email": {
-                "name": "Email Corporativo",
-                "description": "Cuentas de email profesionales para tu negocio"
+                "name": "Email Corporativo / Mes",
+                "description": "Email corporativo reenviado a tu email personal ($5 USD/mes)"
             },
             "booking": {
                 "name": "Reservas",

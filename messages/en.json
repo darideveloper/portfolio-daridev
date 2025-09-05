@@ -229,8 +229,8 @@
                 "description": "Payment gateway integration for online transactions"
             },
             "email": {
-                "name": "Company Email",
-                "description": "Professional email accounts for your business"
+                "name": "Company Email / Month",
+                "description": "Company email forwarded to your personal email ($5 USD/month)"
             },
             "booking": {
                 "name": "Booking",

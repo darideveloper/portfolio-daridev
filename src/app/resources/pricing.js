@@ -84,7 +84,7 @@ const FEATURES = {
         name: 'email',
         icon: 'email',
         category: 'basic',
-        usdPrice: 15,
+        usdPrice: 5,
         description: 'email.description'
     },
     booking: {
