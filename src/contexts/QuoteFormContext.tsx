@@ -174,20 +174,99 @@ export const QuoteFormProvider: React.FC<{ children: React.ReactNode }> = ({ chi
 
     const submitForm = useCallback(async (): Promise<{ success: boolean; message: string }> => {
         try {
-            const submissionData: QuoteSubmission = {
-                selectedFeatures: state.selectedFeatures,
-                selectedSections: state.selectedSections,
-                extraSections: state.extraSections,
+            // Import pricing data to get individual item prices
+            const { FEATURES, WEBSITE_SECTIONS } = await import('@/app/resources/pricing');
+            const { WEBSITE_SECTIONS: SECTIONS } = await import('@/app/resources/sections');
+            
+            // Calculate individual feature prices
+            const selectedFeaturePrices = state.selectedFeatures.map(featureId => {
+                const feature = FEATURES[featureId];
+                return {
+                    id: featureId,
+                    name: feature?.name || featureId,
+                    price: feature?.usdPrice || 0,
+                    category: feature?.category || 'unknown'
+                };
+            });
+
+            // Calculate individual section prices (each section costs $20 USD)
+            const selectedSectionPrices = state.selectedSections.map(sectionId => {
+                const section = SECTIONS[sectionId];
+                return {
+                    id: sectionId,
+                    name: section?.name || sectionId,
+                    price: 20, // Each section costs $20 USD
+                    category: section?.category || 'unknown'
+                };
+            });
+
+            // Calculate extra sections price
+            const extraSectionsPrice = state.extraSections * 20; // Each extra section costs $20 USD
+
+            // Create formatted email body (spam-safe format - no numbers with USD)
+            const formatPrice = (price: number) => `Price: ${price}`;
+            
+            const emailBody = `
+NEW QUOTE REQUEST
+
+CLIENT INFORMATION
+Name: ${state.clientInfo.name}
+Email: ${state.clientInfo.email}
+Company: ${state.clientInfo.company || 'Not provided'}
+Phone: ${state.clientInfo.phone || 'Not provided'}
+
+QUOTE SUMMARY
+Currency: ${state.currency}
+Total Price: ${state.totalPrice}
+Selected Sections: ${state.selectedSections.length}
+Extra Sections: ${state.extraSections}
+Extra Sections Price: ${extraSectionsPrice}
+
+SELECTED FEATURES
+${selectedFeaturePrices.length > 0 ? selectedFeaturePrices.map(feature => 
+  `- ${feature.name} (${feature.category}) - Price: ${feature.price}`
+).join('\n') : 'No features selected'}
+
+SELECTED SECTIONS
+${selectedSectionPrices.length > 0 ? selectedSectionPrices.map(section => 
+  `- ${section.name} (${section.category}) - Price: ${section.price}`
+).join('\n') : 'No sections selected'}
+
+${state.customFeatures ? `CUSTOM FEATURES\n${state.customFeatures}\n` : ''}
+${state.questions ? `QUESTIONS\n${state.questions}\n` : ''}
+
+Submitted: ${new Date().toLocaleString()}
+            `.trim();
+
+            // Get API configuration from environment variables
+            const apiUrl = process.env.NEXT_PUBLIC_QUOTE_API_URL || 'https://services.darideveloper.com/contact-form/';
+            const apiKey = process.env.NEXT_PUBLIC_QUOTE_API_KEY || 'aHR9zwVL5r3a8Lo6qRy2v5A';
+            const apiUser = process.env.NEXT_PUBLIC_QUOTE_API_USER || 'daridev';
+
+            // Prepare the submission data for the external API
+            const submissionData = {
+                api_key: apiKey,
+                user: apiUser,
+                subject: "New Quote Requested",
+                message: emailBody,
+                // Keep JSON data for API processing if needed
+                client_name: state.clientInfo.name,
+                client_email: state.clientInfo.email,
+                client_company: state.clientInfo.company || '',
+                client_phone: state.clientInfo.phone || '',
                 currency: state.currency,
-                sectionCount: state.sectionCount,
-                totalPrice: state.totalPrice,
-                clientInfo: state.clientInfo,
-                customFeatures: state.customFeatures,
-                questions: state.questions,
+                total_price: state.totalPrice,
+                section_count: state.selectedSections.length,
+                extra_sections: state.extraSections,
+                extra_sections_price: extraSectionsPrice,
+                selected_features: selectedFeaturePrices,
+                selected_sections: selectedSectionPrices,
+                custom_features: state.customFeatures || '',
+                questions: state.questions || '',
                 timestamp: new Date().toISOString()
             };
 
-            const response = await fetch('/api/quote-submission', {
+            const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -196,17 +275,20 @@ export const QuoteFormProvider: React.FC<{ children: React.ReactNode }> = ({ chi
             });
 
             if (response.ok) {
+                const result = await response.json();
                 return {
                     success: true,
                     message: t('quote.form.success')
                 };
             } else {
+                const errorData = await response.json().catch(() => ({}));
                 return {
                     success: false,
-                    message: t('quote.form.error')
+                    message: errorData.message || t('quote.form.error')
                 };
             }
         } catch (error) {
+            console.error('Quote submission error:', error);
             return {
                 success: false,
                 message: t('quote.form.error')
