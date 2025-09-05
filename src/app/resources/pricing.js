@@ -140,11 +140,7 @@ const FEATURE_CATEGORIES = {
     },
     advanced: {
         title: 'quote.steps.advanced',
-        features: ['ecommerce', 'payments', 'booking', 'events', 'search']
-    },
-    services: {
-        title: 'quote.steps.services',
-        features: ['multilang', 'backups']
+        features: ['ecommerce', 'payments', 'booking', 'events', 'search', 'multilang', 'backups']
     }
 };
 

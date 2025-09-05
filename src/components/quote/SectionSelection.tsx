@@ -384,30 +384,6 @@ function SectionSkeleton({ sectionId }: { sectionId: string }) {
                     </div>
                 );
             
-            case 'services':
-                return (
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                        <div style={{ width: '100%', height: '22px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
-                        <div style={{ display: 'flex', gap: '8px' }}>
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', flex: 1 }}>
-                                <div style={{ width: '100%', height: '40px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
-                                <div style={{ width: '90%', height: '14px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
-                                <div style={{ width: '80%', height: '12px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
-                            </div>
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', flex: 1 }}>
-                                <div style={{ width: '100%', height: '40px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
-                                <div style={{ width: '90%', height: '14px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
-                                <div style={{ width: '80%', height: '12px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
-                            </div>
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', flex: 1 }}>
-                                <div style={{ width: '100%', height: '40px', backgroundColor: '#d1d5db', borderRadius: '6px' }} />
-                                <div style={{ width: '90%', height: '14px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
-                                <div style={{ width: '80%', height: '12px', backgroundColor: '#d1d5db', borderRadius: '4px' }} />
-                            </div>
-                        </div>
-                    </div>
-                );
-            
             
             case 'gallery':
                 return (

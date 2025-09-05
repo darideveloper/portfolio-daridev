@@ -13,8 +13,8 @@ import { ClientInfoForm } from './ClientInfoForm';
 import { ConfirmationMessage } from './ConfirmationMessage';
 import { getFeaturesByCategory } from '@/app/resources/pricing';
 
-const TOTAL_STEPS = 6; // Increased to include section selection
-const STEP_CATEGORIES = ['basic', 'sections', 'content', 'advanced', 'services', 'info'];
+const TOTAL_STEPS = 5; // Basic, Sections, Content, Advanced, Info
+const STEP_CATEGORIES = ['basic', 'sections', 'content', 'advanced', 'info'];
 
 function QuoteFormContent() {
     const t = useTranslations();
