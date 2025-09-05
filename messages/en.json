@@ -230,7 +230,7 @@
             },
             "ecommerce": {
                 "name": "E-commerce",
-                "description": "Complete online store with payment processing"
+                "description": "Complete online store with products, variants, shopping cart, etc."
             },
             "multilang": {
                 "name": "Multi-language",
@@ -242,7 +242,7 @@
             },
             "payments": {
                 "name": "Online Payments",
-                "description": "Payment gateway integration for online transactions"
+                "description": "For small pages that sell one or few products with direct payment links"
             },
             "email": {
                 "name": "Company Email / Month",

@@ -230,7 +230,7 @@
             },
             "ecommerce": {
                 "name": "E-commerce",
-                "description": "Tienda en línea completa con procesamiento de pagos"
+                "description": "Tienda en línea completa con productos, variantes, carrito de compras, etc."
             },
             "multilang": {
                 "name": "Multiidioma",
@@ -242,7 +242,7 @@
             },
             "payments": {
                 "name": "Pagos en Línea",
-                "description": "Integración de pasarela de pagos para transacciones en línea"
+                "description": "Para páginas pequeñas que venden uno o pocos productos con enlaces de pago directo"
             },
             "email": {
                 "name": "Email Corporativo / Mes",
