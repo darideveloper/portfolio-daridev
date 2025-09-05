@@ -140,6 +140,20 @@
             "sectionsPrice": "Precio de Secciones",
             "sectionsCalculation": "Total de Secciones: {count} × $20 = ${total} USD",
             "sectionsIncludedInTotal": "Este precio se incluye automáticamente en el total de la cotización",
+            "categories": {
+                "core": {
+                    "name": "Secciones Principales",
+                    "description": "Secciones esenciales para cada sitio web"
+                },
+                "content": {
+                    "name": "Secciones de Contenido",
+                    "description": "Secciones de contenido principal para tu sitio web"
+                },
+                "contact": {
+                    "name": "Secciones de Contacto",
+                    "description": "Secciones de contacto y comunicación"
+                }
+            },
             "sectionNames": {
                 "header": "Encabezado",
                 "footer": "Pie de Página",

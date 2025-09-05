@@ -140,6 +140,20 @@
             "sectionsPrice": "Sections Price",
             "sectionsCalculation": "Total Sections: {count} × $20 = ${total} USD",
             "sectionsIncludedInTotal": "This price is automatically included in the quote total",
+            "categories": {
+                "core": {
+                    "name": "Core Sections",
+                    "description": "Essential sections for every website"
+                },
+                "content": {
+                    "name": "Content Sections",
+                    "description": "Main content sections for your website"
+                },
+                "contact": {
+                    "name": "Contact Sections",
+                    "description": "Contact and communication sections"
+                }
+            },
             "sectionNames": {
                 "header": "Header",
                 "footer": "Footer",

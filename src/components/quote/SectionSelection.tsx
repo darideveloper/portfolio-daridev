@@ -112,7 +112,7 @@ export function SectionSelection({
                                     style={{ color: 'var(--color-brand-strong)' }}
                                 />
                                 <Text variant="heading-default-l" weight="strong">
-                                    {category.name}
+                                    {t(`quote.sections.categories.${categoryKey}.name`)}
                                 </Text>
                             </Flex>
                         }
@@ -124,7 +124,7 @@ export function SectionSelection({
                             <Text
                                 variant="body-default-s"
                                 onBackground="neutral-weak">
-                                {category.description}
+                                {t(`quote.sections.categories.${categoryKey}.description`)}
                             </Text>
                             <Flex
                                 fillWidth
