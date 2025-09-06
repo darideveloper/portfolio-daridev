@@ -239,9 +239,9 @@ Submitted: ${new Date().toLocaleString()}
             `.trim();
 
             // Get API configuration from environment variables
-            const apiUrl = process.env.NEXT_PUBLIC_QUOTE_API_URL || 'https://services.darideveloper.com/contact-form/';
-            const apiKey = process.env.NEXT_PUBLIC_QUOTE_API_KEY || 'aHR9zwVL5r3a8Lo6qRy2v5A';
-            const apiUser = process.env.NEXT_PUBLIC_QUOTE_API_USER || 'daridev';
+            const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://services.darideveloper.com/contact-form/';
+            const apiKey = process.env.NEXT_PUBLIC_API_KEY || 'aHR9zwVL5r3a8Lo6qRy2v5A';
+            const apiUser = process.env.NEXT_PUBLIC_API_USER || 'daridev';
 
             // Prepare the submission data for the external API
             const submissionData = {

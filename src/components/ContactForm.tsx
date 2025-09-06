@@ -34,12 +34,57 @@ export const ContactForm = ({ display }: ContactFormProps) => {
         setSubmitStatus('idle');
 
         try {
-            // Here you would typically send the form data to your backend
-            // For now, we'll just simulate a successful submission
-            await new Promise(resolve => setTimeout(resolve, 1000));
-            setSubmitStatus('success');
-            setFormData({ name: '', email: '', subject: '', message: '' });
+            // Get API configuration from environment variables
+            const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://services.darideveloper.com/contact-form/';
+            const apiKey = process.env.NEXT_PUBLIC_API_KEY || 'aHR9zwVL5r3a8Lo6qRy2v5A';
+            const apiUser = process.env.NEXT_PUBLIC_API_USER || 'daridev';
+
+            // Create formatted email body (spam-safe format)
+            const emailBody = `
+NEW CONTACT MESSAGE
+
+CLIENT INFORMATION
+Name: ${formData.name}
+Email: ${formData.email}
+
+MESSAGE DETAILS
+Subject: ${formData.subject}
+Message: ${formData.message}
+
+Submitted: ${new Date().toLocaleString()}
+            `.trim();
+
+            // Prepare the submission data for the external API
+            const submissionData = {
+                api_key: apiKey,
+                user: apiUser,
+                subject: "New Contact Message",
+                message: emailBody,
+                // Contact form specific data only
+                client_name: formData.name,
+                client_email: formData.email,
+                message_subject: formData.subject,
+                message_content: formData.message,
+                timestamp: new Date().toISOString()
+            };
+
+            const response = await fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(submissionData),
+            });
+
+            if (response.ok) {
+                setSubmitStatus('success');
+                setFormData({ name: '', email: '', subject: '', message: '' });
+            } else {
+                const errorData = await response.json().catch(() => ({}));
+                setSubmitStatus('error');
+            }
         } catch (error) {
+            console.error('Contact form submission error:', error);
             setSubmitStatus('error');
         } finally {
             setIsSubmitting(false);
