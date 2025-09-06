@@ -33,6 +33,33 @@ export function ConfirmationMessage({
                 }}>
                 {message}
             </Text>
+            {type === 'success' && (
+                <Flex
+                    direction="column"
+                    gap="m"
+                    alignItems="center"
+                    padding="l"
+                    style={{
+                        backgroundColor: 'var(--color-neutral-weak)',
+                        borderRadius: 'var(--border-radius-m)',
+                        border: '1px solid var(--color-neutral-medium)',
+                        maxWidth: 'var(--responsive-width-s)'
+                    }}>
+                    <Text 
+                        variant="body-default-s" 
+                        align="center"
+                        onBackground="neutral-strong"
+                        weight="strong">
+                        {t('quote.form.approximation.title')}
+                    </Text>
+                    <Text 
+                        variant="body-default-s" 
+                        align="center"
+                        onBackground="neutral-medium">
+                        {t('quote.form.approximation.description')}
+                    </Text>
+                </Flex>
+            )}
             <Flex gap="m">
                 {type === 'error' && onRetry && (
                     <Button variant="primary" onClick={onRetry}>

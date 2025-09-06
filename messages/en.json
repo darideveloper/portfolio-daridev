@@ -290,7 +290,11 @@
             "warning": "This is just a general approximation. Our sales team will provide you with a custom offer after reviewing the details.",
             "success": "Quote submitted successfully! We'll contact you soon.",
             "error": "There was an error submitting your quote. Please try again.",
-            "currency": "Currency:"
+            "currency": "Currency:",
+            "approximation": {
+                "title": "Approximate Price",
+                "description": "This form provides only an approximate estimate. Our sales team will analyze your project in detail and provide you with an exact personalized price."
+            }
         }
     }
 }
