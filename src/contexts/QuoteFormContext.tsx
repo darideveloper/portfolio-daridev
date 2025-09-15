@@ -175,7 +175,7 @@ export const QuoteFormProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     const submitForm = useCallback(async (): Promise<{ success: boolean; message: string }> => {
         try {
             // Import pricing data to get individual item prices
-            const { FEATURES, WEBSITE_SECTIONS } = await import('@/app/resources/pricing');
+            const { FEATURES } = await import('@/app/resources/pricing');
             const { WEBSITE_SECTIONS: SECTIONS } = await import('@/app/resources/sections');
             
             // Calculate individual feature prices

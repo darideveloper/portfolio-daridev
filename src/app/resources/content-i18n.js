@@ -284,6 +284,13 @@ const createI18nContent = (t) => {
       },
     ]
   }
+
+  const newsletter = {
+    display: true,
+    title: <>{t("newsletter.title", { firstName: person.firstName })}</>,
+    description: <>{t("newsletter.description")}</>,
+    button: t("newsletter.button")
+  }
   return {
     person,
     social,
@@ -292,7 +299,8 @@ const createI18nContent = (t) => {
     about,
     blog,
     work,
-    gallery
+    gallery,
+    newsletter
   }
 }
 

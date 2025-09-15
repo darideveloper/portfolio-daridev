@@ -102,10 +102,9 @@ Submitted: ${new Date().toLocaleString()}
             background="surface" border="neutral-medium" borderStyle="solid-1">
             <Background
                 position="absolute"
-                mask={false}
-                gradient={false}
-                dots={false}
-                lines={false}/>
+                gradient={{ display: false }}
+                dots={{ display: false }}
+                lines={{ display: false }}/>
             <Heading style={{position: 'relative'}}
                 marginBottom="s"
                 variant="display-strong-xs">
@@ -132,54 +131,58 @@ Submitted: ${new Date().toLocaleString()}
                     fillWidth maxWidth={24} gap="m"
                     direction="column">
                     <Flex gap="m" mobileDirection="column">
+                        <Flex fillWidth>
+                            <Input
+                                id="name"
+                                name="name"
+                                type="text"
+                                label={t('contact.form.name')}
+                                value={formData.name}
+                                onChange={handleChange}
+                                required
+                            />
+                        </Flex>
+                        <Flex fillWidth>
+                            <Input
+                                id="email"
+                                name="email"
+                                type="email"
+                                label={t('contact.form.email')}
+                                value={formData.email}
+                                onChange={handleChange}
+                                required
+                            />
+                        </Flex>
+                    </Flex>
+                    <Flex fillWidth>
                         <Input
-                            id="name"
-                            name="name"
+                            id="subject"
+                            name="subject"
                             type="text"
-                            label={t('contact.form.name')}
-                            value={formData.name}
+                            label={t('contact.form.subject')}
+                            value={formData.subject}
                             onChange={handleChange}
                             required
-                            fillWidth
-                        />
-                        <Input
-                            id="email"
-                            name="email"
-                            type="email"
-                            label={t('contact.form.email')}
-                            value={formData.email}
-                            onChange={handleChange}
-                            required
-                            fillWidth
                         />
                     </Flex>
-                    <Input
-                        id="subject"
-                        name="subject"
-                        type="text"
-                        label={t('contact.form.subject')}
-                        value={formData.subject}
-                        onChange={handleChange}
-                        required
-                        fillWidth
-                    />
-                    <Textarea
-                        id="message"
-                        name="message"
-                        label={t('contact.form.message')}
-                        value={formData.message}
-                        onChange={handleChange}
-                        required
-                        rows={4}
-                        fillWidth
-                    />
+                    <Flex fillWidth>
+                        <Textarea
+                            id="message"
+                            name="message"
+                            label={t('contact.form.message')}
+                            value={formData.message}
+                            onChange={handleChange}
+                            required
+                            rows={4}
+                        />
+                    </Flex>
                     {submitStatus === 'success' && (
                         <Text onBackground="success-strong" variant="body-default-s">
                             {t('contact.form.success')}
                         </Text>
                     )}
                     {submitStatus === 'error' && (
-                        <Text onBackground="error-strong" variant="body-default-s">
+                        <Text onBackground="danger-strong" variant="body-default-s">
                             {t('contact.form.error')}
                         </Text>
                     )}

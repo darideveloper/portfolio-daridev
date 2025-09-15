@@ -253,4 +253,41 @@ const gallery = {
     ]
 }
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+const contact = {
+    label: 'Contact',
+    title: 'Get in touch',
+    description: `Let's work together on your next project`,
+    form: {
+        display: true,
+        title: 'Send me a message',
+        description: 'I\'d love to hear from you. Send me a message and I\'ll respond as soon as possible.',
+        fields: {
+            name: {
+                label: 'Name',
+                placeholder: 'Your name',
+                required: true
+            },
+            email: {
+                label: 'Email',
+                placeholder: 'your.email@example.com',
+                required: true
+            },
+            subject: {
+                label: 'Subject',
+                placeholder: 'What\'s this about?',
+                required: true
+            },
+            message: {
+                label: 'Message',
+                placeholder: 'Tell me about your project...',
+                required: true
+            }
+        },
+        submit: 'Send message',
+        submitting: 'Sending...',
+        success: 'Thank you! Your message has been sent successfully.',
+        error: 'Sorry, there was an error sending your message. Please try again.'
+    }
+}
+
+export { person, social, newsletter, home, about, blog, work, gallery, contact };
