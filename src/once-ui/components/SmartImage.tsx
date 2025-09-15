@@ -5,6 +5,7 @@ import Image, { ImageProps } from 'next/image';
 import classNames from 'classnames';
 
 import { Flex, Skeleton } from '@/once-ui/components';
+import styles from './SmartImage.module.css';
 
 export type SmartImageProps = ImageProps & {
     className?: string;
@@ -111,7 +112,7 @@ const SmartImage: React.FC<SmartImageProps> = ({
                     ...calculateTransform(),
                     ...style,
                 }}
-                className={classNames(className)}
+                className={classNames(className, styles.smartImageContainer)}
                 onClick={handleClick}>
                 {isLoading && (
                     <Skeleton shape="block" />

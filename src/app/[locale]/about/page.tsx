@@ -97,6 +97,7 @@ export default function About({
   ]
   return (
     <Flex
+      className='content-about'
       fillWidth
       maxWidth='m'
       direction='column'
@@ -282,7 +283,7 @@ export default function About({
           )}
 
           {about.work.display && (
-            <>
+            <div className={'content-about'}>
               <Heading
                 as='h2'
                 id={about.work.title}
@@ -348,6 +349,7 @@ export default function About({
                     </Flex>
                     {experience.images.length > 0 && (
                       <Flex
+                        className={styles.imagesContainer}
                         fillWidth
                         paddingTop='m'
                         paddingLeft='40'
@@ -376,7 +378,7 @@ export default function About({
                   </Flex>
                 ))}
               </Flex>
-            </>
+            </div>
           )}
 
           {about.studies.display && (
@@ -462,6 +464,7 @@ export default function About({
                     </Text>
                     {skill.images && skill.images.length > 0 && (
                       <Flex
+                        className={styles.imagesContainer}
                         fillWidth
                         paddingTop='m'
                         gap='12'
