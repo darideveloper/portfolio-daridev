@@ -296,5 +296,71 @@
                 "description": "This form provides only an approximate estimate. Our sales team will analyze your project in detail and provide you with an exact personalized price."
             }
         }
+    },
+    "privacy": {
+        "title": "Privacy Policy",
+        "lastUpdated": "Last updated: {date}",
+        "introduction": {
+            "title": "Introduction",
+            "content": "This Privacy Policy explains how {companyName} (\"we\", \"our\", or \"us\") collects, uses, and protects your personal information when you use our website and services. We are committed to protecting your privacy and ensuring the security of your personal data."
+        },
+        "dataCollection": {
+            "title": "Information We Collect",
+            "content": "We only collect information that you voluntarily provide to us through our contact and quote forms. This includes:",
+            "items": {
+                "0": "Name and contact information (email address, phone number)",
+                "1": "Company information (if provided)",
+                "2": "Project details and requirements",
+                "3": "Messages and communications you send to us"
+            }
+        },
+        "dataUsage": {
+            "title": "How We Use Your Information",
+            "content": "We use the information you provide solely for the following purposes:",
+            "items": {
+                "0": "To respond to your inquiries and provide customer support",
+                "1": "To process and evaluate your project quote requests",
+                "2": "To communicate with you about our services",
+                "3": "To improve our website and services"
+            }
+        },
+        "dataStorage": {
+            "title": "Data Storage and Security",
+            "content": "We do not store your personal information on our servers. All form submissions are processed through secure third-party services and are not retained in our systems. We implement appropriate security measures to protect your information during transmission and processing."
+        },
+        "dataSharing": {
+            "title": "Information Sharing",
+            "content": "We do not sell, trade, or otherwise transfer your personal information to third parties. We may share your information only in the following limited circumstances:",
+            "items": {
+                "0": "With your explicit consent",
+                "1": "To comply with legal obligations",
+                "2": "To protect our rights and prevent fraud"
+            }
+        },
+        "cookies": {
+            "title": "Cookies and Tracking",
+            "content": "Our website may use cookies and similar tracking technologies to enhance your browsing experience. These technologies help us understand how you use our website and improve our services. You can control cookie settings through your browser preferences."
+        },
+        "yourRights": {
+            "title": "Your Rights",
+            "content": "You have the right to:",
+            "items": {
+                "0": "Request access to your personal information",
+                "1": "Request correction of inaccurate information",
+                "2": "Request deletion of your personal information",
+                "3": "Withdraw consent at any time",
+                "4": "Object to processing of your personal information"
+            }
+        },
+        "contact": {
+            "title": "Contact Us",
+            "content": "If you have any questions about this Privacy Policy or our data practices, please contact us at:",
+            "email": "Email: darideveloper@gmail.com",
+            "website": "Website: https://www.darideveloper.com"
+        },
+        "changes": {
+            "title": "Changes to This Policy",
+            "content": "We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the \"Last updated\" date. We encourage you to review this Privacy Policy periodically for any changes."
+        }
     }
 }

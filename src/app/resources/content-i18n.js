@@ -291,6 +291,74 @@ const createI18nContent = (t) => {
     description: <>{t("newsletter.description")}</>,
     button: t("newsletter.button")
   }
+
+  const privacy = {
+    title: t("privacy.title"),
+    lastUpdated: t("privacy.lastUpdated"),
+    introduction: {
+      title: t("privacy.introduction.title"),
+      content: t("privacy.introduction.content", { companyName: `${person.firstName}'s Portfolio` }),
+    },
+    dataCollection: {
+      title: t("privacy.dataCollection.title"),
+      content: t("privacy.dataCollection.content"),
+      items: [
+        t("privacy.dataCollection.items.0"),
+        t("privacy.dataCollection.items.1"),
+        t("privacy.dataCollection.items.2"),
+        t("privacy.dataCollection.items.3"),
+      ],
+    },
+    dataUsage: {
+      title: t("privacy.dataUsage.title"),
+      content: t("privacy.dataUsage.content"),
+      items: [
+        t("privacy.dataUsage.items.0"),
+        t("privacy.dataUsage.items.1"),
+        t("privacy.dataUsage.items.2"),
+        t("privacy.dataUsage.items.3"),
+      ],
+    },
+    dataStorage: {
+      title: t("privacy.dataStorage.title"),
+      content: t("privacy.dataStorage.content"),
+    },
+    dataSharing: {
+      title: t("privacy.dataSharing.title"),
+      content: t("privacy.dataSharing.content"),
+      items: [
+        t("privacy.dataSharing.items.0"),
+        t("privacy.dataSharing.items.1"),
+        t("privacy.dataSharing.items.2"),
+      ],
+    },
+    cookies: {
+      title: t("privacy.cookies.title"),
+      content: t("privacy.cookies.content"),
+    },
+    yourRights: {
+      title: t("privacy.yourRights.title"),
+      content: t("privacy.yourRights.content"),
+      items: [
+        t("privacy.yourRights.items.0"),
+        t("privacy.yourRights.items.1"),
+        t("privacy.yourRights.items.2"),
+        t("privacy.yourRights.items.3"),
+        t("privacy.yourRights.items.4"),
+      ],
+    },
+    contact: {
+      title: t("privacy.contact.title"),
+      content: t("privacy.contact.content"),
+      email: t("privacy.contact.email"),
+      website: t("privacy.contact.website"),
+    },
+    changes: {
+      title: t("privacy.changes.title"),
+      content: t("privacy.changes.content"),
+    },
+  }
+
   return {
     person,
     social,
@@ -300,7 +368,8 @@ const createI18nContent = (t) => {
     blog,
     work,
     gallery,
-    newsletter
+    newsletter,
+    privacy
   }
 }
 

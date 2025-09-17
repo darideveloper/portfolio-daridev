@@ -135,7 +135,7 @@
             "sections": "Secciones del Sitio Web",
             "basic": "Características Básicas",
             "content": "Características de Contenido",
-            "advanced": "Características Avanzadas", 
+            "advanced": "Características Avanzadas",
             "info": "Tu Información"
         },
         "sections": {
@@ -295,6 +295,72 @@
                 "title": "Precio Aproximado",
                 "description": "Este formulario proporciona solo una estimación aproximada. Nuestro equipo de ventas analizará tu proyecto en detalle y te proporcionará un precio exacto personalizado."
             }
+        }
+    },
+    "privacy": {
+        "title": "Política de Privacidad",
+        "lastUpdated": "Última actualización: {date}",
+        "introduction": {
+            "title": "Introducción",
+            "content": "Esta Política de Privacidad explica cómo {companyName} (\"nosotros\", \"nuestro\" o \"nos\") recopila, usa y protege tu información personal cuando utilizas nuestro sitio web y servicios. Estamos comprometidos a proteger tu privacidad y garantizar la seguridad de tus datos personales."
+        },
+        "dataCollection": {
+            "title": "Información que Recopilamos",
+            "content": "Solo recopilamos información que nos proporcionas voluntariamente a través de nuestros formularios de contacto y cotización. Esto incluye:",
+            "items": {
+                "0": "Nombre e información de contacto (dirección de email, número de teléfono)",
+                "1": "Información de la empresa (si se proporciona)",
+                "2": "Detalles y requisitos del proyecto",
+                "3": "Mensajes y comunicaciones que nos envías"
+            }
+        },
+        "dataUsage": {
+            "title": "Cómo Usamos tu Información",
+            "content": "Utilizamos la información que proporcionas únicamente para los siguientes propósitos:",
+            "items": {
+                "0": "Para responder a tus consultas y brindar soporte al cliente",
+                "1": "Para procesar y evaluar tus solicitudes de cotización de proyectos",
+                "2": "Para comunicarnos contigo sobre nuestros servicios",
+                "3": "Para mejorar nuestro sitio web y servicios"
+            }
+        },
+        "dataStorage": {
+            "title": "Almacenamiento y Seguridad de Datos",
+            "content": "No almacenamos tu información personal en nuestros servidores. Todas las presentaciones de formularios se procesan a través de servicios seguros de terceros y no se conservan en nuestros sistemas. Implementamos medidas de seguridad apropiadas para proteger tu información durante la transmisión y el procesamiento."
+        },
+        "dataSharing": {
+            "title": "Compartir Información",
+            "content": "No vendemos, intercambiamos o transferimos de otra manera tu información personal a terceros. Podemos compartir tu información solo en las siguientes circunstancias limitadas:",
+            "items": {
+                "0": "Con tu consentimiento explícito",
+                "1": "Para cumplir con obligaciones legales",
+                "2": "Para proteger nuestros derechos y prevenir fraudes"
+            }
+        },
+        "cookies": {
+            "title": "Cookies y Seguimiento",
+            "content": "Nuestro sitio web puede usar cookies y tecnologías de seguimiento similares para mejorar tu experiencia de navegación. Estas tecnologías nos ayudan a entender cómo usas nuestro sitio web y mejorar nuestros servicios. Puedes controlar la configuración de cookies a través de las preferencias de tu navegador."
+        },
+        "yourRights": {
+            "title": "Tus Derechos",
+            "content": "Tienes derecho a:",
+            "items": {
+                "0": "Solicitar acceso a tu información personal",
+                "1": "Solicitar corrección de información inexacta",
+                "2": "Solicitar eliminación de tu información personal",
+                "3": "Retirar el consentimiento en cualquier momento",
+                "4": "Oponerte al procesamiento de tu información personal"
+            }
+        },
+        "contact": {
+            "title": "Contáctanos",
+            "content": "Si tienes alguna pregunta sobre esta Política de Privacidad o nuestras prácticas de datos, por favor contáctanos en:",
+            "email": "Email: darideveloper@gmail.com",
+            "website": "Sitio web: https://www.darideveloper.com"
+        },
+        "changes": {
+            "title": "Cambios a esta Política",
+            "content": "Podemos actualizar esta Política de Privacidad de vez en cuando. Te notificaremos de cualquier cambio publicando la nueva Política de Privacidad en esta página y actualizando la fecha de \"Última actualización\". Te recomendamos revisar esta Política de Privacidad periódicamente para cualquier cambio."
         }
     }
 }
