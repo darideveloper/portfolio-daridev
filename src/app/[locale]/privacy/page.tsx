@@ -4,6 +4,7 @@ import {
   Text,
 } from '@/once-ui/components'
 import { baseURL, renderContent } from '@/app/resources'
+import { branding } from '@/app/resources/branding'
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 import { useTranslations } from 'next-intl'
 
@@ -13,14 +14,14 @@ export async function generateMetadata({
   params: { locale: string }
 }) {
   const t = await getTranslations()
-  const { person, privacy } = renderContent(t)
+  const { person, privacy, company } = renderContent(t)
   const title = t(privacy.title)
   const description = t(privacy.introduction.content)
 
   return {
     title,
     description,
-    keywords: 'privacy, policy, data protection, GDPR, personal information, cookies, Dari Dev',
+    keywords: branding.seo.keywords,
     author: person.name,
     openGraph: {
       title,
@@ -40,8 +41,8 @@ export async function generateMetadata({
     },
     twitter: {
       card: 'summary_large_image',
-      site: '@DeveloperDari',
-      creator: '@DeveloperDari',
+      site: branding.social.twitter,
+      creator: branding.social.twitter,
       title,
       description,
       images: [`${baseURL}${person.avatar}`],
@@ -63,7 +64,7 @@ export default function Privacy({
 }) {
   unstable_setRequestLocale(locale)
   const t = useTranslations()
-  const { person, privacy } = renderContent(t)
+  const { person, privacy, company } = renderContent(t)
 
   const privacySections = [
     {

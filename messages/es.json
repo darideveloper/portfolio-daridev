@@ -355,8 +355,8 @@
         "contact": {
             "title": "Contáctanos",
             "content": "Si tienes alguna pregunta sobre esta Política de Privacidad o nuestras prácticas de datos, por favor contáctanos en:",
-            "email": "Email: darideveloper@gmail.com",
-            "website": "Sitio web: https://www.darideveloper.com"
+            "email": "Email: {email}",
+            "website": "Sitio web: {website}"
         },
         "changes": {
             "title": "Cambios a esta Política",

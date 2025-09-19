@@ -15,7 +15,12 @@ const renderContent = (t) => {
             blog,
             work,
             gallery,
-            newsletter
+            newsletter,
+            company: {
+                name: person.firstName + ' ' + person.lastName,
+                email: 'example@gmail.com',
+                website: 'https://example.com'
+            }
         }
     }
 };
