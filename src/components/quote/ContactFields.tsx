@@ -11,9 +11,13 @@ interface ContactFieldsProps {
         phone?: string;
     };
     onClientInfoChange: (field: string, value: string) => void;
+    validationErrors?: {
+        name?: string;
+        email?: string;
+    };
 }
 
-export function ContactFields({ clientInfo, onClientInfoChange }: ContactFieldsProps) {
+export function ContactFields({ clientInfo, onClientInfoChange, validationErrors }: ContactFieldsProps) {
     const t = useTranslations();
 
     return (
@@ -26,6 +30,7 @@ export function ContactFields({ clientInfo, onClientInfoChange }: ContactFieldsP
                 value={clientInfo.name}
                 onChange={(e) => onClientInfoChange('name', e.target.value)}
                 required
+                error={validationErrors?.name}
             />
             <Input
                 id="email"
@@ -34,6 +39,7 @@ export function ContactFields({ clientInfo, onClientInfoChange }: ContactFieldsP
                 value={clientInfo.email}
                 onChange={(e) => onClientInfoChange('email', e.target.value)}
                 required
+                error={validationErrors?.email}
             />
             <Input
                 id="company"

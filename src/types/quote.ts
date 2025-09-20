@@ -2,6 +2,15 @@
 
 export type Currency = 'USD' | 'MXN';
 
+// Add new interface for validation errors
+export interface ValidationErrors {
+    privacyPolicy?: string;
+    clientInfo?: {
+        name?: string;
+        email?: string;
+    };
+}
+
 export interface QuoteFormState {
     currentStep: number;
     selectedFeatures: string[];
@@ -13,6 +22,8 @@ export interface QuoteFormState {
     customFeatures: string;
     questions: string;
     totalPrice: number;
+    privacyAccepted: boolean;
+    validationErrors: ValidationErrors;
 }
 
 export interface ClientInfo {
@@ -76,9 +87,13 @@ export interface QuoteFormContextType {
     updateClientInfo: (field: keyof ClientInfo, value: string) => void;
     setCustomFeatures: (features: string) => void;
     setQuestions: (questions: string) => void;
+    setPrivacyAccepted: (accepted: boolean) => void;
     calculateTotal: () => void;
     resetForm: () => void;
     submitForm: () => Promise<{ success: boolean; message: string }>;
+    validateForm: () => boolean;
+    clearValidationErrors: () => void;
+    setValidationError: (field: keyof ValidationErrors, message: string | undefined) => void;
 }
 
 export interface FormStepProps {
@@ -129,9 +144,8 @@ export interface ClientInfoFormProps {
 }
 
 export interface ConfirmationMessageProps {
-    type: 'success' | 'error';
+    type: 'success';
     message: string;
-    onRetry?: () => void;
     onNewQuote?: () => void;
 }
 

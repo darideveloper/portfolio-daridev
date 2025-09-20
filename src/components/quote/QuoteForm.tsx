@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
-import { Flex, Heading, Text, Button } from '@/once-ui/components';
+import { useParams } from 'next/navigation';
+import { Flex, Heading, Text, Button, Checkbox } from '@/once-ui/components';
 import { QuoteFormProvider, useQuoteForm } from '@/contexts/QuoteFormContext';
 import { StepIndicator } from './StepIndicator';
 import { PriceDisplay } from './PriceDisplay';
@@ -18,6 +19,7 @@ const STEP_CATEGORIES = ['basic', 'sections', 'content', 'advanced', 'info'];
 
 function QuoteFormContent() {
     const t = useTranslations();
+    const params = useParams();
     const { 
         state, 
         calculateTotal, 
@@ -30,11 +32,15 @@ function QuoteFormContent() {
         updateClientInfo,
         setCustomFeatures,
         setQuestions,
-        submitForm
+        setPrivacyAccepted,
+        submitForm,
+        validateForm,
+        clearValidationErrors,
+        setValidationError
     } = useQuoteForm();
 
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [submissionResult, setSubmissionResult] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
+    const [submissionResult, setSubmissionResult] = useState<{ type: 'success'; message: string } | null>(null);
 
     // Calculate total whenever dependencies change
     useEffect(() => {
@@ -54,18 +60,31 @@ function QuoteFormContent() {
     };
 
     const handleSubmit = async () => {
+        // Clear any previous validation errors
+        clearValidationErrors();
+        
+        // Validate form before submission
+        const isValid = validateForm();
+        if (!isValid) {
+            return; // Stay on same screen, errors will be displayed inline
+        }
+        
         setIsSubmitting(true);
         try {
             const result = await submitForm();
-            setSubmissionResult({
-                type: result.success ? 'success' : 'error',
-                message: result.message
-            });
+            if (result.success) {
+                setSubmissionResult({
+                    type: 'success',
+                    message: result.message
+                });
+            } else {
+                // Handle API errors - could show inline or toast notification
+                // For now, we'll handle this in the context
+                console.error('Submission failed:', result.message);
+            }
         } catch (error) {
-            setSubmissionResult({
-                type: 'error',
-                message: t('quote.form.error')
-            });
+            // Handle network errors
+            console.error('Submission error:', error);
         } finally {
             setIsSubmitting(false);
         }
@@ -73,22 +92,17 @@ function QuoteFormContent() {
 
     const handleNewQuote = () => {
         setSubmissionResult(null);
+        clearValidationErrors();
         updateStep(1);
         // Reset form would go here
     };
 
-    const handleRetry = () => {
-        setSubmissionResult(null);
-        handleSubmit();
-    };
-
-    // Show confirmation message if submission completed
+    // Only show confirmation for success
     if (submissionResult) {
         return (
             <ConfirmationMessage
                 type={submissionResult.type}
                 message={submissionResult.message}
-                onRetry={submissionResult.type === 'error' ? handleRetry : undefined}
                 onNewQuote={handleNewQuote}
             />
         );
@@ -240,6 +254,7 @@ function QuoteFormContent() {
                             onClientInfoChange={updateClientInfo}
                             onCustomFeaturesChange={setCustomFeatures}
                             onQuestionsChange={setQuestions}
+                            validationErrors={state.validationErrors.clientInfo}
                         />
                         
                         <Flex
@@ -254,6 +269,69 @@ function QuoteFormContent() {
                             <Text variant="body-default-s" align="center">
                                 {t('quote.form.warning')}
                             </Text>
+                        </Flex>
+                        
+                        {/* Privacy Policy Acceptance */}
+                        <Flex
+                            fillWidth
+                            direction="column"
+                            gap="m"
+                            paddingY="l"
+                            style={{
+                                borderTop: '1px solid var(--color-neutral-weak)',
+                            }}>
+                            <Flex
+                                alignItems="center"
+                                gap="m"
+                                justifyContent="center">
+                                <Checkbox
+                                    isChecked={state.privacyAccepted}
+                                    onToggle={() => {
+                                        const newValue = !state.privacyAccepted;
+                                        setPrivacyAccepted(newValue);
+                                        // Clear privacy error when checked
+                                        if (newValue) {
+                                            setValidationError('privacyPolicy', undefined);
+                                        }
+                                    }}
+                                />
+                                <Text variant="body-default-s">
+                                    {t('quote.form.privacyAcceptance.text')}{' '}
+                                    <a 
+                                        href={`/${params?.locale}/privacy`} 
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                        style={{
+                                            color: 'var(--color-brand-strong)',
+                                            textDecoration: 'underline',
+                                        }}
+                                    >
+                                        {t('quote.form.privacyAcceptance.link')}
+                                    </a>
+                                </Text>
+                            </Flex>
+                            
+                            {/* Privacy Policy Error Message */}
+                            {state.validationErrors.privacyPolicy && (
+                                <Flex
+                                    fillWidth
+                                    paddingY="m"
+                                    style={{
+                                        backgroundColor: 'var(--color-danger-weak)',
+                                        border: '1px solid var(--color-danger-strong)',
+                                        borderRadius: 'var(--border-radius-m)',
+                                        padding: 'var(--spacing-m)',
+                                    }}>
+                                    <Text 
+                                        variant="body-default-s" 
+                                        align="center"
+                                        style={{
+                                            color: 'var(--color-danger-strong)',
+                                        }}>
+                                        {state.validationErrors.privacyPolicy}
+                                    </Text>
+                                </Flex>
+                            )}
                         </Flex>
                     </>
                 )}
@@ -280,7 +358,8 @@ function QuoteFormContent() {
                         <Button
                             variant="primary"
                             onClick={handleSubmit}
-                            loading={isSubmitting}>
+                            loading={isSubmitting}
+                            disabled={!state.privacyAccepted || !state.clientInfo.name.trim() || !state.clientInfo.email.trim()}>
                             {t('quote.form.submit')}
                         </Button>
                     ) : (

@@ -290,10 +290,15 @@
             "warning": "Esto es solo una aproximación general. Nuestro equipo de ventas te proporcionará una oferta personalizada después de revisar los detalles.",
             "success": "¡Cotización enviada exitosamente! Te contactaremos pronto.",
             "error": "Hubo un error al enviar tu cotización. Por favor intenta de nuevo.",
+            "privacyRequired": "Debes aceptar la Política de Privacidad para enviar tu cotización.",
             "currency": "Moneda:",
             "approximation": {
                 "title": "Precio Aproximado",
                 "description": "Este formulario proporciona solo una estimación aproximada. Nuestro equipo de ventas analizará tu proyecto en detalle y te proporcionará un precio exacto personalizado."
+            },
+            "privacyAcceptance": {
+                "text": "He leído y acepto la",
+                "link": "Política de Privacidad"
             }
         }
     },

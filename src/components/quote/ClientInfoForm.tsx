@@ -2,7 +2,7 @@
 
 import { Flex, Textarea, Text } from '@/once-ui/components';
 import { useTranslations } from 'next-intl';
-import { ClientInfoFormProps } from '@/types/quote';
+import { ClientInfoFormProps, ValidationErrors } from '@/types/quote';
 import { ContactFields } from './ContactFields';
 
 export function ClientInfoForm({ 
@@ -11,8 +11,9 @@ export function ClientInfoForm({
     questions, 
     onClientInfoChange, 
     onCustomFeaturesChange, 
-    onQuestionsChange 
-}: ClientInfoFormProps) {
+    onQuestionsChange,
+    validationErrors 
+}: ClientInfoFormProps & { validationErrors?: ValidationErrors['clientInfo'] }) {
     const t = useTranslations();
 
     return (
@@ -29,6 +30,7 @@ export function ClientInfoForm({
                 <ContactFields
                     clientInfo={clientInfo}
                     onClientInfoChange={onClientInfoChange}
+                    validationErrors={validationErrors}
                 />
             </Flex>
             

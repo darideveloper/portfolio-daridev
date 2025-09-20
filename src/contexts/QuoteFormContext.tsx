@@ -7,7 +7,8 @@ import {
     QuoteFormContextType, 
     Currency, 
     ClientInfo,
-    QuoteSubmission 
+    QuoteSubmission,
+    ValidationErrors
 } from '@/types/quote';
 import { calculateTotalPrice } from '@/app/resources/pricing';
 
@@ -27,7 +28,9 @@ const initialState: QuoteFormState = {
     },
     customFeatures: '',
     questions: '',
-    totalPrice: 0
+    totalPrice: 0,
+    privacyAccepted: false,
+    validationErrors: {}
 };
 
 // Action types
@@ -41,8 +44,11 @@ type QuoteFormAction =
     | { type: 'UPDATE_CLIENT_INFO'; payload: { field: keyof ClientInfo; value: string } }
     | { type: 'SET_CUSTOM_FEATURES'; payload: string }
     | { type: 'SET_QUESTIONS'; payload: string }
+    | { type: 'SET_PRIVACY_ACCEPTED'; payload: boolean }
     | { type: 'CALCULATE_TOTAL' }
-    | { type: 'RESET_FORM' };
+    | { type: 'RESET_FORM' }
+    | { type: 'SET_VALIDATION_ERROR'; payload: { field: keyof ValidationErrors; message: string | undefined } }
+    | { type: 'CLEAR_VALIDATION_ERRORS' };
 
 // Reducer
 const quoteFormReducer = (state: QuoteFormState, action: QuoteFormAction): QuoteFormState => {
@@ -92,6 +98,9 @@ const quoteFormReducer = (state: QuoteFormState, action: QuoteFormAction): Quote
         case 'SET_QUESTIONS':
             return { ...state, questions: action.payload };
         
+        case 'SET_PRIVACY_ACCEPTED':
+            return { ...state, privacyAccepted: action.payload };
+        
         case 'CALCULATE_TOTAL':
             const totalPrice = calculateTotalPrice(
                 state.selectedFeatures,
@@ -105,9 +114,46 @@ const quoteFormReducer = (state: QuoteFormState, action: QuoteFormAction): Quote
         case 'RESET_FORM':
             return initialState;
         
+        case 'SET_VALIDATION_ERROR':
+            return {
+                ...state,
+                validationErrors: {
+                    ...state.validationErrors,
+                    [action.payload.field]: action.payload.message
+                }
+            };
+        
+        case 'CLEAR_VALIDATION_ERRORS':
+            return {
+                ...state,
+                validationErrors: {}
+            };
+        
         default:
             return state;
     }
+};
+
+// Validation helper functions
+const validateEmail = (email: string): boolean => {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailPattern.test(email);
+};
+
+const validateClientInfo = (clientInfo: ClientInfo): Partial<ValidationErrors['clientInfo']> => {
+    const errors: Partial<ValidationErrors['clientInfo']> = {};
+    
+    if (!clientInfo.name.trim()) {
+        errors.name = 'Name is required';
+    }
+    
+    if (!clientInfo.email.trim()) {
+        errors.email = 'Email is required';
+    } else if (!validateEmail(clientInfo.email)) {
+        errors.email = 'Please enter a valid email address';
+    }
+    
+    return errors;
 };
 
 // Context
@@ -164,6 +210,10 @@ export const QuoteFormProvider: React.FC<{ children: React.ReactNode }> = ({ chi
         dispatch({ type: 'SET_QUESTIONS', payload: questions });
     }, []);
 
+    const setPrivacyAccepted = useCallback((accepted: boolean) => {
+        dispatch({ type: 'SET_PRIVACY_ACCEPTED', payload: accepted });
+    }, []);
+
     const calculateTotal = useCallback(() => {
         dispatch({ type: 'CALCULATE_TOTAL' });
     }, []);
@@ -172,8 +222,37 @@ export const QuoteFormProvider: React.FC<{ children: React.ReactNode }> = ({ chi
         dispatch({ type: 'RESET_FORM' });
     }, []);
 
+    const validateForm = useCallback((): boolean => {
+        const clientInfoErrors = validateClientInfo(state.clientInfo);
+        const hasClientInfoErrors = clientInfoErrors && Object.keys(clientInfoErrors).length > 0;
+        const hasPrivacyError = !state.privacyAccepted;
+        
+        // Set validation errors
+        dispatch({ 
+            type: 'SET_VALIDATION_ERROR', 
+            payload: { field: 'clientInfo', message: hasClientInfoErrors ? JSON.stringify(clientInfoErrors) : undefined }
+        });
+        dispatch({ 
+            type: 'SET_VALIDATION_ERROR', 
+            payload: { field: 'privacyPolicy', message: hasPrivacyError ? 'You must accept the Privacy Policy to submit your quote.' : undefined }
+        });
+        
+        return !hasClientInfoErrors && !hasPrivacyError;
+    }, [state.clientInfo, state.privacyAccepted]);
+
+    const clearValidationErrors = useCallback(() => {
+        dispatch({ type: 'CLEAR_VALIDATION_ERRORS' });
+    }, []);
+
+    const setValidationError = useCallback((field: keyof ValidationErrors, message: string | undefined) => {
+        dispatch({ type: 'SET_VALIDATION_ERROR', payload: { field, message } });
+    }, []);
+
     const submitForm = useCallback(async (): Promise<{ success: boolean; message: string }> => {
         try {
+            // Privacy policy and form validation are now handled by validateForm()
+            // This method only handles API submission
+
             // Import pricing data to get individual item prices
             const { FEATURES } = await import('@/app/resources/pricing');
             const { WEBSITE_SECTIONS: SECTIONS } = await import('@/app/resources/sections');
@@ -307,9 +386,13 @@ Submitted: ${new Date().toLocaleString()}
         updateClientInfo,
         setCustomFeatures,
         setQuestions,
+        setPrivacyAccepted,
         calculateTotal,
         resetForm,
-        submitForm
+        submitForm,
+        validateForm,
+        clearValidationErrors,
+        setValidationError
     };
 
     return (
