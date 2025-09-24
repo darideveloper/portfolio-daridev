@@ -286,12 +286,6 @@ const createI18nContent = (t) => {
     ]
   }
 
-  const newsletter = {
-    display: true,
-    title: <>{t("newsletter.title", { firstName: person.firstName })}</>,
-    description: <>{t("newsletter.description")}</>,
-    button: t("newsletter.button")
-  }
 
   // Add company information for privacy policy
   const company = {
@@ -378,7 +372,6 @@ const createI18nContent = (t) => {
     blog,
     work,
     gallery,
-    newsletter,
     privacy,
     company
   }
