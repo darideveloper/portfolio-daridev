@@ -47,11 +47,27 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 
     const handleControlClick = (index: number) => {
         if (index !== activeIndex) {
+            // Phase 1: Start fade-out
             setIsTransitioning(false);
+            
+            // Preload image during fade-out
+            const img = new Image();
+            img.onload = () => {
+                // Image is ready, wait for full fade-out duration (1s) + buffer
+                setTimeout(() => {
+                    setActiveIndex(index);
+                    setIsTransitioning(true); // Start fade-in
+                }, 1100); // 1s animation + 100ms buffer
+            };
+            img.src = images[index];
+            
+            // Fallback: proceed after 1.5s regardless of loading status
             setTimeout(() => {
-                setActiveIndex(index);
-                setIsTransitioning(true);
-            }, 630);
+                if (activeIndex !== index) {
+                    setActiveIndex(index);
+                    setIsTransitioning(true);
+                }
+            }, 1500);
         }
     };
 
