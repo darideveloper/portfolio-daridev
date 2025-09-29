@@ -26,7 +26,7 @@ export default function Post({ post, thumbnail }: PostProps) {
                 fillWidth paddingY="12" paddingX="16" gap="32">
                 {post.metadata.image && thumbnail && (
                     <Flex
-                        maxWidth={20} fillWidth
+                        fillWidth
                         className={styles.image}>
                         <SmartImage
                             priority
