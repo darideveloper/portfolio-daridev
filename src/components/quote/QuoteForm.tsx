@@ -277,14 +277,13 @@ function QuoteFormContent() {
                             fillWidth
                             direction="column"
                             gap="m"
-                            paddingY="l"
                             style={{
                                 borderTop: '1px solid var(--color-neutral-weak)',
                             }}>
                             <Flex
-                                alignItems="center"
+                                alignItems="left"
                                 gap="m"
-                                justifyContent="center">
+                                justifyContent="left">
                                 <Checkbox
                                     isChecked={state.privacyAccepted}
                                     onToggle={() => {
