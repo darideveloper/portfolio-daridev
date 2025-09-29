@@ -126,7 +126,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                         )}
                         {description?.trim() && (
                             <Text
-                                wrap="balance"
                                 variant="body-default-s"
                                 onBackground="neutral-weak">
                                 {description}
