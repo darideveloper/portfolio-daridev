@@ -49,7 +49,7 @@ export default function Post({ post, thumbnail }: PostProps) {
                     <Heading
                         as="h2"
                         variant="heading-strong-l"
-                        wrap="balance">
+                        >
                         {post.metadata.title}
                     </Heading>
                     <Text

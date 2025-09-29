@@ -109,7 +109,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                         flex={5}>
                         <Heading
                             as="h2"
-                            wrap="balance"
                             variant="heading-strong-xl">
                             {title}
                         </Heading>
