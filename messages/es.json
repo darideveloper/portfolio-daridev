@@ -250,7 +250,7 @@
                 "description": "Agregar soporte multiidioma para las secciones seleccionadas"
             },
             "backups": {
-                "name": "Respaldos Semanales / Mes",
+                "name": "Respaldos / Mes",
                 "description": "Respaldos automatizados semanales de tu sitio web"
             },
             "payments": {

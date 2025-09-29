@@ -250,7 +250,7 @@
                 "description": "Add multi-language support for selected sections"
             },
             "backups": {
-                "name": "Weekly Backups / Month",
+                "name": "Backups / Month",
                 "description": "Automated weekly backups of your website"
             },
             "payments": {
