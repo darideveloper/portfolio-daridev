@@ -97,7 +97,7 @@ Submitted: ${new Date().toLocaleString()}
         <Flex
             style={{overflow: 'hidden'}}
             position="relative"
-            fillWidth padding="xl" radius="l" marginBottom="m"
+            fillWidth padding="l" radius="l" marginBottom="m" paddingY='xl'
             direction="column" alignItems="center" align="center"
             background="surface" border="neutral-medium" borderStyle="solid-1">
             <Background
