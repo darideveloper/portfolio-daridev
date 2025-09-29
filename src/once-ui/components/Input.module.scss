@@ -129,6 +129,11 @@
     }
 
     &::placeholder {
+        color: transparent;
+        transition: color 0.2s ease-in-out;
+    }
+    
+    &:focus::placeholder {
         color: var(--neutral-on-background-weak);
     }
 

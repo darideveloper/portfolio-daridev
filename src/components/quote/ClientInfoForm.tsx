@@ -32,14 +32,6 @@ export function ClientInfoForm({
                     onClientInfoChange={onClientInfoChange}
                     validationErrors={validationErrors}
                 />
-            </Flex>
-            
-            <Flex
-                direction="column"
-                gap="m">
-                <Text variant="body-default-m" weight="strong">
-                    {t('quote.form.customFeatures')}
-                </Text>
                 <Textarea
                     id="customFeatures"
                     label={t('quote.form.customFeatures')}
@@ -48,14 +40,6 @@ export function ClientInfoForm({
                     onChange={(e) => onCustomFeaturesChange(e.target.value)}
                     rows={3}
                 />
-            </Flex>
-            
-            <Flex
-                direction="column"
-                gap="m">
-                <Text variant="body-default-m" weight="strong">
-                    {t('quote.form.questions')}
-                </Text>
                 <Textarea
                     id="questions"
                     label={t('quote.form.questions')}
