@@ -164,6 +164,7 @@ function QuoteFormContent() {
                 <Flex
                     fillWidth
                     justifyContent="space-between"
+                    mobileDirection='column'
                     alignItems="center"
                     gap="l"
                     style={{
