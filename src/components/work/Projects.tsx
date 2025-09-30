@@ -34,7 +34,7 @@ export function Projects({ range, locale }: ProjectsProps) {
                     avatars={post.metadata.team?.map((member) => ({ src: member.avatar })) || []}
                     link={post.metadata.link || ""}
                     autoPlay={true}
-                    autoPlayDelay={4000}
+                    autoPlayDelay={2000}
                     pauseOnHover={true}
                     showNavigation={false}
                     showPagination={true}

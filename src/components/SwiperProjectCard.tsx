@@ -41,7 +41,7 @@ export const SwiperProjectCard: React.FC<SwiperProjectCardProps> = ({
     avatars,
     link,
     autoPlay = true,
-    autoPlayDelay = 4000,
+    autoPlayDelay = 2000,
     pauseOnHover = true,
     showNavigation = false,
     showPagination = true,
