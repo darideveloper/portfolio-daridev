@@ -125,7 +125,9 @@
     },
     "projectCard": {
         "label": "Leer más",
-        "link": "Enlace del proyecto"
+        "link": "Enlace del proyecto",
+        "play": "Reproducir",
+        "pause": "Pausar"
     },
     "quote": {
         "title": "Obtener Cotización",

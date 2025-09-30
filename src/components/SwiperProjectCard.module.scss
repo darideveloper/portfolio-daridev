@@ -1,0 +1,111 @@
+.swiperContainer {
+    width: 100%;
+    position: relative;
+    
+    .swiperSlide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .swiperPagination {
+        position: relative;
+        margin-top: 16px;
+        display: flex;
+        justify-content: center;
+        gap: 4px;
+        
+        .customBullet {
+            width: 32px;
+            height: 2px;
+            background: var(--neutral-alpha-medium);
+            border-radius: 0;
+            opacity: 1;
+            transition: background 0.3s ease;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            
+            &:hover {
+                background: var(--neutral-alpha-strong);
+            }
+            
+            &.swiper-pagination-bullet-active {
+                background: var(--neutral-on-background-strong);
+            }
+        }
+    }
+    
+    .swiperNavigation {
+        .swiperButtonNext,
+        .swiperButtonPrev {
+            color: var(--neutral-on-background-strong);
+            width: 32px;
+            height: 32px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            cursor: pointer;
+            
+            &:after {
+                font-size: 16px;
+            }
+            
+            &:hover {
+                color: var(--neutral-on-background-medium);
+            }
+        }
+        
+        .swiperButtonNext {
+            right: 8px;
+        }
+        
+        .swiperButtonPrev {
+            left: 8px;
+        }
+    }
+    
+    .autoPlayControls {
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+        padding-top: 8px;
+    }
+}
+
+// Swiper fade effect styles
+.swiperFade {
+    .swiperSlide {
+        opacity: 0;
+        transition-property: opacity;
+    }
+    
+    .swiperSlideActive {
+        opacity: 1;
+    }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+    .swiperContainer {
+        .swiperNavigation {
+            .swiperButtonNext,
+            .swiperButtonPrev {
+                width: 28px;
+                height: 28px;
+                
+                &:after {
+                    font-size: 14px;
+                }
+            }
+        }
+        
+        .swiperPagination {
+            .customBullet {
+                width: 24px;
+                height: 2px;
+            }
+        }
+    }
+}

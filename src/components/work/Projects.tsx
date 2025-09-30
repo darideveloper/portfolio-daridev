@@ -1,7 +1,7 @@
 import { getPosts } from '@/app/utils/utils';
 import { Flex } from '@/once-ui/components';
 
-import { ProjectCard } from '@/components';
+import { SwiperProjectCard } from '@/components/SwiperProjectCard';
 
 interface ProjectsProps {
     range?: [number, number?];
@@ -24,7 +24,7 @@ export function Projects({ range, locale }: ProjectsProps) {
             fillWidth gap="xl" marginBottom="40" paddingX="l"
             direction="column">
             {displayedProjects.map((post) => (
-                <ProjectCard
+                <SwiperProjectCard
                     key={post.slug}
                     href={`work/${post.slug}`}
                     images={post.metadata.images}
@@ -33,6 +33,11 @@ export function Projects({ range, locale }: ProjectsProps) {
                     content={post.content}
                     avatars={post.metadata.team?.map((member) => ({ src: member.avatar })) || []}
                     link={post.metadata.link || ""}
+                    autoPlay={true}
+                    autoPlayDelay={4000}
+                    pauseOnHover={true}
+                    showNavigation={false}
+                    showPagination={true}
                 />
             ))}
         </Flex>
