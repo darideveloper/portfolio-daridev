@@ -49,18 +49,42 @@ export const SwiperProjectCard: React.FC<SwiperProjectCardProps> = ({
     const [swiperRef, setSwiperRef] = useState<SwiperType | null>(null);
     const [isPlaying, setIsPlaying] = useState(autoPlay);
     const [currentSlide, setCurrentSlide] = useState(0);
+    const [loadedImages, setLoadedImages] = useState(new Set<number>());
     const t = useTranslations();
 
-    // Preload images for better performance
+    // Smart preloading: Load first 3 images immediately + current + adjacent
     useEffect(() => {
-        if (images.length > 1) {
-            const preloadImage = (src: string) => {
+        if (images.length > 0) {
+            const preloadImage = (src: string, index: number) => {
                 const img = new Image();
                 img.src = src;
+                setLoadedImages(prev => new Set(Array.from(prev).concat(index)));
             };
-            images.forEach(preloadImage);
+            
+            // Load first 3 images immediately (critical for UX)
+            const initialImages = images.slice(0, Math.min(3, images.length));
+            initialImages.forEach((img, i) => preloadImage(img, i));
         }
     }, [images]);
+
+    // Memory cleanup: Remove unused images after 5 seconds
+    useEffect(() => {
+        const cleanup = () => {
+            const keepRange = [currentSlide - 2, currentSlide + 3];
+            setLoadedImages(prev => {
+                const newSet = new Set<number>();
+                keepRange.forEach(i => {
+                    if (i >= 0 && i < images.length && prev.has(i)) {
+                        newSet.add(i);
+                    }
+                });
+                return newSet;
+            });
+        };
+        
+        const timer = setTimeout(cleanup, 5000); // Cleanup after 5 seconds
+        return () => clearTimeout(timer);
+    }, [currentSlide, images.length]);
 
     // Auto-play control handlers
     const handlePlay = () => {
@@ -100,9 +124,19 @@ export const SwiperProjectCard: React.FC<SwiperProjectCardProps> = ({
         }
     };
 
-    // Handle slide change
+    // Handle slide change with smart loading
     const handleSlideChange = (swiper: SwiperType) => {
-        setCurrentSlide(swiper.realIndex);
+        const newIndex = swiper.realIndex;
+        setCurrentSlide(newIndex);
+        
+        // Load current + next image if not already loaded
+        [newIndex, newIndex + 1].forEach(i => {
+            if (i < images.length && !loadedImages.has(i)) {
+                const img = new Image();
+                img.src = images[i];
+                setLoadedImages(prev => new Set(Array.from(prev).concat(i)));
+            }
+        });
     };
 
     // Get responsive configuration
@@ -239,6 +273,8 @@ export const SwiperProjectCard: React.FC<SwiperProjectCardProps> = ({
                                     src={image}
                                     onClick={handleImageClick}
                                     onKeyDown={handleKeyDown}
+                                    loading={index < 3 ? 'eager' : 'lazy'}
+                                    priority={index < 3}
                                     style={{
                                         border: '1px solid var(--neutral-alpha-weak)',
                                         cursor: 'pointer',
