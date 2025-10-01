@@ -59,11 +59,13 @@ export function generateMetadata({ params: { slug, locale } }: BlogParams) {
   let ogImage = image
     ? `https://${baseURL}${image}`
     : `https://${baseURL}/images/avatar.png`
+    
+  const postsTags = post.metadata.tag || []
 
   return {
     title,
     description,
-    keywords: `blog, ${title}, portfolio, web development, design, Next.js, React, fullstack, automation, DevOps, Dari Dev, article`,
+    keywords: `blog, ${(Array.isArray(postsTags) ? postsTags.join(', ') : postsTags)}, portfolio, web development, design, Next.js, React, fullstack, automation, DevOps, Dari Dev, article`,
     author: 'Dari Dev',
     openGraph: {
       title,
