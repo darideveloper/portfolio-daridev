@@ -1,5 +1,6 @@
 import ScrollToHash from '@/components/ScrollToHash'
 import { notFound } from 'next/navigation'
+import { QuoteForm } from '@/components/quote'
 import { CustomMDX } from '@/components/mdx'
 import { getPosts } from '@/app/utils/utils'
 import { Avatar, Button, Flex, Heading, Text } from '@/once-ui/components'
@@ -125,6 +126,7 @@ export default function Blog({ params }: BlogParams) {
       direction='column'
       gap='m'
     >
+
       <script
         type='application/ld+json'
         suppressHydrationWarning
@@ -184,6 +186,10 @@ export default function Blog({ params }: BlogParams) {
         <CustomMDX source={post.content} />
       </Flex>
       <ScrollToHash />
+
+      {/* Quote Form at footer */}
+      <QuoteForm />
+
     </Flex>
   )
 }
