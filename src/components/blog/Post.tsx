@@ -38,12 +38,13 @@ export default function Post({ post, thumbnail }: PostProps) {
       >
         {post.metadata.image && thumbnail && (
           <Flex
-            fillWidth
             className={styles.image}
+            style={{
+              width: '100%',
+            }}
           >
             <SmartImage
               priority
-              sizes='640px'
               style={{
                 cursor: 'pointer',
                 border: '1px solid var(--neutral-alpha-weak)',
@@ -60,6 +61,9 @@ export default function Post({ post, thumbnail }: PostProps) {
           gap='8'
           direction='column'
           justifyContent='center'
+          style={{
+            width: '100%',
+          }}
         >
           <Heading
             as='h2'
