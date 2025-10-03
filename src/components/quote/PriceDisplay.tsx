@@ -1,6 +1,6 @@
 "use client";
 
-import { Flex, Text, Heading } from '@/once-ui/components';
+import { Flex, Text } from '@/once-ui/components';
 import { PriceDisplayProps } from '@/types/quote';
 
 export function PriceDisplay({ totalPrice, currency }: PriceDisplayProps) {
@@ -34,14 +34,14 @@ export function PriceDisplay({ totalPrice, currency }: PriceDisplayProps) {
                 }}>
                 Estimated Total
             </Text>
-            <Heading 
+            <Text 
                 variant="display-strong-m"
                 style={{
                     color: 'var(--color-brand-strong)',
                     margin: 0,
                 }}>
                 {formatPrice(totalPrice, currency)}
-            </Heading>
+            </Text>
         </Flex>
     );
 }
