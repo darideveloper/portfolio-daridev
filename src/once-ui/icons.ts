@@ -20,7 +20,9 @@ import {
 	HiEnvelope,
 	HiCalendarDays,
 	HiClipboard,
-	HiArrowRight
+	HiArrowRight,
+	HiPlay,
+	HiPause
 } from "react-icons/hi2";
 
 import {
@@ -79,4 +81,6 @@ export const iconLibrary: Record<string, IconType> = {
 	telegram: FaTelegram,
 	fiverr: SiFiverr,
 	quote: FaFileInvoiceDollar,
+	play: HiPlay,
+	pause: HiPause,
 };

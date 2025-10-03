@@ -38,7 +38,7 @@ function readMDXFile(filePath: string) {
 
     const metadata: Metadata = {
         title: data.title || '',
-        publishedAt: data.publishedAt,
+        publishedAt: data.publishedAt || '',
         summary: data.summary || '',
         image: data.image || '',
         images: data.images || [],

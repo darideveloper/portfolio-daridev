@@ -9,6 +9,9 @@ import { useTranslations } from 'next-intl';
 import { formatDate } from '@/app/utils/formatDate';
 import ScrollToHash from '@/components/ScrollToHash';
 
+// Dari Dev Components
+import ShareButtons from '@/components/ShareButtons'
+
 interface WorkParams {
     params: {
         slug: string;
@@ -51,30 +54,44 @@ export function generateMetadata({ params: { slug, locale } }: WorkParams) {
 	} = post.metadata
 	let ogImage = image
 		? `https://${baseURL}${image}`
-		: `https://${baseURL}/og?title=${title}`;
+		: `https://${baseURL}/images/avatar.png`;
 
 	return {
 		title,
 		description,
-		images,
-		team,
+		keywords: `project, ${title}, portfolio, web development, design, Next.js, React, fullstack, automation, DevOps, Dari Dev`,
+		author: 'Dari Dev',
 		openGraph: {
 			title,
 			description,
 			type: 'article',
 			publishedTime,
 			url: `https://${baseURL}/${locale}/work/${post.slug}`,
+			siteName: 'Dari Dev Portfolio',
+			locale: 'en_US',
 			images: [
 				{
 					url: ogImage,
+					alt: `${title} - Project by Dari Dev`,
+					width: 1200,
+					height: 630,
 				},
 			],
 		},
 		twitter: {
 			card: 'summary_large_image',
+			site: '@DeveloperDari',
+			creator: '@DeveloperDari',
 			title,
 			description,
 			images: [ogImage],
+		},
+		alternates: {
+			canonical: `https://${baseURL}/${locale}/work/${post.slug}`,
+			languages: {
+				'en': `https://${baseURL}/en/work/${post.slug}`,
+				'es': `https://${baseURL}/es/work/${post.slug}`,
+			},
 		},
 	}
 }
@@ -162,6 +179,9 @@ export default function Project({ params }: WorkParams) {
 						{formatDate(post.metadata.publishedAt)}
 					</Text>
 				</Flex>
+
+				<ShareButtons />
+
 				<CustomMDX source={post.content} />
 			</Flex>
 			<ScrollToHash />

@@ -1,0 +1,90 @@
+/* Mobile styles */
+@media (max-width: 768px) {
+  .content-about .smartImageContainer {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 16px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    /* Make container fit content and respect image aspect ratio */
+    position: relative !important;
+    height: auto !important;
+    aspect-ratio: unset !important;
+    /* Remove any fixed dimensions that might cause empty space */
+    min-height: 0 !important;
+  }
+  
+  /* Make images fit naturally within container and preserve aspect ratio */
+  .content-about .smartImageContainer img,
+  .content-about .smartImageContainer video,
+  .content-about .smartImageContainer iframe {
+    position: static !important;
+    inset: unset !important;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    max-width: calc(100% - 32px) !important;
+    max-height: none !important;
+    min-height: 0 !important;
+    /* Remove absolute positioning to let container size to content */
+    display: block !important;
+  }
+  
+  /* Override any absolute positioning that might cause empty space */
+  .content-about .smartImageContainer > div {
+    position: static !important;
+    height: auto !important;
+    width: 100% !important;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 500px) {
+  .content-about .smartImageContainer {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin-left: calc(-50vw + 50%) !important;
+    margin-right: calc(-50vw + 50%) !important;
+    padding: 16px !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+    /* Make container fit content and respect image aspect ratio */
+    position: relative !important;
+    height: auto !important;
+    aspect-ratio: unset !important;
+    min-height: 0 !important;
+  }
+  
+  /* Make images fit naturally within viewport and preserve aspect ratio */
+  .content-about .smartImageContainer img,
+  .content-about .smartImageContainer video,
+  .content-about .smartImageContainer iframe {
+    position: static !important;
+    inset: unset !important;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    max-width: calc(100vw - 32px) !important;
+    max-height: none !important;
+    min-height: 0 !important;
+    /* Remove absolute positioning to let container size to content */
+    display: block !important;
+  }
+  
+  /* Ensure the parent containers don't constrain */
+  .content-about .smartImageContainer > * {
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+  
+  /* Override any absolute positioning that might cause empty space */
+  .content-about .smartImageContainer > div {
+    position: static !important;
+    height: auto !important;
+    width: 100% !important;
+  }
+}

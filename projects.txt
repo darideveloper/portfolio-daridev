@@ -39,9 +39,7 @@ https://github.com/darideveloper/sorteos-ajolote-backend
 https://github.com/darideveloper/optima
 https://github.com/darideveloper/buenos-aires-aire-acondicionado
 https://github.com/darideveloper/First-in-Flight-Network
-https://github.com/darideveloper/Keagan-s-Kloset-Boutique
-https://github.com/darideveloper/webleague
-https://github.com/darideveloper/XYMale-Barbershop
+* https://github.com/darideveloper/XYMale-Barbershop
 https://drive.google.com/drive/folders/104B2A4yRohU1WWoaW8YDg_3CC07UtpIN?usp=drive_link
 https://drive.google.com/drive/folders/19wL5-qRRJIMrB0PxIKFa-kVBIX1zbJJT?usp=drive_link
 https://drive.google.com/drive/folders/1medcqqmCopjPz7X0hsRi6eOhFvK2Rc4S?usp=drive_link

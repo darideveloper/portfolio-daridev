@@ -27,6 +27,13 @@ export async function generateMetadata(
 		metadataBase: new URL(`https://${baseURL}/${locale}`),
 		title: home.title,
 		description: home.description,
+		keywords: 'portfolio, web development, design, Next.js, React, fullstack, automation, DevOps, Dari Dev',
+		author: person.name,
+		viewport: 'width=device-width, initial-scale=1, viewport-fit=cover',
+		charset: 'utf-8',
+		referrer: 'origin-when-cross-origin',
+		themeColor: '#000000',
+		colorScheme: 'light dark',
 		openGraph: {
 			title: `${person.firstName}'s Portfolio`,
 			description: 'Portfolio website showcasing my work.',
@@ -34,6 +41,22 @@ export async function generateMetadata(
 			siteName: `${person.firstName}'s Portfolio`,
 			locale: 'en_US',
 			type: 'website',
+			images: [
+				{
+					url: `${baseURL}${person.avatar}`,
+					alt: `${person.name} - ${person.role}`,
+					width: 400,
+					height: 400,
+				},
+			],
+		},
+		twitter: {
+			card: 'summary_large_image',
+			site: '@DeveloperDari',
+			creator: '@DeveloperDari',
+			title: `${person.firstName}'s Portfolio`,
+			description: 'Portfolio website showcasing my work.',
+			images: [`${baseURL}${person.avatar}`],
 		},
 		robots: {
 			index: true,
@@ -44,6 +67,17 @@ export async function generateMetadata(
 				'max-video-preview': -1,
 				'max-image-preview': 'large',
 				'max-snippet': -1,
+			},
+		},
+		verification: {
+			google: 'your-google-verification-code',
+			yandex: 'your-yandex-verification-code',
+		},
+		alternates: {
+			canonical: `https://${baseURL}/${locale}`,
+			languages: {
+				'en': `https://${baseURL}/en`,
+				'es': `https://${baseURL}/es`,
 			},
 		},
 	}
@@ -83,12 +117,14 @@ export function generateStaticParams() {
 	return routing.locales.map((locale) => ({locale}));
   }
 
-export default async function RootLayout({
+  export default async function RootLayout({
 	children,
 	params: {locale}
 } : RootLayoutProps) {
 	unstable_setRequestLocale(locale);
 	const messages = await getMessages();
+	const t = await getTranslations();
+	const { person, social } = renderContent(t);
 	return (
 		<NextIntlClientProvider messages={messages}>
 			<Flex
@@ -109,6 +145,34 @@ export default async function RootLayout({
 					as="body"
 					fillWidth margin="0" padding="0"
 					direction="column">
+					<script
+						type="application/ld+json"
+						suppressHydrationWarning
+						dangerouslySetInnerHTML={{
+							__html: JSON.stringify({
+								'@context': 'https://schema.org',
+								'@type': 'Organization',
+								name: `${person.firstName}'s Portfolio`,
+								url: `https://${baseURL}`,
+								logo: `https://${baseURL}${person.avatar}`,
+								description: 'Portfolio website showcasing web development and design work',
+								sameAs: social
+									.filter((item) => item.link && !item.link.startsWith('mailto:'))
+									.map((item) => item.link),
+								founder: {
+									'@type': 'Person',
+									name: person.name,
+									jobTitle: person.role,
+									image: `https://${baseURL}${person.avatar}`,
+								},
+								contactPoint: {
+									'@type': 'ContactPoint',
+									contactType: 'customer service',
+									email: 'darideveloper@gmail.com',
+								},
+							}),
+						}}
+					/>
 					<Background
 						mask={effects.mask as any}
 						gradient={effects.gradient as any}

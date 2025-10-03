@@ -1,4 +1,4 @@
-const baseURL = 'darideveloper.com'
+const baseURL = 'https://www.darideveloper.com'
 
 // Enable localization
 const i18n = true;
@@ -15,6 +15,8 @@ const routes = {
     '/work':    true,
     '/blog':    true,
     '/gallery': false,
+    '/quote':   true,
+    '/privacy': true,
 }
 
 // Enable password protection on selected routes

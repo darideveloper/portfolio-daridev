@@ -1,4 +1,5 @@
 import { InlineCode } from "@/once-ui/components"
+import { branding } from './branding'
 
 /**
  * Returns a Jsx ul list from string separated by ;
@@ -21,15 +22,15 @@ const createI18nContent = (t) => {
       return `${this.firstName} ${this.lastName}`
     },
     role: t("person.role"),
-    avatar: '/images/avatar.png',
-    location: 'America/Mexico_City',        // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-    languages: ['Español', "English"]  // optional: Leave the array empty if you don't want to display languages
+    avatar: branding.assets.avatar,
+    location: branding.contact.location,
+    languages: branding.contact.languages
   }
 
-  const newsletter = {
+  const contact = {
     display: true,
-    title: <>{t("newsletter.title", { firstName: person.firstName })}</>,
-    description: <>{t("newsletter.description")}</>
+    title: <>{t("contact.title")}</>,
+    description: <>{t("contact.description")}</>
   }
 
   const social = [
@@ -38,27 +39,27 @@ const createI18nContent = (t) => {
     {
       name: 'GitHub',
       icon: 'github',
-      link: 'https://github.com/darideveloper?tab=repositories',
+      link: `https://github.com/${branding.social.github}?tab=repositories`,
     },
     {
       name: 'Email',
       icon: 'email',
-      link: 'mailto:darideveloper@gmail.com',
+      link: `mailto:${branding.contact.email}`,
     },
     {
       name: 'WhatsApp',
       icon: 'whatsapp',
-      link: 'https://api.whatsapp.com/send?phone=5214493402622',
+      link: `https://api.whatsapp.com/send?phone=${branding.contact.phone}`,
     },
     {
       name: 'Telegram',
       icon: 'telegram',
-      link: 'https://t.me/darideveloper',
+      link: `https://t.me/${branding.social.telegram}`,
     },
     {
       name: 'Fiverr',
       icon: 'fiverr',
-      link: 'https://www.fiverr.com/s/AyKKV6Q',
+      link: branding.social.fiverr,
     },
   ]
 
@@ -284,15 +285,95 @@ const createI18nContent = (t) => {
       },
     ]
   }
+
+
+  // Add company information for privacy policy
+  const company = {
+    name: branding.company.name,
+    fullName: branding.company.fullName,
+    legalName: branding.company.legalName,
+    email: branding.contact.email,
+    website: branding.contact.website
+  }
+
+  const privacy = {
+    title: t("privacy.title"),
+    lastUpdated: t("privacy.lastUpdated", { date: new Date().toLocaleDateString() }),
+    introduction: {
+      title: t("privacy.introduction.title"),
+      content: t("privacy.introduction.content", { companyName: company.name }),
+    },
+    dataCollection: {
+      title: t("privacy.dataCollection.title"),
+      content: t("privacy.dataCollection.content"),
+      items: [
+        t("privacy.dataCollection.items.0"),
+        t("privacy.dataCollection.items.1"),
+        t("privacy.dataCollection.items.2"),
+        t("privacy.dataCollection.items.3"),
+      ],
+    },
+    dataUsage: {
+      title: t("privacy.dataUsage.title"),
+      content: t("privacy.dataUsage.content"),
+      items: [
+        t("privacy.dataUsage.items.0"),
+        t("privacy.dataUsage.items.1"),
+        t("privacy.dataUsage.items.2"),
+        t("privacy.dataUsage.items.3"),
+      ],
+    },
+    dataStorage: {
+      title: t("privacy.dataStorage.title"),
+      content: t("privacy.dataStorage.content"),
+    },
+    dataSharing: {
+      title: t("privacy.dataSharing.title"),
+      content: t("privacy.dataSharing.content"),
+      items: [
+        t("privacy.dataSharing.items.0"),
+        t("privacy.dataSharing.items.1"),
+        t("privacy.dataSharing.items.2"),
+      ],
+    },
+    cookies: {
+      title: t("privacy.cookies.title"),
+      content: t("privacy.cookies.content"),
+    },
+    yourRights: {
+      title: t("privacy.yourRights.title"),
+      content: t("privacy.yourRights.content"),
+      items: [
+        t("privacy.yourRights.items.0"),
+        t("privacy.yourRights.items.1"),
+        t("privacy.yourRights.items.2"),
+        t("privacy.yourRights.items.3"),
+        t("privacy.yourRights.items.4"),
+      ],
+    },
+    contact: {
+      title: t("privacy.contact.title"),
+      content: t("privacy.contact.content"),
+      email: t("privacy.contact.email", { email: company.email }),
+      website: t("privacy.contact.website", { website: company.website }),
+    },
+    changes: {
+      title: t("privacy.changes.title"),
+      content: t("privacy.changes.content"),
+    },
+  }
+
   return {
     person,
     social,
-    newsletter,
+    contact,
     home,
     about,
     blog,
     work,
-    gallery
+    gallery,
+    privacy,
+    company
   }
 }
 

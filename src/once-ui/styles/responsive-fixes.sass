@@ -1,0 +1,437 @@
+// =============================================================================
+// RESPONSIVE FIXES - Global Sass utilities for responsive design
+// =============================================================================
+
+// Mixins for responsive breakpoints
+@mixin mobile-only
+  @media (max-width: 768px)
+    @content
+
+@mixin tablet-only
+  @media (min-width: 769px) and (max-width: 1024px)
+    @content
+
+@mixin desktop-only
+  @media (min-width: 1025px)
+    @content
+
+@mixin mobile-and-tablet
+  @media (max-width: 1024px)
+    @content
+
+@mixin tablet-and-desktop
+  @media (min-width: 769px)
+    @content
+
+// Using the existing custom media queries from breakpoints.scss
+@mixin small-screen
+  @media (--s)
+    @content
+
+@mixin medium-screen
+  @media (--m)
+    @content
+
+@mixin large-screen
+  @media (--l)
+    @content
+
+// =============================================================================
+// RESPONSIVE UTILITIES
+// =============================================================================
+
+// Hide/show utilities for different screen sizes
+.hide-mobile
+  @include mobile-only
+    display: none !important
+
+.hide-tablet
+  @include tablet-only
+    display: none !important
+
+.hide-desktop
+  @include desktop-only
+    display: none !important
+
+.show-mobile-only
+  display: none !important
+  @include mobile-only
+    display: block !important
+
+.show-tablet-only
+  display: none !important
+  @include tablet-only
+    display: block !important
+
+.show-desktop-only
+  display: none !important
+  @include desktop-only
+    display: block !important
+
+// =============================================================================
+// RESPONSIVE TYPOGRAPHY
+// =============================================================================
+
+// Responsive font sizes
+.responsive-text-xs
+  font-size: 0.75rem
+  @include mobile-only
+    font-size: 0.7rem
+
+.responsive-text-sm
+  font-size: 0.875rem
+  @include mobile-only
+    font-size: 0.8rem
+
+.responsive-text-base
+  font-size: 1rem
+  @include mobile-only
+    font-size: 0.9rem
+
+.responsive-text-lg
+  font-size: 1.125rem
+  @include mobile-only
+    font-size: 1rem
+
+.responsive-text-xl
+  font-size: 1.25rem
+  @include mobile-only
+    font-size: 1.1rem
+
+.responsive-text-2xl
+  font-size: 1.5rem
+  @include mobile-only
+    font-size: 1.3rem
+
+.responsive-text-3xl
+  font-size: 1.875rem
+  @include mobile-only
+    font-size: 1.5rem
+
+.responsive-text-4xl
+  font-size: 2.25rem
+  @include mobile-only
+    font-size: 1.8rem
+
+.responsive-text-5xl
+  font-size: 3rem
+  @include mobile-only
+    font-size: 2.2rem
+
+// =============================================================================
+// RESPONSIVE SPACING
+// =============================================================================
+
+// Responsive padding utilities
+.responsive-p-1
+  padding: 0.25rem
+  @include mobile-only
+    padding: 0.125rem
+
+.responsive-p-2
+  padding: 0.5rem
+  @include mobile-only
+    padding: 0.375rem
+
+.responsive-p-3
+  padding: 0.75rem
+  @include mobile-only
+    padding: 0.5rem
+
+.responsive-p-4
+  padding: 1rem
+  @include mobile-only
+    padding: 0.75rem
+
+.responsive-p-6
+  padding: 1.5rem
+  @include mobile-only
+    padding: 1rem
+
+.responsive-p-8
+  padding: 2rem
+  @include mobile-only
+    padding: 1.25rem
+
+// Responsive margin utilities
+.responsive-m-1
+  margin: 0.25rem
+  @include mobile-only
+    margin: 0.125rem
+
+.responsive-m-2
+  margin: 0.5rem
+  @include mobile-only
+    margin: 0.375rem
+
+.responsive-m-3
+  margin: 0.75rem
+  @include mobile-only
+    margin: 0.5rem
+
+.responsive-m-4
+  margin: 1rem
+  @include mobile-only
+    margin: 0.75rem
+
+.responsive-m-6
+  margin: 1.5rem
+  @include mobile-only
+    margin: 1rem
+
+.responsive-m-8
+  margin: 2rem
+  @include mobile-only
+    margin: 1.25rem
+
+// =============================================================================
+// RESPONSIVE LAYOUT
+// =============================================================================
+
+// Responsive container with max-width
+.responsive-container
+  width: 100%
+  max-width: 1200px
+  margin: 0 auto
+  padding: 0 1rem
+  @include mobile-only
+    padding: 0 0.75rem
+    max-width: 100%
+
+// Responsive grid columns
+.responsive-grid
+  display: grid
+  gap: 1rem
+  @include mobile-only
+    gap: 0.75rem
+
+.responsive-grid-2
+  @extend .responsive-grid
+  grid-template-columns: repeat(2, 1fr)
+  @include mobile-only
+    grid-template-columns: 1fr
+
+.responsive-grid-3
+  @extend .responsive-grid
+  grid-template-columns: repeat(3, 1fr)
+  @include tablet-only
+    grid-template-columns: repeat(2, 1fr)
+  @include mobile-only
+    grid-template-columns: 1fr
+
+.responsive-grid-4
+  @extend .responsive-grid
+  grid-template-columns: repeat(4, 1fr)
+  @include tablet-and-desktop
+    grid-template-columns: repeat(2, 1fr)
+  @include mobile-only
+    grid-template-columns: 1fr
+
+// =============================================================================
+// RESPONSIVE FLEXBOX
+// =============================================================================
+
+.responsive-flex
+  display: flex
+  @include mobile-only
+    flex-direction: column
+
+.responsive-flex-row
+  display: flex
+  flex-direction: row
+  @include mobile-only
+    flex-direction: column
+
+.responsive-flex-col
+  display: flex
+  flex-direction: column
+  @include tablet-and-desktop
+    flex-direction: row
+
+// =============================================================================
+// RESPONSIVE IMAGES
+// =============================================================================
+
+.responsive-img
+  max-width: 100%
+  height: auto
+  display: block
+
+.responsive-img-cover
+  @extend .responsive-img
+  object-fit: cover
+  width: 100%
+
+.responsive-img-contain
+  @extend .responsive-img
+  object-fit: contain
+  width: 100%
+
+// =============================================================================
+// RESPONSIVE NAVIGATION
+// =============================================================================
+
+.responsive-nav
+  @include mobile-only
+    flex-direction: column
+    align-items: stretch
+
+.responsive-nav-item
+  @include mobile-only
+    width: 100%
+    text-align: center
+    padding: 0.75rem 0
+
+// =============================================================================
+// RESPONSIVE CARDS
+// =============================================================================
+
+.responsive-card
+  padding: 1.5rem
+  border-radius: 0.5rem
+  @include mobile-only
+    padding: 1rem
+    border-radius: 0.375rem
+
+.responsive-card-grid
+  @extend .responsive-grid-3
+  @include tablet-only
+    grid-template-columns: repeat(2, 1fr)
+  @include mobile-only
+    grid-template-columns: 1fr
+
+// =============================================================================
+// RESPONSIVE FORMS
+// =============================================================================
+
+.responsive-form
+  max-width: 600px
+  @include mobile-only
+    max-width: 100%
+
+.responsive-input
+  width: 100%
+  padding: 0.75rem
+  @include mobile-only
+    padding: 0.625rem
+
+.responsive-textarea
+  @extend .responsive-input
+  min-height: 120px
+  @include mobile-only
+    min-height: 100px
+
+// =============================================================================
+// RESPONSIVE MODALS/OVERLAYS
+// =============================================================================
+
+.responsive-modal
+  max-width: 90vw
+  max-height: 90vh
+  @include mobile-only
+    max-width: 95vw
+    max-height: 95vh
+    margin: 1rem
+
+// =============================================================================
+// RESPONSIVE TABLES
+// =============================================================================
+
+.responsive-table
+  width: 100%
+  overflow-x: auto
+  @include mobile-only
+    font-size: 0.875rem
+
+.responsive-table-wrapper
+  overflow-x: auto
+  @include mobile-only
+    -webkit-overflow-scrolling: touch
+
+// =============================================================================
+// RESPONSIVE VIDEO
+// =============================================================================
+
+.responsive-video
+  position: relative
+  width: 100%
+  height: 0
+  padding-bottom: 56.25% // 16:9 aspect ratio
+
+  iframe,
+  video
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+
+// =============================================================================
+// RESPONSIVE UTILITIES FOR COMMON ISSUES
+// =============================================================================
+
+// Prevent horizontal scroll on mobile
+.no-horizontal-scroll
+  overflow-x: hidden
+
+// Fix viewport issues on mobile
+.mobile-viewport-fix
+  @include mobile-only
+    min-height: 100vh
+    min-height: -webkit-fill-available
+
+// Responsive text alignment
+.text-responsive-center
+  text-align: center
+  @include mobile-only
+    text-align: left
+
+.text-responsive-left
+  text-align: left
+  @include mobile-only
+    text-align: center
+
+// =============================================================================
+// RESPONSIVE ACCESSIBILITY
+// =============================================================================
+
+// Focus management for mobile
+.mobile-focus-visible
+  @include mobile-only
+    &:focus
+      outline: 2px solid var(--brand-on-background-medium)
+      outline-offset: 2px
+
+// Touch target sizing
+.touch-target
+  min-height: 44px
+  min-width: 44px
+  @include mobile-only
+    min-height: 48px
+    min-width: 48px
+
+// =============================================================================
+// RESPONSIVE ANIMATIONS
+// =============================================================================
+
+// Reduce motion on mobile for better performance
+@media (prefers-reduced-motion: reduce)
+  .responsive-animate
+    animation: none !important
+    transition: none !important
+
+// =============================================================================
+// RESPONSIVE PRINT STYLES
+// =============================================================================
+
+@media print
+  .no-print
+    display: none !important
+
+  .print-only
+    display: block !important
+
+  .responsive-container
+    max-width: 100%
+    padding: 0
+

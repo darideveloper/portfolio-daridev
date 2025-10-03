@@ -9,32 +9,47 @@ export async function generateMetadata(
 ) {
 
 	const t = await getTranslations();
-	const { gallery } = renderContent(t);
+	const { gallery, person } = renderContent(t);
 
 	const title = gallery.title;
 	const description = gallery.description;
-	const ogImage = `https://${baseURL}/og?title=${encodeURIComponent(title)}`;
+	const ogImage = `${baseURL}${person.avatar}`;
 
 	return {
 		title,
 		description,
+		keywords: 'gallery, portfolio, web development, design, Next.js, React, fullstack, automation, DevOps, Dari Dev, photos, images',
+		author: person.name,
 		openGraph: {
 			title,
 			description,
 			type: 'website',
 			url: `https://${baseURL}/${locale}/gallery`,
+			siteName: `${person.firstName}'s Portfolio`,
+			locale: 'en_US',
 			images: [
 				{
 					url: ogImage,
-					alt: title,
+					alt: `${person.name} - ${person.role}`,
+					width: 400,
+					height: 400,
 				},
 			],
 		},
 		twitter: {
 			card: 'summary_large_image',
+			site: '@DeveloperDari',
+			creator: '@DeveloperDari',
 			title,
 			description,
 			images: [ogImage],
+		},
+		alternates: {
+			canonical: `https://${baseURL}/${locale}/gallery`,
+			languages: {
+				'en': `https://${baseURL}/en/gallery`,
+				'es': `https://${baseURL}/es/gallery`,
+			},
 		},
 	};
 }

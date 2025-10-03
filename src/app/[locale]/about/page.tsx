@@ -24,28 +24,43 @@ export async function generateMetadata({
   const { person, about, social } = renderContent(t)
   const title = about.title
   const description = about.description
-  const ogImage = `https://${baseURL}/og?title=${encodeURIComponent(title)}`
+  const ogImage = `${baseURL}${person.avatar}`
 
   return {
     title,
     description,
+    keywords: 'about, portfolio, web development, design, Next.js, React, fullstack, automation, DevOps, Dari Dev, experience, skills',
+    author: person.name,
     openGraph: {
       title,
       description,
       type: 'website',
       url: `https://${baseURL}/${locale}/about`,
+      siteName: `${person.firstName}'s Portfolio`,
+      locale: 'en_US',
       images: [
         {
           url: ogImage,
-          alt: title,
+          alt: `${person.name} - ${person.role}`,
+          width: 400,
+          height: 400,
         },
       ],
     },
     twitter: {
       card: 'summary_large_image',
+      site: '@DeveloperDari',
+      creator: '@DeveloperDari',
       title,
       description,
       images: [ogImage],
+    },
+    alternates: {
+      canonical: `https://${baseURL}/${locale}/about`,
+      languages: {
+        'en': `https://${baseURL}/en/about`,
+        'es': `https://${baseURL}/es/about`,
+      },
     },
   }
 }
@@ -82,6 +97,7 @@ export default function About({
   ]
   return (
     <Flex
+      className='content-about'
       fillWidth
       maxWidth='m'
       direction='column'
@@ -267,7 +283,7 @@ export default function About({
           )}
 
           {about.work.display && (
-            <>
+            <div className={'content-about'}>
               <Heading
                 as='h2'
                 id={about.work.title}
@@ -333,6 +349,7 @@ export default function About({
                     </Flex>
                     {experience.images.length > 0 && (
                       <Flex
+                        className={styles.imagesContainer}
                         fillWidth
                         paddingTop='m'
                         paddingLeft='40'
@@ -361,7 +378,7 @@ export default function About({
                   </Flex>
                 ))}
               </Flex>
-            </>
+            </div>
           )}
 
           {about.studies.display && (
@@ -447,6 +464,7 @@ export default function About({
                     </Text>
                     {skill.images && skill.images.length > 0 && (
                       <Flex
+                        className={styles.imagesContainer}
                         fillWidth
                         paddingTop='m'
                         gap='12'

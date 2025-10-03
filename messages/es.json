@@ -3,113 +3,371 @@
         "role": "Equipo Full Stack"
     },
     "newsletter": {
-        "title": "Subscríbete al Newsletter de {firstName}",
-        "description": "I occasionally write about design, technology, and share thoughts on the intersection of creativity and engineering",
-        "button": "Sign up"
+        "title": "Suscríbete al Newsletter de {firstName}",
+        "description": "Ocasionalmente escribo sobre desarrollo web, emprendimiento, programación, inteligencia artificial, herramientas digitales y más.",
+        "button": "Suscribirse"
+    },
+    "contact": {
+        "title": "Contáctame",
+        "description": "¿Tienes un proyecto en mente? Me encantaría escuchar sobre tu idea y cómo puedo ayudarte a hacerla realidad.",
+        "form": {
+            "name": "Nombre",
+            "email": "Email",
+            "subject": "Asunto",
+            "message": "Mensaje",
+            "submit": "Enviar Mensaje",
+            "submitting": "Enviando...",
+            "success": "¡Mensaje enviado con éxito! Te contactaré pronto.",
+            "error": "Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo."
+        }
     },
     "home": {
-        "label": "Home",
-        "title": "{name}'s Portfolio",
-        "description": "Portfolio website showcasing my work as a {role}",
-        "headline": "Design engineer and builder",
-        "subline": "I'm Selene, a design engineer at FLY, where I craft intuitive user experiences. After hours, I build my own projects."
+        "label": "Inicio",
+        "title": "Portfolio de {name}",
+        "description": "Sitio web de portfolio que muestra mi trabajo como {role}",
+        "headline": "Desarrollador Web",
+        "subline": "Soy Dari Dev, un desarrollador web full stack y líder de mi propio equipo de desarrollo. ¿Listo para llevar tu proyecto al siguiente nivel?"
     },
     "about": {
         "label": "Acerca de",
-        "title": "Acerca de",
+        "title": "Acerca de mí",
         "description": "Conoce a {name}, {role} de {location}",
         "quote": {
             "text": "Cotiza tu proyecto"
         },
         "intro": {
-            "title": "Introduction",
-            "description": "Desarrollador web full stack y líder de mi propio equipo de desarrollo, especializado en sitios modernos, rápidos y optimizados para conversión. Ofrecemos soluciones a medida, desde la Landing Pages hasta Aplicaciones Web. Portafolio, contacto y servicios en un solo lugar."
+            "title": "Introducción",
+            "description": "Desarrollador web full stack y líder de mi propio equipo de desarrollo, especializado en sitios web modernos, rápidos y optimizados para conversión. Ofrecemos soluciones personalizadas, desde landing pages hasta aplicaciones web. Portfolio, contacto y servicios todo en un lugar."
         },
         "work": {
-            "title": "Trayectoria Profesional",
+            "title": "Experiencia Profesional",
             "experiences": {
                 "daridevsTeam": {
-                    "company": "DariDev's Team",
-                    "timeframe": "2024 - Present",
-                    "role": "Team Lead & Full Stack Developer",
-                    "achievements": "Team Líder en mi Agencia de Desarrollo Web, donde creamos soluciones digitales completas, personalizadas y listas para escalar.; Junto a un equipo de profesionales, ayudo a negocios y emprendedores a lanzar landing pages efectivas, dashboards intuitivos, blogs modernos, sistemas de reservaciones, tiendas online y todo tipo de aplicaciones web.; Nos enfocamos en resultados reales: mejorar tu presencia digital, atraer más clientes y ayudarte a crecer con tecnología que trabaja para ti.",
-                    "imgAlt": "Ilustración del equipo de DariDev"
+                    "company": "Equipo DariDevs",
+                    "timeframe": "2020 - Presente",
+                    "role": "Líder de Equipo y Desarrollador Full Stack",
+                    "achievements": "Liderando un equipo de desarrollo;Gestionando múltiples proyectos de clientes;Implementando tecnologías web modernas;Asegurando calidad de código y mejores prácticas",
+                    "imgAlt": "Ilustración de colaboración en equipo"
                 },
                 "fullStack": {
-                    "company": "Full Stack Freelance",
-                    "timeframe": "2021 - 2024",
-                    "role": "Desarrollador Full Stack Developer",
-                    "achievements": "Durante 4 años ayudé a emprendedores, negocios locales y empresas a crear sitios web profesionales, tiendas en línea y plataformas personalizadas.; Me enfoqué en desarrollar soluciones completas, desde el diseño hasta la funcionalidad, siempre priorizando velocidad, usabilidad y resultados reales.; Mi trabajo permitió a mis clientes ahorrar tiempo, atraer más clientes y mejorar su presencia digital.",
-                    "imgAlt": "Ilustración de Dari Dev programando un protecto Full Stack"
+                    "company": "Freelance",
+                    "timeframe": "2018 - Presente",
+                    "role": "Desarrollador Full Stack",
+                    "achievements": "Construyendo aplicaciones web responsivas;Creando soluciones personalizadas para clientes;Integrando servicios de terceros;Optimizando el rendimiento del sitio web",
+                    "imgAlt": "Ilustración de desarrollo full stack"
                 },
                 "automation": {
-                    "company": "Automatización Freelance",
-                    "timeframe": "2020 - 2021",
+                    "company": "Varios Clientes",
+                    "timeframe": "2019 - Presente",
                     "role": "Especialista en Automatización",
-                    "achievements": "Aayudé a empresas y emprendedores a automatizar tareas repetitivas y recopilar información clave de internet para tomar mejores decisiones.; Desarrollé soluciones personalizadas que ahorraron tiempo, redujeron errores humanos y mejoraron procesos internos, como la actualización de bases de datos, monitoreo de precios, generación de reportes o seguimiento de prospectos.",
-                    "imgAlt": "Ilustración de Dari Dev programando un script de automatización"
+                    "achievements": "Implementando pipelines CI/CD;Automatizando procesos de despliegue;Configurando sistemas de monitoreo;Creando flujos de trabajo de pruebas automatizadas",
+                    "imgAlt": "Ilustración de proceso de automatización"
                 }
             }
         },
         "studies": {
-            "title": "Studies",
+            "title": "Educación",
             "institutions": {
                 "University of Jakarta": {
-                    "description": "Studied software engineering."
+                    "description": "Licenciatura en Ciencias de la Computación con enfoque en desarrollo web e ingeniería de software."
                 },
                 "Build the Future": {
-                    "description": "Studied online marketing and personal branding."
+                    "description": "Certificación avanzada en tecnologías web modernas y computación en la nube."
                 }
             }
         },
         "technical": {
             "title": "Habilidades Técnicas",
-            "description": "En conjunto con mi equipo de DariDev's Team, ofrecemos un servicio integral de desarrollo web y automatización. Nos especializamos en crear soluciones digitales personalizadas que se adaptan a las necesidades específicas de cada cliente.",
+            "description": "Experiencia integral en tecnologías y metodologías modernas de desarrollo web.",
             "skills": {
                 "frontend": {
-                    "title": "Frontend",
-                    "description": "HTML5; CSS3; JavaScript; Astro; React.js; Next.js; Tailwind CSS; AOS; Axios; Fetch API; WordPress; Divi"
+                    "title": "Desarrollo Frontend",
+                    "description": "React, Next.js, TypeScript, HTML5, CSS3, SCSS, Tailwind CSS, Diseño Responsivo, PWA, Web Components"
                 },
                 "backend": {
-                    "title": "Backend",
-                    "description": "Node.js; Django; Python; Flask, REST APIs; JWT; OAuth; WebSockets"
+                    "title": "Desarrollo Backend",
+                    "description": "Node.js, Express, Python, Django, PHP, Laravel, APIs RESTful, GraphQL, Microservicios, Serverless"
                 },
                 "database": {
-                    "title": "Base de datos",
-                    "description": "PostgreSQL; MySQL; MongoDB; SQLite; Supabase"
+                    "title": "Gestión de Base de Datos",
+                    "description": "PostgreSQL, MySQL, MongoDB, Redis, Diseño de Base de Datos, Optimización de Consultas, Migración de Datos"
                 },
                 "automation": {
-                    "title": "Automatización",
-                    "description": "Python; Requests; BeautifulSoup; Selenium; Telegram Bots; Zapier; n8n"
+                    "title": "DevOps y Automatización",
+                    "description": "Docker, Kubernetes, AWS, Azure, CI/CD, GitHub Actions, Pruebas Automatizadas, Monitoreo, Infraestructura como Código"
                 },
                 "devops": {
-                    "title": "DevOps & Hosting",
-                    "description": "Git; GitHub; Docker; Coolify; Vercel; DigitalOcean; Hetzner; Nginx; GitHub Actions"
+                    "title": "Nube e Infraestructura",
+                    "description": "AWS, Azure, Google Cloud, Vercel, Netlify, CDN, SSL, Gestión de Dominios, Configuración de Servidores"
                 },
                 "integrations": {
-                    "title": "Integraciones",
-                    "description": "Stripe; PayPal; Google APIs; OpenAI; HubSpot"
-                }                
+                    "title": "Integraciones de Terceros",
+                    "description": "Pasarelas de Pago, Servicios de Email, Analytics, Sistemas CRM, APIs de Redes Sociales, Webhooks"
+                }
             }
         }
     },
     "blog": {
         "label": "Blog",
-        "title": "Writing about design and tech...",
-        "description": "Read what {name} has been up to recently"
+        "title": "Blog",
+        "description": "Pensamientos e ideas sobre desarrollo web, tecnología e innovación digital por {name}",
+        "last": "Últimas Publicaciones"
     },
     "work": {
-        "label": "Work",
-        "title": "My projects",
-        "description": "Design and dev projects by {name}"
+        "label": "Trabajo",
+        "title": "Proyectos",
+        "description": "Una muestra de proyectos de desarrollo web y soluciones digitales creadas por {name}"
     },
     "gallery": {
-        "label": "Gallery",
-        "title": "My photo gallery",
-        "description": "A photo collection by {name}"
+        "label": "Galería",
+        "title": "Galería",
+        "description": "Una colección de fotos por {name}"
     },
     "projectCard": {
-        "label": "Read More",
-        "link": "Project Link"
+        "label": "Leer más",
+        "link": "Enlace del proyecto",
+        "play": "Reproducir",
+        "pause": "Pausar"
+    },
+    "quote": {
+        "title": "Obtener Cotización",
+        "description": "Obtén una cotización personalizada para tu proyecto de desarrollo web. Selecciona las características que necesitas y te proporcionaremos un precio estimado.",
+        "comingSoon": "Formulario de cotización próximamente...",
+        "steps": {
+            "sections": "Secciones del Sitio Web",
+            "basic": "Características Básicas",
+            "content": "Características de Contenido",
+            "advanced": "Características Avanzadas",
+            "info": "Tu Información"
+        },
+        "sections": {
+            "title": "Seleccionar Secciones del Sitio Web",
+            "description": "Elige las secciones que quieres para tu sitio web. Cada sección cuesta $20 USD.",
+            "totalSections": "Total de Secciones",
+            "requiredSections": "Secciones Requeridas (Incluidas)",
+            "extraCustomSections": "Secciones Personalizadas Extra",
+            "extraDescription": "Agregar secciones personalizadas que no están en la lista anterior",
+            "extraSections": "Secciones Extra",
+            "required": "Requerido",
+            "selected": "Seleccionado",
+            "select": "Seleccionar",
+            "pricePerSection": "Precio por sección:",
+            "sectionsPrice": "Precio de Secciones",
+            "sectionsCalculation": "Total de Secciones: {count} × $20 = ${total} USD",
+            "sectionsIncludedInTotal": "Este precio se incluye automáticamente en el total de la cotización",
+            "categories": {
+                "core": {
+                    "name": "Secciones Principales",
+                    "description": "Secciones esenciales para cada sitio web"
+                },
+                "content": {
+                    "name": "Secciones de Contenido",
+                    "description": "Secciones de contenido principal para tu sitio web"
+                },
+                "contact": {
+                    "name": "Secciones de Contacto",
+                    "description": "Secciones de contacto y comunicación"
+                }
+            },
+            "sectionNames": {
+                "header": "Encabezado",
+                "footer": "Pie de Página",
+                "hero": "Sección Hero",
+                "about": "Acerca de Nosotros",
+                "services": "Servicios",
+                "gallery": "Galería",
+                "testimonials": "Testimonios",
+                "team": "Nuestro Equipo",
+                "pricing": "Precios",
+                "features": "Características",
+                "stats": "Estadísticas",
+                "faq": "Preguntas Frecuentes",
+                "contact": "Formulario de Contacto",
+                "location": "Ubicación",
+                "social": "Redes Sociales",
+                "whatsapp": "Botón de WhatsApp"
+            },
+            "sectionDescriptions": {
+                "header": "Encabezado del sitio web con menú de navegación y logo",
+                "footer": "Pie de página del sitio web con enlaces e información de contacto",
+                "hero": "Sección de banner principal con llamada a la acción",
+                "about": "Sección acerca de con información de la empresa",
+                "services": "Sección de exhibición de servicios",
+                "gallery": "Sección de galería de imágenes",
+                "testimonials": "Sección de testimonios de clientes",
+                "team": "Sección de miembros del equipo",
+                "pricing": "Sección de planes de precios",
+                "features": "Sección de lista de características",
+                "stats": "Sección de estadísticas y números",
+                "faq": "Sección de preguntas frecuentes",
+                "contact": "Sección de formulario de contacto",
+                "location": "Sección de ubicación y mapa",
+                "social": "Sección de enlaces de redes sociales",
+                "whatsapp": "Sección de botón de contacto de WhatsApp"
+            }
+        },
+        "currency": {
+            "usd": "USD",
+            "mxn": "MXN"
+        },
+        "features": {
+            "blog": {
+                "name": "Blog",
+                "description": "Sistema completo de blog con panel de administración para gestión de contenido"
+            },
+            "sections": {
+                "name": "Cada Sección",
+                "description": "Secciones de contenido adicionales para tu sitio web"
+            },
+            "domain": {
+                "name": "Dominio / Año",
+                "description": "Registro de dominio y renovación por un año"
+            },
+            "social": {
+                "name": "Integración de Redes Sociales",
+                "description": "Incrustar feeds de redes sociales y botones de compartir"
+            },
+            "hosting": {
+                "name": "Hosting / Mes",
+                "description": "Servicio de hosting web con certificado SSL"
+            },
+            "newsletter": {
+                "name": "Newsletter",
+                "description": "Sistema de suscripción y gestión de newsletter por email"
+            },
+            "portfolio": {
+                "name": "Portafolio",
+                "description": "Sección de portafolio para mostrar trabajos y proyectos"
+            },
+            "news": {
+                "name": "Noticias",
+                "description": "Sección de noticias y actualizaciones del sitio web"
+            },
+            "ecommerce": {
+                "name": "E-commerce",
+                "description": "Tienda en línea completa con productos, variantes, carrito de compras, etc."
+            },
+            "multilang": {
+                "name": "Multiidioma",
+                "description": "Agregar soporte multiidioma para las secciones seleccionadas"
+            },
+            "backups": {
+                "name": "Respaldos / Mes",
+                "description": "Respaldos automatizados semanales de tu sitio web"
+            },
+            "payments": {
+                "name": "Pagos en Línea",
+                "description": "Para páginas pequeñas que venden uno o pocos productos con enlaces de pago directo"
+            },
+            "email": {
+                "name": "Email Corporativo / Mes",
+                "description": "Email corporativo reenviado a tu email personal ($5 USD/mes)"
+            },
+            "booking": {
+                "name": "Reservas",
+                "description": "Sistema de reservas y citas en línea"
+            },
+            "events": {
+                "name": "Eventos",
+                "description": "Calendario de eventos y gestión de eventos"
+            },
+            "search": {
+                "name": "Búsqueda",
+                "description": "Funcionalidad de búsqueda en el sitio web"
+            }
+        },
+        "form": {
+            "total": "Precio Total",
+            "next": "Siguiente",
+            "previous": "Anterior",
+            "submit": "Obtener Cotización",
+            "name": "Nombre Completo",
+            "email": "Dirección de Email",
+            "company": "Empresa (Opcional)",
+            "phone": "Número de Teléfono (Opcional)",
+            "customFeatures": "Características Personalizadas",
+            "customFeaturesPlaceholder": "Describe cualquier característica adicional que necesites...",
+            "questions": "Preguntas",
+            "questionsPlaceholder": "¿Alguna pregunta sobre tu proyecto?",
+            "warning": "Esto es solo una aproximación general. Nuestro equipo de ventas te proporcionará una oferta personalizada después de revisar los detalles.",
+            "success": "¡Cotización enviada exitosamente! Te contactaremos pronto.",
+            "error": "Hubo un error al enviar tu cotización. Por favor intenta de nuevo.",
+            "privacyRequired": "Debes aceptar la Política de Privacidad para enviar tu cotización.",
+            "currency": "Moneda:",
+            "approximation": {
+                "title": "Precio Aproximado",
+                "description": "Este formulario proporciona solo una estimación aproximada. Nuestro equipo de ventas analizará tu proyecto en detalle y te proporcionará un precio exacto personalizado."
+            },
+            "privacyAcceptance": {
+                "text": "He leído y acepto la",
+                "link": "Política de Privacidad"
+            }
+        }
+    },
+    "privacy": {
+        "title": "Política de Privacidad",
+        "lastUpdated": "Última actualización: {date}",
+        "introduction": {
+            "title": "Introducción",
+            "content": "Esta Política de Privacidad explica cómo {companyName} (\"nosotros\", \"nuestro\" o \"nos\") recopila, usa y protege tu información personal cuando utilizas nuestro sitio web y servicios. Estamos comprometidos a proteger tu privacidad y garantizar la seguridad de tus datos personales."
+        },
+        "dataCollection": {
+            "title": "Información que Recopilamos",
+            "content": "Solo recopilamos información que nos proporcionas voluntariamente a través de nuestros formularios de contacto y cotización. Esto incluye:",
+            "items": {
+                "0": "Nombre e información de contacto (dirección de email, número de teléfono)",
+                "1": "Información de la empresa (si se proporciona)",
+                "2": "Detalles y requisitos del proyecto",
+                "3": "Mensajes y comunicaciones que nos envías"
+            }
+        },
+        "dataUsage": {
+            "title": "Cómo Usamos tu Información",
+            "content": "Utilizamos la información que proporcionas únicamente para los siguientes propósitos:",
+            "items": {
+                "0": "Para responder a tus consultas y brindar soporte al cliente",
+                "1": "Para procesar y evaluar tus solicitudes de cotización de proyectos",
+                "2": "Para comunicarnos contigo sobre nuestros servicios",
+                "3": "Para mejorar nuestro sitio web y servicios"
+            }
+        },
+        "dataStorage": {
+            "title": "Almacenamiento y Seguridad de Datos",
+            "content": "No almacenamos tu información personal en nuestros servidores. Todas las presentaciones de formularios se procesan a través de servicios seguros de terceros y no se conservan en nuestros sistemas. Implementamos medidas de seguridad apropiadas para proteger tu información durante la transmisión y el procesamiento."
+        },
+        "dataSharing": {
+            "title": "Compartir Información",
+            "content": "No vendemos, intercambiamos o transferimos de otra manera tu información personal a terceros. Podemos compartir tu información solo en las siguientes circunstancias limitadas:",
+            "items": {
+                "0": "Con tu consentimiento explícito",
+                "1": "Para cumplir con obligaciones legales",
+                "2": "Para proteger nuestros derechos y prevenir fraudes"
+            }
+        },
+        "cookies": {
+            "title": "Cookies y Seguimiento",
+            "content": "Nuestro sitio web puede usar cookies y tecnologías de seguimiento similares para mejorar tu experiencia de navegación. Estas tecnologías nos ayudan a entender cómo usas nuestro sitio web y mejorar nuestros servicios. Puedes controlar la configuración de cookies a través de las preferencias de tu navegador."
+        },
+        "yourRights": {
+            "title": "Tus Derechos",
+            "content": "Tienes derecho a:",
+            "items": {
+                "0": "Solicitar acceso a tu información personal",
+                "1": "Solicitar corrección de información inexacta",
+                "2": "Solicitar eliminación de tu información personal",
+                "3": "Retirar el consentimiento en cualquier momento",
+                "4": "Oponerte al procesamiento de tu información personal"
+            }
+        },
+        "contact": {
+            "title": "Contáctanos",
+            "content": "Si tienes alguna pregunta sobre esta Política de Privacidad o nuestras prácticas de datos, por favor contáctanos en:",
+            "email": "Email: {email}",
+            "website": "Sitio web: {website}"
+        },
+        "changes": {
+            "title": "Cambios a esta Política",
+            "content": "Podemos actualizar esta Política de Privacidad de vez en cuando. Te notificaremos de cualquier cambio publicando la nueva Política de Privacidad en esta página y actualizando la fecha de \"Última actualización\". Te recomendamos revisar esta Política de Privacidad periódicamente para cualquier cambio."
+        }
     }
 }

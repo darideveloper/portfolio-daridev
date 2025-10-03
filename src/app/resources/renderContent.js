@@ -1,4 +1,4 @@
-import { person, newsletter, social, home, about, blog, work, gallery } from './content';
+import { person, contact, social, home, about, blog, work, gallery } from './content';
 import { createI18nContent } from './content-i18n';
 import { i18n } from './config';
 
@@ -9,12 +9,17 @@ const renderContent = (t) => {
         return {
             person,
             social,
-            newsletter,
+            contact,
             home,
             about,
             blog,
             work,
-            gallery
+            gallery,
+            company: {
+                name: person.firstName + ' ' + person.lastName,
+                email: 'example@gmail.com',
+                website: 'https://example.com'
+            }
         }
     }
 };
