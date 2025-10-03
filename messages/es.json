@@ -131,6 +131,7 @@
     },
     "quote": {
         "title": "Obtener Cotización",
+        "pageTitle": "Tu Web Hecha a la Medida",
         "description": "Obtén una cotización personalizada para tu proyecto de desarrollo web. Selecciona las características que necesitas y te proporcionaremos un precio estimado.",
         "comingSoon": "Formulario de cotización próximamente...",
         "steps": {

@@ -83,10 +83,13 @@ export default function Quote(
 								'@type': 'ImageObject',
 								url: `${baseURL}${person.avatar}`,
 							},
-						},
+						},	
 					}),
 				}}
 			/>
+			<Heading as="h1" size="xl" style={{ textAlign: 'center' }}>
+				{t('quote.pageTitle')}
+			</Heading>
 			<QuoteForm />
 		</Flex>
 	);

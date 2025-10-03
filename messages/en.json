@@ -131,6 +131,7 @@
     },
     "quote": {
         "title": "Get a Quote",
+        "pageTitle": "Your Custom Website Awaits",
         "description": "Get a personalized quote for your web development project. Select the features you need and we'll provide you with an estimated price.",
         "comingSoon": "Quote form coming soon...",
         "steps": {
