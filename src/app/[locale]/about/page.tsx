@@ -223,7 +223,7 @@ export default function About({
                     onBackground='brand-weak'
                   />
                 </Flex>
-                <Flex paddingX='8'>{t(about.quote.text)}</Flex>
+                <Flex paddingX='8'>{about.quote.text}</Flex>
                 <IconButton
                   href={about.quote.link}
                   data-border='rounded'
