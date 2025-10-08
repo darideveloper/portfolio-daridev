@@ -8,6 +8,7 @@ import { unstable_setRequestLocale } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 import { formatDate } from '@/app/utils/formatDate';
 import ScrollToHash from '@/components/ScrollToHash';
+import { QuoteForm } from '@/components/quote'
 
 // Dari Dev Components
 import ShareButtons from '@/components/ShareButtons'
@@ -185,6 +186,9 @@ export default function Project({ params }: WorkParams) {
 				<CustomMDX source={post.content} />
 			</Flex>
 			<ScrollToHash />
+
+			{/* Quote Form at footer */}
+			<QuoteForm />
 		</Flex>
 	)
 }
