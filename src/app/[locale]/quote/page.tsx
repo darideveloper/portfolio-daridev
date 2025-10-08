@@ -3,12 +3,14 @@ import { useTranslations } from 'next-intl';
 import { Flex, Heading, Text } from '@/once-ui/components';
 import { baseURL, renderContent } from '@/app/resources';
 import { QuoteForm } from '@/components/quote';
+import { getBrandFromHeaders } from '@/utils/getBrand';
 
 export async function generateMetadata(
 	{ params: { locale } }: { params: { locale: string } }
 ) {
 	const t = await getTranslations();
-	const { person } = renderContent(t);
+	const brand = getBrandFromHeaders();
+	const { person } = renderContent(t, brand);
 	const title = t('quote.title');
 	const description = t('quote.description');
 	const ogImage = `${baseURL}${person.avatar}`;
@@ -57,7 +59,8 @@ export default function Quote(
 ) {
 	unstable_setRequestLocale(locale);
 	const t = useTranslations();
-	const { person } = renderContent(t);
+	const brand = getBrandFromHeaders();
+	const { person } = renderContent(t, brand);
 
 	return (
 		<Flex

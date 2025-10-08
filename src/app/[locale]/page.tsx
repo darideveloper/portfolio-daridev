@@ -8,12 +8,14 @@ import { ContactForm } from '@/components';
 import { Posts } from '@/components/blog/Posts';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
+import { getBrandFromHeaders } from '@/utils/getBrand';
 
 export async function generateMetadata(
 	{params: {locale}}: { params: { locale: string }}
 ) {
 	const t = await getTranslations();
-    const { home, person } = renderContent(t);
+	const brand = getBrandFromHeaders();
+    const { home, person } = renderContent(t, brand);
 	const title = home.title;
 	const description = home.description;
 	const ogImage = `${baseURL}${person.avatar}`;
@@ -62,7 +64,8 @@ export default function Home(
 ) {
 	unstable_setRequestLocale(locale);
 	const t = useTranslations();
-	const { home, about, person, contact } = renderContent(t);
+	const brand = getBrandFromHeaders();
+	const { home, about, person, contact } = renderContent(t, brand);
 	return (
 		<Flex
 			maxWidth="m" fillWidth gap="xl"

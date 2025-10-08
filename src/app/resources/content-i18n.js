@@ -1,5 +1,4 @@
 import { getBranding } from './branding'
-import { getBrandFromEnv } from '@/utils/getBrand.client'
 
 /**
  * Returns a Jsx ul list from string separated by ;
@@ -14,9 +13,9 @@ function getJsxList(text) {
   return <ul>{items}</ul>
 }
 
-const createI18nContent = (t) => {
-  // Get dynamic branding (using env for client component compatibility)
-  const branding = getBranding(getBrandFromEnv())
+const createI18nContent = (t, brand) => {
+  // Use the provided brand parameter
+  const branding = getBranding(brand)
   
   const person = {
     firstName: branding.company.fullName,

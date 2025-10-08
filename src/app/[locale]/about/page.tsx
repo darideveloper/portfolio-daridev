@@ -14,6 +14,7 @@ import TableOfContents from '@/components/about/TableOfContents'
 import styles from '@/components/about/about.module.scss'
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 import { useTranslations } from 'next-intl'
+import { getBrandFromHeaders } from '@/utils/getBrand'
 
 export async function generateMetadata({
   params: { locale },
@@ -21,7 +22,8 @@ export async function generateMetadata({
   params: { locale: string }
 }) {
   const t = await getTranslations()
-  const { person, about, social } = renderContent(t)
+  const brand = getBrandFromHeaders()
+  const { person, about, social } = renderContent(t, brand)
   const title = about.title
   const description = about.description
   const ogImage = `${baseURL}${person.avatar}`
@@ -72,7 +74,8 @@ export default function About({
 }) {
   unstable_setRequestLocale(locale)
   const t = useTranslations()
-  const { person, about, social } = renderContent(t)
+  const brand = getBrandFromHeaders()
+  const { person, about, social } = renderContent(t, brand)
   const structure = [
     {
       title: about.intro.title,

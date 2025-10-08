@@ -3,13 +3,15 @@ import MasonryGrid from "@/components/gallery/MasonryGrid";
 import { baseURL, renderContent } from "@/app/resources";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
+import { getBrandFromHeaders } from '@/utils/getBrand';
 
 export async function generateMetadata(
 	{params: {locale}}: { params: { locale: string }}
 ) {
 
 	const t = await getTranslations();
-	const { gallery, person } = renderContent(t);
+	const brand = getBrandFromHeaders();
+	const { gallery, person } = renderContent(t, brand);
 
 	const title = gallery.title;
 	const description = gallery.description;
@@ -59,7 +61,8 @@ export default function Gallery(
 ) {
 	unstable_setRequestLocale(locale);
 	const t = useTranslations();
-	const { gallery, person } = renderContent(t);
+	const brand = getBrandFromHeaders();
+	const { gallery, person } = renderContent(t, brand);
     return (
         <Flex fillWidth>
             <script

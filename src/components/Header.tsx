@@ -51,7 +51,7 @@ const TimeDisplay: React.FC<TimeDisplayProps> = ({ timeZone, locale = 'en-GB' })
 
 export default TimeDisplay;
 
-export const Header = () => {
+export const Header = ({ brand }: { brand: '3s' | 'daridev' }) => {
     const router = useRouter();
     const [isPending, startTransition] = useTransition();
     const pathname = usePathname() ?? '';
@@ -68,7 +68,7 @@ export const Header = () => {
     }
 
     const t = useTranslations();
-    const { person, home, about, blog, work, gallery } = renderContent(t);
+    const { person, home, about, blog, work, gallery } = renderContent(t, brand);
 
     return (
         <>

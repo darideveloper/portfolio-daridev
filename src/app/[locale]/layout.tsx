@@ -22,10 +22,10 @@ export async function generateMetadata(
 ) {
 
 	const t = await getTranslations();
-	const { person, home } = renderContent(t);
-
+	
 	// Get brand dynamically from headers (this is a server component)
 	const brand = getBrandFromHeaders();
+	const { person, home } = renderContent(t, brand);
 
 	return {
 		metadataBase: new URL(`https://${baseURL}/${locale}`),
@@ -132,7 +132,11 @@ export function generateStaticParams() {
 	unstable_setRequestLocale(locale);
 	const messages = await getMessages();
 	const t = await getTranslations();
-	const { person, social } = renderContent(t);
+	
+	// Get brand from middleware headers (server component)
+	const brand = getBrandFromHeaders();
+	
+	const { person, social } = renderContent(t, brand);
 	return (
 		<NextIntlClientProvider messages={messages}>
 			<Flex
@@ -190,7 +194,7 @@ export function generateStaticParams() {
 						fillWidth
 						minHeight="16">
 					</Flex>
-					<Header/>
+					<Header brand={brand}/>
 					<Flex
 						zIndex={0}
 						fillWidth paddingY="l" paddingX="l"
@@ -203,7 +207,7 @@ export function generateStaticParams() {
 							</RouteGuard>
 						</Flex>
 					</Flex>
-					<Footer/>
+					<Footer brand={brand}/>
 				</Flex>
 			</Flex>
 		</NextIntlClientProvider>

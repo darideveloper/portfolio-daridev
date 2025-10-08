@@ -3,11 +3,11 @@ import { Flex, IconButton, SmartLink, Text } from "@/once-ui/components"
 import { useTranslations } from "next-intl";
 import styles from './Footer.module.scss'
 
-export const Footer = () => {
+export const Footer = ({ brand }: { brand: '3s' | 'daridev' }) => {
     const currentYear = new Date().getFullYear();
 
     const t = useTranslations();
-    const { person, social } = renderContent(t);
+    const { person, social } = renderContent(t, brand);
 
     return (
         <Flex

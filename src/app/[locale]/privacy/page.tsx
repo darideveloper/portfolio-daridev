@@ -15,8 +15,9 @@ export async function generateMetadata({
   params: { locale: string }
 }) {
   const t = await getTranslations()
-  const branding = getBranding(getBrandFromHeaders())
-  const { person, privacy, company } = renderContent(t)
+  const brand = getBrandFromHeaders()
+  const branding = getBranding(brand)
+  const { person, privacy, company } = renderContent(t, brand)
   const title = t(privacy.title)
   const description = t(privacy.introduction.content)
 
@@ -66,7 +67,8 @@ export default function Privacy({
 }) {
   unstable_setRequestLocale(locale)
   const t = useTranslations()
-  const { person, privacy, company } = renderContent(t)
+  const brand = getBrandFromHeaders()
+  const { person, privacy, company } = renderContent(t, brand)
 
   const privacySections = [
     {

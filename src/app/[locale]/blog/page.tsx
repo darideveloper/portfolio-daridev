@@ -4,13 +4,15 @@ import { Posts } from '@/components/blog/Posts';
 import { baseURL, renderContent } from '@/app/resources'
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
+import { getBrandFromHeaders } from '@/utils/getBrand';
 
 export async function generateMetadata(
 	{params: {locale}}: { params: { locale: string }}
 ) {
 
 	const t = await getTranslations();
-	const { blog, person } = renderContent(t);
+	const brand = getBrandFromHeaders();
+	const { blog, person } = renderContent(t, brand);
 
 	const title = blog.title;
 	const description = blog.description;
@@ -61,7 +63,8 @@ export default function Blog(
 	unstable_setRequestLocale(locale);
 
 	const t = useTranslations();
-	const { person, blog, contact } = renderContent(t);
+	const brand = getBrandFromHeaders();
+	const { person, blog, contact } = renderContent(t, brand);
     return (
         <Flex
 			fillWidth maxWidth="s"

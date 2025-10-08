@@ -1,6 +1,7 @@
 import { ImageResponse } from 'next/og'
 import { baseURL, renderContent } from '@/app/resources';
 import { getTranslations } from 'next-intl/server';
+import { getBrandFromHeaders } from '@/utils/getBrand';
 
 export const runtime = 'edge';
 
@@ -13,7 +14,8 @@ export async function GET(request: Request) {
     const fontData = await font;
 
     const t = await getTranslations();
-    const { person } = renderContent(t);
+    const brand = getBrandFromHeaders();
+    const { person } = renderContent(t, brand);
 
     return new ImageResponse(
         (

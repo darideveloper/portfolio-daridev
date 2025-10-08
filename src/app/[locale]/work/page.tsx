@@ -4,13 +4,15 @@ import { Projects } from '@/components/work/Projects';
 import { baseURL, renderContent } from '@/app/resources';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
+import { getBrandFromHeaders } from '@/utils/getBrand';
 
 export async function generateMetadata(
     {params: {locale}}: { params: { locale: string }}
 ) {
 
     const t = await getTranslations();
-    const { work, person } = renderContent(t);
+    const brand = getBrandFromHeaders();
+    const { work, person } = renderContent(t, brand);
 
 	const title = work.title;
 	const description = work.description;
@@ -62,7 +64,8 @@ export default function Work(
     let allProjects = getPosts(['src', 'app', '[locale]', 'work', 'projects', locale]);
 
     const t = useTranslations();
-    const { person, work } = renderContent(t);
+    const brand = getBrandFromHeaders();
+    const { person, work } = renderContent(t, brand);
 
     return (
         <Flex
