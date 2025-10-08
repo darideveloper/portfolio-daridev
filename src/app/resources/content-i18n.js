@@ -16,8 +16,8 @@ function getJsxList(text) {
 
 const createI18nContent = (t) => {
   const person = {
-    firstName: 'Dari',
-    lastName: 'Dev',
+    firstName: branding.company.fullName,
+    lastName: "",
     get name() {
       return `${this.firstName} ${this.lastName}`
     },

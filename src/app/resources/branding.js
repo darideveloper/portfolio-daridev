@@ -1,5 +1,9 @@
+// get brand
+const brand = process.env.NEXT_PUBLIC_BRAND || 'daridev'
+
 // Centralized branding configuration
-export const branding = {
+
+const brandingDariDev = {
   // Company/Person Information
   company: {
     name: "Dari Dev",
@@ -38,3 +42,48 @@ export const branding = {
   }
 }
 
+
+const branding3s = {
+  // Company/Person Information
+  company: {
+    name: "3S",
+    fullName: "Smooth Software Solutions",
+    legalName: "Smooth Software Solutions",
+    tagline: "Full Stack Team",
+    description: "Software development and consulting services"
+  },
+  
+  // Contact Information
+  contact: {
+    email: "contact@software3s.com",
+    website: "https://www.software3s.com",
+    phone: "5214493402622", // WhatsApp number
+    location: "America/Mexico_City",
+    languages: ["Español", "English"]
+  },
+  
+  // Social Media
+  social: {
+    twitter: "@DeveloperDari",
+    github: "darideveloper",
+    telegram: "darideveloper",
+    fiverr: "https://www.fiverr.com/s/AyKKV6Q"
+  },
+  
+  // Assets
+  assets: {
+    avatar: "/images/3s-logo.webp",
+    logo: "/images/3s-logo.webp" // if exists
+  },
+  
+  // SEO Keywords
+  seo: {
+    keywords: "privacy, policy, data protection, GDPR, personal information, cookies, Dari Dev"
+  }
+}
+
+const brandings = {
+  daridev: brandingDariDev,
+  "3s": branding3s
+}
+export const branding = brandings[brand]
