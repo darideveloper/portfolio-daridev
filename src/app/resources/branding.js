@@ -1,6 +1,3 @@
-// get brand
-const brand = process.env.NEXT_PUBLIC_BRAND || 'daridev'
-
 // Centralized branding configuration
 
 const brandingDariDev = {
@@ -86,4 +83,11 @@ const brandings = {
   daridev: brandingDariDev,
   "3s": branding3s
 }
-export const branding = brandings[brand]
+
+// NEW: Export function for dynamic brand selection
+export function getBranding(brand) {
+  return brandings[brand] || brandingDariDev;
+}
+
+// DEPRECATED: Keep for backwards compatibility during migration
+export const branding = brandings[process.env.NEXT_PUBLIC_BRAND || 'daridev'];

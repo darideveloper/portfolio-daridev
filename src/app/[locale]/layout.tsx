@@ -5,6 +5,7 @@ import classNames from 'classnames';
 
 import { Footer, Header, RouteGuard } from "@/components";
 import { baseURL, effects, style } from '@/app/resources'
+import { getBrandFromHeaders } from '@/utils/getBrand'
 
 import { Inter } from 'next/font/google'
 import { Source_Code_Pro } from 'next/font/google';
@@ -23,8 +24,8 @@ export async function generateMetadata(
 	const t = await getTranslations();
 	const { person, home } = renderContent(t);
 
-	// Get brand from env
-	const brand = process.env.NEXT_PUBLIC_BRAND || 'daridev';
+	// Get brand dynamically from headers (this is a server component)
+	const brand = getBrandFromHeaders();
 
 	return {
 		metadataBase: new URL(`https://${baseURL}/${locale}`),

@@ -4,7 +4,8 @@ import {
   Text,
 } from '@/once-ui/components'
 import { baseURL, renderContent } from '@/app/resources'
-import { branding } from '@/app/resources/branding'
+import { getBranding } from '@/app/resources/branding'
+import { getBrandFromHeaders } from '@/utils/getBrand'
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 import { useTranslations } from 'next-intl'
 
@@ -14,6 +15,7 @@ export async function generateMetadata({
   params: { locale: string }
 }) {
   const t = await getTranslations()
+  const branding = getBranding(getBrandFromHeaders())
   const { person, privacy, company } = renderContent(t)
   const title = t(privacy.title)
   const description = t(privacy.introduction.content)

@@ -1,5 +1,5 @@
-import { InlineCode } from "@/once-ui/components"
-import { branding } from './branding'
+import { getBranding } from './branding'
+import { getBrandFromEnv } from '@/utils/getBrand.client'
 
 /**
  * Returns a Jsx ul list from string separated by ;
@@ -15,6 +15,9 @@ function getJsxList(text) {
 }
 
 const createI18nContent = (t) => {
+  // Get dynamic branding (using env for client component compatibility)
+  const branding = getBranding(getBrandFromEnv())
+  
   const person = {
     firstName: branding.company.fullName,
     lastName: "",
