@@ -23,12 +23,19 @@ export async function generateMetadata(
 	const t = await getTranslations();
 	const { person, home } = renderContent(t);
 
+	// Get brand from env
+	const brand = process.env.NEXT_PUBLIC_BRAND || 'daridev';
+
 	return {
 		metadataBase: new URL(`https://${baseURL}/${locale}`),
 		title: home.title,
 		description: home.description,
 		keywords: 'portfolio, web development, design, Next.js, React, fullstack, automation, DevOps, Dari Dev',
 		author: person.name,
+		// Favicon based in brand
+		icons: {
+			icon: `/favicon/${brand}.ico`,
+		},
 		viewport: 'width=device-width, initial-scale=1, viewport-fit=cover',
 		charset: 'utf-8',
 		referrer: 'origin-when-cross-origin',
