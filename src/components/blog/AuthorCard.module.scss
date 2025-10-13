@@ -1,0 +1,17 @@
+.authorCard {
+  margin: var(--static-space-32) 0;
+  
+  .socialLink {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--static-space-8);
+    border-radius: var(--radius-m);
+    transition: background-color 0.2s ease;
+    
+    &:hover {
+      background-color: var(--neutral-alpha-weak);
+    }
+  }
+}
+

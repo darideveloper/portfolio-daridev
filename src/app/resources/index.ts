@@ -1,5 +1,6 @@
 // import a pre-defined template for config and content options
 export { routes, protectedRoutes, effects, style, display, mailchimp, baseURL } from '@/app/resources/config'
 export { branding } from '@/app/resources/branding'
+export { getAuthor } from '@/app/resources/authors'
 // export { person, social, newsletter, home, about, blog, work, gallery } from '@/app/resources/content-en'
 export { renderContent } from '@/app/resources/renderContent';

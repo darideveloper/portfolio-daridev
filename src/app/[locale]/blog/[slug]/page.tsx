@@ -10,9 +10,11 @@ import { unstable_setRequestLocale } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
 import { useTranslations } from 'next-intl'
 import { formatDate } from '@/app/utils/formatDate'
+import { getAuthor } from '@/app/resources/authors'
 
 // Dari Dev Components
 import ShareButtons from '@/components/ShareButtons'
+import AuthorCard from '@/components/blog/AuthorCard'
 
 interface BlogParams {
   params: {
@@ -56,6 +58,11 @@ export function generateMetadata({ params: { slug, locale } }: BlogParams) {
     summary: description,
     image,
   } = post.metadata
+  
+  // Get author data
+  const authorId = post.metadata.author || 'daridev';
+  const author = getAuthor(authorId);
+  
   let ogImage = image
     ? `https://${baseURL}${image}`
     : `https://${baseURL}/images/avatar.png`
@@ -66,7 +73,7 @@ export function generateMetadata({ params: { slug, locale } }: BlogParams) {
     title,
     description,
     keywords: `blog, ${(Array.isArray(postsTags) ? postsTags.join(', ') : postsTags)}, portfolio, web development, design, Next.js, React, fullstack, automation, DevOps, Dari Dev, article`,
-    author: 'Dari Dev',
+    author: author.fullName,
     openGraph: {
       title,
       description,
@@ -78,7 +85,7 @@ export function generateMetadata({ params: { slug, locale } }: BlogParams) {
       images: [
         {
           url: ogImage,
-          alt: `${title} - Article by Dari Dev`,
+          alt: `${title} - Article by ${author.fullName}`,
           width: 1200,
           height: 630,
         },
@@ -86,8 +93,8 @@ export function generateMetadata({ params: { slug, locale } }: BlogParams) {
     },
     twitter: {
       card: 'summary_large_image',
-      site: '@DeveloperDari',
-      creator: '@DeveloperDari',
+      site: author.social.twitter || '@DeveloperDari',
+      creator: author.social.twitter || '@DeveloperDari',
       title,
       description,
       images: [ogImage],
@@ -118,7 +125,10 @@ export default function Blog({ params }: BlogParams) {
   }
 
   const t = useTranslations()
-  const { person } = renderContent(t)
+  
+  // Get author data
+  const authorId = post.metadata.author || 'daridev';
+  const author = getAuthor(authorId);
 
   return (
     <Flex
@@ -146,7 +156,9 @@ export default function Blog({ params }: BlogParams) {
             url: `https://${baseURL}/${params.locale}/blog/${post.slug}`,
             author: {
               '@type': 'Person',
-              name: person.name,
+              name: author.fullName,
+              url: author.social.facebook || author.social.github,
+              image: `https://${baseURL}${author.avatar}`
             },
           }),
         }}
@@ -164,18 +176,27 @@ export default function Blog({ params }: BlogParams) {
         gap='12'
         alignItems='center'
       >
-        {person.avatar && (
-          <Avatar
-            size='s'
-            src={person.avatar}
-          />
-        )}
-        <Text
-          variant='body-default-s'
-          onBackground='neutral-weak'
+        <Avatar
+          size='s'
+          src={author.avatar}
+        />
+        <Flex
+          direction='column'
+          gap='4'
         >
-          {formatDate(post.metadata.publishedAt)}
-        </Text>
+          <Text
+            variant='body-default-s'
+            onBackground='neutral-strong'
+          >
+            {author.fullName}
+          </Text>
+          <Text
+            variant='body-default-s'
+            onBackground='neutral-weak'
+          >
+            {formatDate(post.metadata.publishedAt)}
+          </Text>
+        </Flex>
       </Flex>
 
 	  <ShareButtons />
@@ -187,6 +208,10 @@ export default function Blog({ params }: BlogParams) {
       >
         <CustomMDX source={post.content} />
       </Flex>
+
+      {/* Author Card at the bottom */}
+      <AuthorCard author={author} />
+
       <ScrollToHash />
 
       {/* Quote Form at footer */}
