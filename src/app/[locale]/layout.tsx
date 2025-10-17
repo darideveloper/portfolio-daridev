@@ -17,6 +17,9 @@ import { routing } from "@/i18n/routing";
 import { renderContent } from "@/app/resources";
 import { Background, Flex } from "@/once-ui/components";
 
+import Script from 'next/script';
+
+
 export async function generateMetadata(
 	{ params: { locale }}: { params: { locale: string }}
 ) {
@@ -185,6 +188,17 @@ export function generateStaticParams() {
 							}),
 						}}
 					/>
+
+					{/* Google ads scripts */}
+					
+					{/* Influencer Roulette */}
+					<Script
+						async
+						src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4509450751077172"
+						crossOrigin="anonymous"
+						strategy="afterInteractive"
+					/>
+
 					<Background
 						mask={effects.mask as any}
 						gradient={effects.gradient as any}
