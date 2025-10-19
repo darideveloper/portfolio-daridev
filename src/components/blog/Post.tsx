@@ -77,15 +77,24 @@ export default function Post({ post, thumbnail }: PostProps) {
           >
             {formatDate(post.metadata.publishedAt, false)}
           </Text>
-          <div className='flex gap-2 w-full' style={{ flexWrap: 'wrap'}}>
+          <div
+            className='flex gap-2 w-full'
+            style={{ flexWrap: 'wrap' }}
+          >
             {post.metadata.tag &&
-              post.metadata.tag.map((tag: string) => (
-                <Tag
-                  className='mt-8 mr-8 inline-block'
-                  label={tag}
-                  variant='neutral'
-                />
-              ))}
+              post.metadata.tag.map((tag: string) => {
+                // render only 30 chars of the tag
+                const truncatedTag =
+                  tag.length > 30 ? tag.substring(0, 30) + '...' : tag
+                return (
+                  <Tag
+                    key={tag}
+                    className='mt-8 mr-8 inline-block'
+                    label={truncatedTag}
+                    variant='neutral'
+                  />
+                )
+              })}
           </div>
         </Flex>
       </Flex>
