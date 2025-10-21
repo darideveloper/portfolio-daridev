@@ -1,4 +1,8 @@
 {
+    "common": {
+        "chatWhatsApp": "Chatea en WhatsApp",
+        "whatsappMessage": "¡Hola! Estoy interesado en sus servicios."
+    },
     "person": {
         "role": "Equipo Full Stack"
     },

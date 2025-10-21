@@ -1,0 +1,39 @@
+.whatsappContainer {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  
+  // Ensure it's above other content but below modals
+  @media (max-width: 768px) {
+    bottom: 90px; // Account for mobile navigation and footer spacing
+    right: 16px;
+  }
+}
+
+.whatsappButton {
+  // Add pulsing animation for attention
+  animation: pulse 2s infinite;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    animation: none; // Stop pulsing on hover
+  }
+  
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); // WhatsApp green glow
+  }
+}
+

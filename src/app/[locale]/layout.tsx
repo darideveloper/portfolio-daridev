@@ -3,7 +3,7 @@ import "@/once-ui/tokens/index.scss";
 
 import classNames from 'classnames';
 
-import { Footer, Header, RouteGuard } from "@/components";
+import { Footer, Header, RouteGuard, WhatsAppButton } from "@/components";
 import { baseURL, effects, style } from '@/app/resources'
 import { getBrandFromHeaders } from '@/utils/getBrand'
 
@@ -222,6 +222,7 @@ export function generateStaticParams() {
 						</Flex>
 					</Flex>
 					<Footer brand={brand}/>
+					<WhatsAppButton brand={brand}/>
 				</Flex>
 			</Flex>
 		</NextIntlClientProvider>
