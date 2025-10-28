@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import { QuoteForm } from '@/components/quote'
 import { CustomMDX } from '@/components/mdx'
 import { getPosts } from '@/app/utils/utils'
-import { Avatar, Button, Flex, Heading, Text } from '@/once-ui/components'
+import { Avatar, Button, Flex, Heading, SmartImage, Text } from '@/once-ui/components'
 
 import { baseURL, renderContent } from '@/app/resources'
 import { unstable_setRequestLocale } from 'next-intl/server'
@@ -152,7 +152,11 @@ export default function Blog({ params }: BlogParams) {
             dateModified: post.metadata.publishedAt,
             description: post.metadata.summary,
             image: post.metadata.image
-              ? `${baseURL}${post.metadata.image}`
+              ? {
+                  '@type': 'ImageObject',
+                  url: `${baseURL}${post.metadata.image}`,
+                  caption: post.metadata.title,
+                }
               : `${baseURL}/og?title=${post.metadata.title}`,
             url: `${baseURL}/${params.locale}/blog/${post.slug}`,
             author: {
@@ -201,6 +205,29 @@ export default function Blog({ params }: BlogParams) {
       </Flex>
 
 	  <ShareButtons />
+
+      {/* Hero/Banner Image for the Blog Post */}
+      {post.metadata.image && (
+        <Flex
+          fillWidth
+          style={{
+            marginTop: 'var(--static-space-16)',
+            marginBottom: 'var(--static-space-24)',
+          }}
+        >
+          <SmartImage
+            src={post.metadata.image}
+            alt={`Featured image for the article: ${post.metadata.title} by ${author.fullName}`}
+            title={`${post.metadata.title} - Featured Image by ${author.fullName}`}
+            aspectRatio="16 / 9"
+            radius="m"
+            priority
+            style={{
+              width: '100%',
+            }}
+          />
+        </Flex>
+      )}
 
       <Flex
         as='article'
