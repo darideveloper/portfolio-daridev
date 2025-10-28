@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import { CustomMDX } from '@/components/mdx'
-import { getPosts } from '@/app/utils/utils'
+import { getPosts, resolveImageUrl } from '@/app/utils/utils'
 import { AvatarGroup, Button, Flex, Heading, SmartImage, Text } from '@/once-ui/components'
 import { baseURL, renderContent } from '@/app/resources';
 import { routing } from '@/i18n/routing';
@@ -56,9 +56,9 @@ export async function generateMetadata({ params: { slug, locale } }: WorkParams)
 	
 	// Use the first image from the images array if image field doesn't exist
 	let ogImage = image
-		? `${baseURL}${image}`
+		? resolveImageUrl(image, baseURL)
 		: images && images.length > 0
-			? `${baseURL}${images[0]}`
+			? resolveImageUrl(images[0], baseURL)
 			: `${baseURL}/images/avatar.png`;
 
 	return {
@@ -134,9 +134,9 @@ export default function Project({ params }: WorkParams) {
 						dateModified: post.metadata.publishedAt,
 						description: post.metadata.summary,
 						image: post.metadata.image
-							? `${baseURL}${post.metadata.image}`
+							? resolveImageUrl(post.metadata.image, baseURL)
 							: post.metadata.images && post.metadata.images.length > 0
-								? `${baseURL}${post.metadata.images[0]}`
+								? resolveImageUrl(post.metadata.images[0], baseURL)
 								: `${baseURL}/og?title=${post.metadata.title}`,
 						url: `${baseURL}/${params.locale}/work/${post.slug}`,
 						author: {

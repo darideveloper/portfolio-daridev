@@ -2,7 +2,7 @@ import ScrollToHash from '@/components/ScrollToHash'
 import { notFound } from 'next/navigation'
 import { QuoteForm } from '@/components/quote'
 import { CustomMDX } from '@/components/mdx'
-import { getPosts } from '@/app/utils/utils'
+import { getPosts, resolveImageUrl } from '@/app/utils/utils'
 import { Avatar, Button, Flex, Heading, SmartImage, Text } from '@/once-ui/components'
 
 import { baseURL, renderContent } from '@/app/resources'
@@ -63,9 +63,7 @@ export async function generateMetadata({ params: { slug, locale } }: BlogParams)
   const authorId = post.metadata.author || 'daridev';
   const author = getAuthor(authorId);
   
-  let ogImage = image
-    ? `${baseURL}${image}`
-    : `${baseURL}/images/avatar.png`
+  let ogImage = resolveImageUrl(image, baseURL, '/images/avatar.png')
     
   const postsTags = post.metadata.tag || []
 
@@ -154,7 +152,7 @@ export default function Blog({ params }: BlogParams) {
             image: post.metadata.image
               ? {
                   '@type': 'ImageObject',
-                  url: `${baseURL}${post.metadata.image}`,
+                  url: resolveImageUrl(post.metadata.image, baseURL),
                   caption: post.metadata.title,
                 }
               : `${baseURL}/og?title=${post.metadata.title}`,
