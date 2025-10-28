@@ -27,15 +27,16 @@ export async function generateMetadata(
 			title,
 			description,
 			type: 'website',
-			url: `https://${baseURL}/${locale}/blog`,
+			url: `${baseURL}/${locale}/blog`,
 			siteName: `${person.firstName}'s Portfolio`,
-			locale: 'en_US',
+			locale: locale === 'es' ? 'es_ES' : 'en_US',
 			images: [
 				{
 					url: ogImage,
 					alt: `${person.name} - ${person.role}`,
 					width: 400,
 					height: 400,
+					type: 'image/webp',
 				},
 			],
 		},
@@ -45,13 +46,12 @@ export async function generateMetadata(
 			creator: '@DeveloperDari',
 			title,
 			description,
-			images: [ogImage],
 		},
 		alternates: {
-			canonical: `https://${baseURL}/${locale}/blog`,
+			canonical: `${baseURL}/${locale}/blog`,
 			languages: {
-				'en': `https://${baseURL}/en/blog`,
-				'es': `https://${baseURL}/es/blog`,
+				'en': `${baseURL}/en/blog`,
+				'es': `${baseURL}/es/blog`,
 			},
 		},
 	};
@@ -78,7 +78,7 @@ export default function Blog(
 						'@type': 'Blog',
 						headline: blog.title,
 						description: blog.description,
-						url: `https://${baseURL}/blog`,
+						url: `${baseURL}/blog`,
 						image: `${baseURL}${person.avatar}`,
 						author: {
 							'@type': 'Person',

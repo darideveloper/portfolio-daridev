@@ -29,15 +29,16 @@ export async function generateMetadata(
 			title,
 			description,
 			type: 'website',
-			url: `https://${baseURL}/${locale}`,
+			url: `${baseURL}/${locale}`,
 			siteName: `${person.firstName}'s Portfolio`,
-			locale: 'en_US',
+			locale: locale === 'es' ? 'es_ES' : 'en_US',
 			images: [
 				{
 					url: ogImage,
 					alt: `${person.name} - ${person.role}`,
 					width: 400,
 					height: 400,
+					type: 'image/webp',
 				},
 			],
 		},
@@ -47,13 +48,12 @@ export async function generateMetadata(
 			creator: '@DeveloperDari',
 			title,
 			description,
-			images: [ogImage],
 		},
 		alternates: {
-			canonical: `https://${baseURL}/${locale}`,
+			canonical: `${baseURL}/${locale}`,
 			languages: {
-				'en': `https://${baseURL}/en`,
-				'es': `https://${baseURL}/es`,
+				'en': `${baseURL}/en`,
+				'es': `${baseURL}/es`,
 			},
 		},
 	};
@@ -79,7 +79,7 @@ export default function Home(
 						'@type': 'WebPage',
 						name: home.title,
 						description: home.description,
-						url: `https://${baseURL}`,
+						url: `${baseURL}`,
 						image: `${baseURL}${person.avatar}`,
 						publisher: {
 							'@type': 'Person',

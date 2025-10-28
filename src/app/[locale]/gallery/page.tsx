@@ -26,15 +26,16 @@ export async function generateMetadata(
 			title,
 			description,
 			type: 'website',
-			url: `https://${baseURL}/${locale}/gallery`,
+			url: `${baseURL}/${locale}/gallery`,
 			siteName: `${person.firstName}'s Portfolio`,
-			locale: 'en_US',
+			locale: locale === 'es' ? 'es_ES' : 'en_US',
 			images: [
 				{
 					url: ogImage,
 					alt: `${person.name} - ${person.role}`,
 					width: 400,
 					height: 400,
+					type: 'image/webp',
 				},
 			],
 		},
@@ -44,13 +45,12 @@ export async function generateMetadata(
 			creator: '@DeveloperDari',
 			title,
 			description,
-			images: [ogImage],
 		},
 		alternates: {
-			canonical: `https://${baseURL}/${locale}/gallery`,
+			canonical: `${baseURL}/${locale}/gallery`,
 			languages: {
-				'en': `https://${baseURL}/en/gallery`,
-				'es': `https://${baseURL}/es/gallery`,
+				'en': `${baseURL}/en/gallery`,
+				'es': `${baseURL}/es/gallery`,
 			},
 		},
 	};
@@ -74,7 +74,7 @@ export default function Gallery(
 						'@type': 'ImageGallery',
 						name: gallery.title,
 						description: gallery.description,
-						url: `https://${baseURL}/gallery`,
+						url: `${baseURL}/gallery`,
 						image: gallery.images.map((image) => ({
                             '@type': 'ImageObject',
                             url: `${baseURL}${image.src}`,

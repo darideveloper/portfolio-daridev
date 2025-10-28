@@ -38,7 +38,7 @@ export async function generateStaticParams(): Promise<{ slug: string; locale: st
     return allPosts;
 }
 
-export function generateMetadata({ params: { slug, locale } }: WorkParams) {
+export async function generateMetadata({ params: { slug, locale } }: WorkParams) {
 	let post = getPosts(['src', 'app', '[locale]', 'work', 'projects', locale]).find((post) => post.slug === slug)
 	
 	if (!post) {
@@ -53,9 +53,13 @@ export function generateMetadata({ params: { slug, locale } }: WorkParams) {
 		image,
 		team,
 	} = post.metadata
+	
+	// Use the first image from the images array if image field doesn't exist
 	let ogImage = image
-		? `https://${baseURL}${image}`
-		: `https://${baseURL}/images/avatar.png`;
+		? `${baseURL}${image}`
+		: images && images.length > 0
+			? `${baseURL}${images[0]}`
+			: `${baseURL}/images/avatar.png`;
 
 	return {
 		title,
@@ -67,31 +71,32 @@ export function generateMetadata({ params: { slug, locale } }: WorkParams) {
 			description,
 			type: 'article',
 			publishedTime,
-			url: `https://${baseURL}/${locale}/work/${post.slug}`,
+			authors: ['Dari Dev'],
+			url: `${baseURL}/${locale}/work/${post.slug}`,
 			siteName: 'Dari Dev Portfolio',
-			locale: 'en_US',
+			locale: locale === 'es' ? 'es_ES' : 'en_US',
 			images: [
 				{
 					url: ogImage,
 					alt: `${title} - Project by Dari Dev`,
 					width: 1200,
 					height: 630,
+					type: 'image/webp',
 				},
 			],
 		},
 		twitter: {
-			card: 'summary_large_image',
-			site: '@DeveloperDari',
-			creator: '@DeveloperDari',
 			title,
 			description,
-			images: [ogImage],
+			card: ogImage.includes('/images/avatar.png') ? 'summary' : 'summary_large_image',
+			site: '@DeveloperDari',
+			creator: '@DeveloperDari',
 		},
 		alternates: {
-			canonical: `https://${baseURL}/${locale}/work/${post.slug}`,
+			canonical: `${baseURL}/${locale}/work/${post.slug}`,
 			languages: {
-				'en': `https://${baseURL}/en/work/${post.slug}`,
-				'es': `https://${baseURL}/es/work/${post.slug}`,
+				'en': `${baseURL}/en/work/${post.slug}`,
+				'es': `${baseURL}/es/work/${post.slug}`,
 			},
 		},
 	}
@@ -129,9 +134,11 @@ export default function Project({ params }: WorkParams) {
 						dateModified: post.metadata.publishedAt,
 						description: post.metadata.summary,
 						image: post.metadata.image
-							? `https://${baseURL}${post.metadata.image}`
-							: `https://${baseURL}/og?title=${post.metadata.title}`,
-							url: `https://${baseURL}/${params.locale}/work/${post.slug}`,
+							? `${baseURL}${post.metadata.image}`
+							: post.metadata.images && post.metadata.images.length > 0
+								? `${baseURL}${post.metadata.images[0]}`
+								: `${baseURL}/og?title=${post.metadata.title}`,
+						url: `${baseURL}/${params.locale}/work/${post.slug}`,
 						author: {
 							'@type': 'Person',
 							name: person.name,

@@ -43,7 +43,7 @@ export async function generateStaticParams() {
   return allPosts
 }
 
-export function generateMetadata({ params: { slug, locale } }: BlogParams) {
+export async function generateMetadata({ params: { slug, locale } }: BlogParams) {
   let post = getPosts(['src', 'app', '[locale]', 'blog', 'posts', locale]).find(
     (post) => post.slug === slug
   )
@@ -64,8 +64,8 @@ export function generateMetadata({ params: { slug, locale } }: BlogParams) {
   const author = getAuthor(authorId);
   
   let ogImage = image
-    ? `https://${baseURL}${image}`
-    : `https://${baseURL}/images/avatar.png`
+    ? `${baseURL}${image}`
+    : `${baseURL}/images/avatar.png`
     
   const postsTags = post.metadata.tag || []
 
@@ -79,31 +79,32 @@ export function generateMetadata({ params: { slug, locale } }: BlogParams) {
       description,
       type: 'article',
       publishedTime,
-      url: `https://${baseURL}/${locale}/blog/${post.slug}`,
+      authors: [author.fullName],
+      url: `${baseURL}/${locale}/blog/${post.slug}`,
       siteName: 'Dari Dev Portfolio',
-      locale: 'en_US',
+      locale: locale === 'es' ? 'es_ES' : 'en_US',
       images: [
         {
           url: ogImage,
           alt: `${title} - Article by ${author.fullName}`,
           width: 1200,
           height: 630,
+          type: 'image/webp',
         },
       ],
     },
     twitter: {
-      card: 'summary_large_image',
-      site: author.social.twitter || '@DeveloperDari',
-      creator: author.social.twitter || '@DeveloperDari',
       title,
       description,
-      images: [ogImage],
+      card: ogImage.includes('/images/avatar.png') ? 'summary' : 'summary_large_image',
+      site: author.social.twitter || '@DeveloperDari',
+      creator: author.social.twitter || '@DeveloperDari',
     },
     alternates: {
-      canonical: `https://${baseURL}/${locale}/blog/${post.slug}`,
+      canonical: `${baseURL}/${locale}/blog/${post.slug}`,
       languages: {
-        'en': `https://${baseURL}/en/blog/${post.slug}`,
-        'es': `https://${baseURL}/es/blog/${post.slug}`,
+        'en': `${baseURL}/en/blog/${post.slug}`,
+        'es': `${baseURL}/es/blog/${post.slug}`,
       },
     },
   }
@@ -151,14 +152,14 @@ export default function Blog({ params }: BlogParams) {
             dateModified: post.metadata.publishedAt,
             description: post.metadata.summary,
             image: post.metadata.image
-              ? `https://${baseURL}${post.metadata.image}`
-              : `https://${baseURL}/og?title=${post.metadata.title}`,
-            url: `https://${baseURL}/${params.locale}/blog/${post.slug}`,
+              ? `${baseURL}${post.metadata.image}`
+              : `${baseURL}/og?title=${post.metadata.title}`,
+            url: `${baseURL}/${params.locale}/blog/${post.slug}`,
             author: {
               '@type': 'Person',
               name: author.fullName,
               url: author.social.facebook || author.social.github,
-              image: `https://${baseURL}${author.avatar}`
+              image: `${baseURL}${author.avatar}`
             },
           }),
         }}
