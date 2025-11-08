@@ -204,13 +204,18 @@ export function generateStaticParams() {
 						}}
 					/>
 
-					{/* Google ads scripts */}
-
 					{/* Influencer Roulette */}
 					<Script
 						async
 						src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4509450751077172"
 						crossOrigin="anonymous"
+						strategy="afterInteractive"
+					/>
+
+					{/* Umami analytics */}
+					<Script
+						src="https://umami.apps.darideveloper.com/script.js"
+						data-website-id="ea4f3991-4f85-4710-a9cc-fc4848110c56"
 						strategy="afterInteractive"
 					/>
 
