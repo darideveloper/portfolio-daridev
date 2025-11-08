@@ -185,8 +185,27 @@ export function generateStaticParams() {
 						}}
 					/>
 
+					{/* Google tag (gtag.js) */}
+					<Script
+						src="https://www.googletagmanager.com/gtag/js?id=G-808LT56M6M"
+						async
+						strategy="afterInteractive"
+					/>
+					<Script
+						id="google-analytics"
+						strategy="afterInteractive"
+						dangerouslySetInnerHTML={{
+							__html: `
+								window.dataLayer = window.dataLayer || [];
+								function gtag(){dataLayer.push(arguments);}
+								gtag('js', new Date());
+								gtag('config', 'G-808LT56M6M');
+							`.trim(),
+						}}
+					/>
+
 					{/* Google ads scripts */}
-					
+
 					{/* Influencer Roulette */}
 					<Script
 						async
