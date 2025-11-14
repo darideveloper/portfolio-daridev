@@ -30,15 +30,16 @@ export async function generateMetadata({
       title,
       description,
       type: 'website',
-      url: `https://${baseURL}/${locale}/privacy`,
+      url: `${baseURL}/${locale}/privacy`,
       siteName: `${person.firstName}'s Portfolio`,
-      locale: 'en_US',
+      locale: locale === 'es' ? 'es_ES' : 'en_US',
       images: [
         {
           url: `${baseURL}${person.avatar}`,
           alt: `${person.name} - ${person.role}`,
           width: 400,
           height: 400,
+          type: 'image/webp',
         },
       ],
     },
@@ -48,13 +49,12 @@ export async function generateMetadata({
       creator: branding.social.twitter,
       title,
       description,
-      images: [`${baseURL}${person.avatar}`],
     },
     alternates: {
-      canonical: `https://${baseURL}/${locale}/privacy`,
+      canonical: `${baseURL}/${locale}/privacy`,
       languages: {
-        'en': `https://${baseURL}/en/privacy`,
-        'es': `https://${baseURL}/es/privacy`,
+        'en': `${baseURL}/en/privacy`,
+        'es': `${baseURL}/es/privacy`,
       },
     },
   }
@@ -140,7 +140,7 @@ export default function Privacy({
             '@type': 'WebPage',
             name: t(privacy.title),
             description: t(privacy.introduction.content),
-            url: `https://${baseURL}/privacy`,
+            url: `${baseURL}/privacy`,
             author: {
               '@type': 'Person',
               name: person.name,

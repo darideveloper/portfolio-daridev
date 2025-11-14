@@ -70,3 +70,29 @@ export function getPosts(customPath = ['', '', '', '']) {
     const postsDir = path.join(process.cwd(), ...customPath);
     return getMDXData(postsDir);
 }
+
+/**
+ * Resolves an image URL to its absolute URL
+ * Handles both local paths (starts with /) and absolute URLs (starts with http:// or https://)
+ * @param imageUrl - The image URL from metadata (can be relative or absolute)
+ * @param baseURL - The base URL of the site
+ * @param fallback - Optional fallback image path
+ * @returns Absolute URL string
+ */
+export function resolveImageUrl(
+  imageUrl: string | undefined,
+  baseURL: string,
+  fallback?: string
+): string {
+  if (!imageUrl) {
+    return fallback ? `${baseURL}${fallback}` : '';
+  }
+  
+  // If image is already an absolute URL, return it as-is
+  if (imageUrl.startsWith('http://') || imageUrl.startsWith('https://')) {
+    return imageUrl;
+  }
+  
+  // If image is a relative path, prepend baseURL
+  return `${baseURL}${imageUrl}`;
+}

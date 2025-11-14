@@ -31,7 +31,7 @@ export async function generateMetadata(
 	const { person, home } = renderContent(t, brand);
 
 	return {
-		metadataBase: new URL(`https://${baseURL}/${locale}`),
+		metadataBase: new URL(baseURL),
 		title: home.title,
 		description: home.description,
 		keywords: 'portfolio, web development, design, Next.js, React, fullstack, automation, DevOps, Dari Dev',
@@ -48,9 +48,9 @@ export async function generateMetadata(
 		openGraph: {
 			title: `${person.firstName}'s Portfolio`,
 			description: 'Portfolio website showcasing my work.',
-			url: baseURL,
+			url: `${baseURL}/${locale}`,
 			siteName: `${person.firstName}'s Portfolio`,
-			locale: 'en_US',
+			locale: locale === 'es' ? 'es_ES' : 'en_US',
 			type: 'website',
 			images: [
 				{
@@ -58,6 +58,7 @@ export async function generateMetadata(
 					alt: `${person.name} - ${person.role}`,
 					width: 400,
 					height: 400,
+					type: 'image/webp',
 				},
 			],
 		},
@@ -67,7 +68,6 @@ export async function generateMetadata(
 			creator: '@DeveloperDari',
 			title: `${person.firstName}'s Portfolio`,
 			description: 'Portfolio website showcasing my work.',
-			images: [`${baseURL}${person.avatar}`],
 		},
 		robots: {
 			index: true,
@@ -80,15 +80,11 @@ export async function generateMetadata(
 				'max-snippet': -1,
 			},
 		},
-		verification: {
-			google: 'your-google-verification-code',
-			yandex: 'your-yandex-verification-code',
-		},
 		alternates: {
-			canonical: `https://${baseURL}/${locale}`,
+			canonical: `${baseURL}/${locale}`,
 			languages: {
-				'en': `https://${baseURL}/en`,
-				'es': `https://${baseURL}/es`,
+				'en': `${baseURL}/en`,
+				'es': `${baseURL}/es`,
 			},
 		},
 	}
@@ -168,8 +164,8 @@ export function generateStaticParams() {
 								'@context': 'https://schema.org',
 								'@type': 'Organization',
 								name: `${person.firstName}'s Portfolio`,
-								url: `https://${baseURL}`,
-								logo: `https://${baseURL}${person.avatar}`,
+								url: `${baseURL}`,
+								logo: `${baseURL}${person.avatar}`,
 								description: 'Portfolio website showcasing web development and design work',
 								sameAs: social
 									.filter((item) => item.link && !item.link.startsWith('mailto:'))
@@ -178,7 +174,7 @@ export function generateStaticParams() {
 									'@type': 'Person',
 									name: person.name,
 									jobTitle: person.role,
-									image: `https://${baseURL}${person.avatar}`,
+									image: `${baseURL}${person.avatar}`,
 								},
 								contactPoint: {
 									'@type': 'ContactPoint',
@@ -189,13 +185,37 @@ export function generateStaticParams() {
 						}}
 					/>
 
-					{/* Google ads scripts */}
-					
+					{/* Google tag (gtag.js) */}
+					<Script
+						src="https://www.googletagmanager.com/gtag/js?id=G-808LT56M6M"
+						async
+						strategy="afterInteractive"
+					/>
+					<Script
+						id="google-analytics"
+						strategy="afterInteractive"
+						dangerouslySetInnerHTML={{
+							__html: `
+								window.dataLayer = window.dataLayer || [];
+								function gtag(){dataLayer.push(arguments);}
+								gtag('js', new Date());
+								gtag('config', 'G-808LT56M6M');
+							`.trim(),
+						}}
+					/>
+
 					{/* Influencer Roulette */}
 					<Script
 						async
 						src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4509450751077172"
 						crossOrigin="anonymous"
+						strategy="afterInteractive"
+					/>
+
+					{/* Umami analytics */}
+					<Script
+						src="https://umami.apps.darideveloper.com/script.js"
+						data-website-id="ea4f3991-4f85-4710-a9cc-fc4848110c56"
 						strategy="afterInteractive"
 					/>
 

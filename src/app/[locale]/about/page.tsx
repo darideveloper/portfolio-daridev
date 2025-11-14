@@ -37,15 +37,16 @@ export async function generateMetadata({
       title,
       description,
       type: 'website',
-      url: `https://${baseURL}/${locale}/about`,
+      url: `${baseURL}/${locale}/about`,
       siteName: `${person.firstName}'s Portfolio`,
-      locale: 'en_US',
+      locale: locale === 'es' ? 'es_ES' : 'en_US',
       images: [
         {
           url: ogImage,
           alt: `${person.name} - ${person.role}`,
           width: 400,
           height: 400,
+          type: 'image/webp',
         },
       ],
     },
@@ -55,13 +56,12 @@ export async function generateMetadata({
       creator: '@DeveloperDari',
       title,
       description,
-      images: [ogImage],
     },
     alternates: {
-      canonical: `https://${baseURL}/${locale}/about`,
+      canonical: `${baseURL}/${locale}/about`,
       languages: {
-        'en': `https://${baseURL}/en/about`,
-        'es': `https://${baseURL}/es/about`,
+        'en': `${baseURL}/en/about`,
+        'es': `${baseURL}/es/about`,
       },
     },
   }
@@ -115,8 +115,8 @@ export default function About({
             name: person.name,
             jobTitle: person.role,
             description: about.intro.description,
-            url: `https://${baseURL}/about`,
-            image: `${baseURL}/images/${person.avatar}`,
+            url: `${baseURL}/about`,
+            image: `${baseURL}${person.avatar}`,
             sameAs: social
               .filter((item) => item.link && !item.link.startsWith('mailto:')) // Filter out empty links and email links
               .map((item) => item.link),
