@@ -27,15 +27,16 @@ export async function generateMetadata(
 			title,
 			description,
 			type: 'website',
-			url: `https://${baseURL}/${locale}/work/`,
+			url: `${baseURL}/${locale}/work`,
 			siteName: `${person.firstName}'s Portfolio`,
-			locale: 'en_US',
+			locale: locale === 'es' ? 'es_ES' : 'en_US',
 			images: [
 				{
 					url: ogImage,
 					alt: `${person.name} - ${person.role}`,
 					width: 400,
 					height: 400,
+					type: 'image/webp',
 				},
 			],
 		},
@@ -45,13 +46,12 @@ export async function generateMetadata(
 			creator: '@DeveloperDari',
 			title,
 			description,
-			images: [ogImage],
 		},
 		alternates: {
-			canonical: `https://${baseURL}/${locale}/work`,
+			canonical: `${baseURL}/${locale}/work`,
 			languages: {
-				'en': `https://${baseURL}/en/work`,
-				'es': `https://${baseURL}/es/work`,
+				'en': `${baseURL}/en/work`,
+				'es': `${baseURL}/es/work`,
 			},
 		},
 	};
@@ -80,19 +80,22 @@ export default function Work(
                         '@type': 'CollectionPage',
                         headline: work.title,
                         description: work.description,
-                        url: `https://${baseURL}/projects`,
+                        url: `${baseURL}/work`,
                         image: `${baseURL}${person.avatar}`,
                         author: {
                             '@type': 'Person',
                             name: person.name,
                         },
-                        hasPart: allProjects.map(project => ({
-                            '@type': 'CreativeWork',
-                            headline: project.metadata.title,
-                            description: project.metadata.summary,
-                            url: `https://${baseURL}/projects/${project.slug}`,
-                            image: `${baseURL}/${project.metadata.image}`,
-                        })),
+                        hasPart: allProjects.map(project => {
+                            const projectImage = project.metadata.image || (project.metadata.images && project.metadata.images[0]) || '/images/avatar.png';
+                            return {
+                                '@type': 'CreativeWork',
+                                headline: project.metadata.title,
+                                description: project.metadata.summary,
+                                url: `${baseURL}/work/${project.slug}`,
+                                image: `${baseURL}${projectImage}`,
+                            };
+                        }),
                     }),
                 }}
             />

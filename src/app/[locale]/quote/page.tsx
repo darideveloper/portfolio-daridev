@@ -24,15 +24,16 @@ export async function generateMetadata(
 			title,
 			description,
 			type: 'website',
-			url: `https://${baseURL}/${locale}/quote`,
+			url: `${baseURL}/${locale}/quote`,
 			siteName: `${person.firstName}'s Portfolio`,
-			locale: 'en_US',
+			locale: locale === 'es' ? 'es_ES' : 'en_US',
 			images: [
 				{
 					url: ogImage,
 					alt: `${person.name} - ${person.role}`,
 					width: 400,
 					height: 400,
+					type: 'image/webp',
 				},
 			],
 		},
@@ -42,13 +43,12 @@ export async function generateMetadata(
 			creator: '@DeveloperDari',
 			title,
 			description,
-			images: [ogImage],
 		},
 		alternates: {
-			canonical: `https://${baseURL}/${locale}/quote`,
+			canonical: `${baseURL}/${locale}/quote`,
 			languages: {
-				'en': `https://${baseURL}/en/quote`,
-				'es': `https://${baseURL}/es/quote`,
+				'en': `${baseURL}/en/quote`,
+				'es': `${baseURL}/es/quote`,
 			},
 		},
 	};
@@ -77,7 +77,7 @@ export default function Quote(
 						'@type': 'WebPage',
 						name: t('quote.title'),
 						description: t('quote.description'),
-						url: `https://${baseURL}/quote`,
+						url: `${baseURL}/quote`,
 						image: `${baseURL}${person.avatar}`,
 						publisher: {
 							'@type': 'Person',

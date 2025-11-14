@@ -8,14 +8,14 @@ export default async function sitemap() {
 
     let blogs = locales.flatMap((locale) => 
         getPosts(['src', 'app', '[locale]', 'blog', 'posts', locale]).map((post) => ({
-            url: `${baseURL}${includeLocalePrefix ? `/${locale}` : ''}/blog/${post.slug}`,
+            url: `https://${baseURL}${includeLocalePrefix ? `/${locale}` : ''}/blog/${post.slug}`,
             lastModified: post.metadata.publishedAt,
         }))
     );
 
     let works = locales.flatMap((locale) => 
         getPosts(['src', 'app', '[locale]', 'work', 'projects', locale]).map((post) => ({
-            url: `${baseURL}${includeLocalePrefix ? `/${locale}` : ''}/work/${post.slug}`,
+            url: `https://${baseURL}${includeLocalePrefix ? `/${locale}` : ''}/work/${post.slug}`,
             lastModified: post.metadata.publishedAt,
         }))
     );
@@ -24,7 +24,7 @@ export default async function sitemap() {
 
     let routes = locales.flatMap((locale)=> 
         activeRoutes.map((route) => ({
-            url: `${baseURL}${includeLocalePrefix ? `/${locale}` : ''}${route !== '/' ? route : ''}`,
+            url: `https://${baseURL}${includeLocalePrefix ? `/${locale}` : ''}${route !== '/' ? route : ''}`,
             lastModified: new Date().toISOString().split('T')[0],
         }))
     );
